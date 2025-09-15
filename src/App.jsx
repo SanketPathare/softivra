@@ -6,6 +6,7 @@ import Navbar from './components/Navbar'
 import  PartnersSlider  from './components/PartnersSlider'
 import ServicesShowcase from './components/ServicesShowcase'
 import SwiperComponent from './components/SwiperComponent'
+import TestimonialSlider from './components/TestimonialSlider'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
  <ServicesShowcase/>
  <PartnersSlider/>
  <CTASection/>
+ <TestimonialSlider/>
 </>
   )
 }
