@@ -10,17 +10,19 @@ import Navbar from '../components/Navbar'
 
 const Home = () => {
   return (
-    <div  className='max-w-[100rem] mx-auto'>
-        <Navbar/>
+    <>   
  <SwiperComponent/>
+    <div  className='max-w-[100rem] mx-auto '>
+    
  <AboutComponent/>
  <ServicesShowcase/>
  <PartnersSlider/>
  <CTASection/>
  <TestimonialSlider/>
  <BlogInsights/>  
- <Footer/>
+
 </div>
+    </>
   )
 }
 

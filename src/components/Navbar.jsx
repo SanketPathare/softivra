@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Mail, Twitter, Facebook, Instagram, Linkedin, Menu, X } from 'lucide-react';
 import { Icon } from '@iconify-icon/react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const navItems = [
     'Home', 'About Us', 'Services', 'Blogs', 'Careers', 'Contact Us'
@@ -16,6 +18,16 @@ const Navbar = () => {
     { Icon: Linkedin, href: '#', color: 'text-blue-700 hover:text-blue-600' }
   ];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setIsScrolled(scrollPosition > 50); // Show navbar at bottom after scrolling 50px
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div className="w-full shadow-lg">
       {/* Top Contact Bar */}
@@ -24,7 +36,7 @@ const Navbar = () => {
           <div className="flex items-center space-x-3 text-gray-700">
             {/* Logo */}
             <div className="flex items-center space-x-3">
-              <img src='/logo.png' alt='logo' className='h-14 w-fit ' />
+              <img src='/logo.png' alt='logo' className='h-14 w-fit' />
             </div>
           </div>
           <div className="flex space-x-3">
@@ -37,13 +49,13 @@ const Navbar = () => {
             </div>
             <div className='flex gap-3'>
               {socialIcons.map(({ Icon, href, color }, index) => (
-                <a
+                <Link
                   key={index}
-                  href={href}
+                  to={href}
                   className={`bg-Maincolor transition-all duration-300 hover:scale-110 text-white p-3 rounded-full`}
                 >
                   <Icon className="w-4 h-4" />
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -51,25 +63,25 @@ const Navbar = () => {
       </div>
 
       {/* Main Navbar */}
-      <nav className=" relative bg-blue-100 ">
+      <nav className={`relative bg-blue-100 ${isScrolled ? ' bg-transparent md:fixed md:top-[0] md:left-0 md:right-0 md:z-50 ' : ''}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between lg:justify-center items-center lg:h-5 h-20 ">
+          <div className="flex justify-between lg:justify-center items-center lg:h-5 h-20">
             {/* Logo for Mobile */}
             <div className="flex items-center md:hidden">
-              <img src="/logo.png" alt="logo" className="h-10 w-fit " />
+              <img src="/logo.png" alt="logo" className="h-10 w-fit" />
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:block mt-[15px] absolute z-10">
+            <div className="hidden md:block mt-[15px] z-10">
               <div className="flex items-center justify-center bg-Maincolor rounded-md">
                 {navItems.map((item, index) => (
                   <div key={index} className="flex items-center">
-                    <a
-                      href="#"
+                    <Link
+                      to="#"
                       className="relative px-10 py-3 text-white font-medium text-md transition-all duration-300 group"
                     >
                       <span className="relative">{item}</span>
-                    </a>
+                    </Link>
                     {index < navItems.length - 1 && (
                       <span className="h-6 w-[2px] bg-gray-200 mx-2"></span>
                     )}
@@ -78,11 +90,11 @@ const Navbar = () => {
               </div>
             </div>
 
-         {/* Mobile Menu Button */}
+            {/* Mobile Menu Button */}
             <div className="md:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="p-2 text-gray-700 hover:text-blue-600 transition-colors duration-200 f rounded-lg cursor-pointer"
+                className="p-2 text-gray-700 hover:text-blue-600 transition-colors duration-200 rounded-lg cursor-pointer"
                 aria-label={isOpen ? 'Close menu' : 'Open menu'}
                 aria-expanded={isOpen}
               >
@@ -101,13 +113,13 @@ const Navbar = () => {
           <div className="px-4 py-4 space-y-2 bg-blue-50 border-t border-gray-200">
             {navItems.map((item, index) => (
               <div key={index}>
-                <a
-                  href="#"
+                <Link
+                  to="#"
                   className="block px-4 py-3 text-gray-700 hover:text-white hover:bg-blue-600 transition-all duration-300 text-base font-medium rounded-lg"
                   onClick={() => setIsOpen(false)}
                 >
                   {item}
-                </a>
+                </Link>
                 {index < navItems.length - 1 && (
                   <hr className="my-2 border-gray-200" />
                 )}
