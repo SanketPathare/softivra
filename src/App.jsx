@@ -3,6 +3,7 @@ import './App.css'
 import AboutComponent from './components/AboutComponent'
 import BlogInsights from './components/BlogInsights'
 import CTASection from './components/CTASection'
+import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import  PartnersSlider  from './components/PartnersSlider'
 import ServicesShowcase from './components/ServicesShowcase'
@@ -22,6 +23,7 @@ function App() {
  <CTASection/>
  <TestimonialSlider/>
  <BlogInsights/>  
+<Footer/>
 </>
   )
 }
