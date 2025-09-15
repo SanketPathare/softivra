@@ -113,7 +113,7 @@ const ResponsiveSlider = () => {
             className="min-w-full h-full flex items-center justify-center relative"
             style={{
               backgroundImage: `url(${slide.image})`,
-              backgroundSize: "contain",
+              backgroundSize: "cover",
               backgroundPosition: "center",
             }}
           >

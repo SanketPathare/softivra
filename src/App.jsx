@@ -8,13 +8,13 @@ import { Routes, Route } from 'react-router-dom';
 function App() {
   return (
     <>
-     
-      <main>
+     <Navbar/>
+      <main className='bg-slate-800'>
         <Routes>
           <Route path="/" element={<Home />} />
         </Routes>
       </main>
-    
+    <Footer/>
     </>
   );
 }

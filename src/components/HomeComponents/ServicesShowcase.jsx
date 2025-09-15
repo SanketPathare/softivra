@@ -83,7 +83,7 @@ const ServicesShowcase = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-800 py-12 px-4 sm:px-6 lg:px-8 ">
+    <div className=" bg-slate-800 py-12 px-4 sm:px-6 lg:px-8 ">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <motion.div 
