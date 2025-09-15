@@ -75,7 +75,7 @@ const BlogInsights = () => {
   const trendingTopics = ['technology', 'marketing', 'analytics', 'design', 'innovation'];
 
   return (
-    <div className="min-h-screen bg-slate-800 text-white">
+    <div className=" bg-slate-800 text-white">
       <div className="container mx-auto px-4 py-12 lg:py-20">
         <motion.div
           variants={containerVariants}

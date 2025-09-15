@@ -1,31 +1,22 @@
+import './App.css';
 
-import './App.css'
-import AboutComponent from './components/AboutComponent'
-import BlogInsights from './components/BlogInsights'
-import CTASection from './components/CTASection'
-import Footer from './components/Footer'
-import Navbar from './components/Navbar'
-import  PartnersSlider  from './components/PartnersSlider'
-import ServicesShowcase from './components/ServicesShowcase'
-import SwiperComponent from './components/SwiperComponent'
-import TestimonialSlider from './components/TestimonialSlider'
+import Footer from './components/Footer';
+import Navbar from './components/Navbar';
+import Home from './Pages/Home';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
-
-
   return (
-<>
-<Navbar/>
- <SwiperComponent/>
- <AboutComponent/>
- <ServicesShowcase/>
- <PartnersSlider/>
- <CTASection/>
- <TestimonialSlider/>
- <BlogInsights/>  
-<Footer/>
-</>
-  )
+    <>
+     
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </main>
+    
+    </>
+  );
 }
 
-export default App
+export default App;
