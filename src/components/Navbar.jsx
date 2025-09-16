@@ -7,8 +7,14 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
+ // Navigation items with routes
   const navItems = [
-    'Home', 'About Us', 'Services', 'Blogs', 'Careers', 'Contact Us'
+    { name: 'Home', path: '/' },
+    { name: 'About Us', path: '/about-us' },
+    { name: 'Services', path: '/services' },
+    { name: 'Blogs', path: '/blogs' },
+    { name: 'Careers', path: '/careers' },
+    { name: 'Contact Us', path: '/contact' },
   ];
 
   const socialIcons = [
@@ -74,13 +80,13 @@ const Navbar = () => {
             {/* Desktop Navigation */}
             <div className="hidden md:block mt-[15px] z-10">
               <div className="flex items-center justify-center bg-Maincolor rounded-md">
-                {navItems.map((item, index) => (
+              {navItems.map((item, index) => (
                   <div key={index} className="flex items-center">
                     <Link
-                      to="#"
+                      to={item.path}
                       className="relative px-10 py-3 text-white font-medium text-md transition-all duration-300 group"
                     >
-                      <span className="relative">{item}</span>
+                      <span className="relative">{item.name}</span>
                     </Link>
                     {index < navItems.length - 1 && (
                       <span className="h-6 w-[2px] bg-gray-200 mx-2"></span>
@@ -111,14 +117,14 @@ const Navbar = () => {
           }`}
         >
           <div className="px-4 py-4 space-y-2 bg-blue-50 border-t border-gray-200">
-            {navItems.map((item, index) => (
+          {navItems.map((item, index) => (
               <div key={index}>
                 <Link
-                  to="#"
+                  to={item.path}
                   className="block px-4 py-3 text-gray-700 hover:text-white hover:bg-blue-600 transition-all duration-300 text-base font-medium rounded-lg"
                   onClick={() => setIsOpen(false)}
                 >
-                  {item}
+                  {item.name}
                 </Link>
                 {index < navItems.length - 1 && (
                   <hr className="my-2 border-gray-200" />
