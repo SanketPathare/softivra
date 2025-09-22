@@ -61,15 +61,15 @@ const About = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-slate-800 ">
       {/* Hero Section */}
       <motion.section
-        className="bg-slate-800 text-white py-20"
+        className=" inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20  py-20 text-white"
         initial="hidden"
         animate="visible"
-        variants={fadeInUp}
+
       >
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4  ">
           <motion.h1
             className="text-5xl md:text-6xl font-bold text-center mb-4"
             variants={fadeInUp}
@@ -92,7 +92,7 @@ const About = () => {
             className="max-w-4xl mx-auto text-center "
             variants={fadeInUp}
           >
-            <p className="text-lg leading-relaxed text-gray-700">
+            <p className="text-lg leading-relaxed text-gray-200">
               At{" "}
               <span className="text-Maincolor font-semibold">
                 NextDigit Software
