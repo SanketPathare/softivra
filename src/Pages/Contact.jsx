@@ -73,12 +73,12 @@ const Contact = () => {
           >
             Contact Us
           </motion.h1>
-          <motion.p
+          {/* <motion.p
             className="text-lg sm:text-xl text-gray-200 max-w-3xl mx-auto text-center"
             variants={fadeInUp}
           >
             We're here to help! Reach out with any questions, support needs, or to learn more about our services.
-          </motion.p>
+          </motion.p> */}
         </div>
       </motion.section>
 
