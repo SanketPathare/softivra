@@ -63,22 +63,21 @@ const About = () => {
   return (
     <div className="min-h-screen bg-slate-800">
       {/* Hero Section */}
-      <motion.section
-        className="inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 py-20 text-white"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-      >
-        <div className="container mx-auto px-4">
-          <motion.h1
-            className="text-5xl md:text-6xl font-bold text-center mb-4"
-            variants={itemVariants}
+      <section className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8 inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20">
+        <div className="relative max-w-7xl mx-auto text-center">
+          <motion.div
+            id="hero"
+            data-animate
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            About Us
-          </motion.h1>
+            <h1 className="text-5xl md:text-6xl font-bold text-center mb-4 text-white">
+              About Us
+            </h1>
+          </motion.div>
         </div>
-      </motion.section>
+      </section>
 
       {/* Main Content */}
       <motion.section
