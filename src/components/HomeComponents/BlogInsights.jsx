@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom'; 
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { blogData } from "../../Data/blogData";
 
 const BlogInsights = () => {
@@ -13,9 +13,9 @@ const BlogInsights = () => {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        duration: 0.6
-      }
-    }
+        duration: 0.6,
+      },
+    },
   };
 
   const itemVariants = {
@@ -25,9 +25,9 @@ const BlogInsights = () => {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   const cardVariants = {
@@ -37,20 +37,26 @@ const BlogInsights = () => {
       scale: 1,
       transition: {
         duration: 0.5,
-        ease: "easeOut"
-      }
+        ease: "easeOut",
+      },
     },
     hover: {
       scale: 1.05,
       y: -10,
       transition: {
         duration: 0.3,
-        ease: "easeInOut"
-      }
-    }
+        ease: "easeInOut",
+      },
+    },
   };
 
-  const trendingTopics = ['technology', 'marketing', 'analytics', 'design', 'innovation'];
+  const trendingTopics = [
+    "technology",
+    "marketing",
+    "analytics",
+    "design",
+    "innovation",
+  ];
 
   return (
     <div className="bg-slate-800 text-white">
@@ -64,40 +70,41 @@ const BlogInsights = () => {
           {/* Header Section */}
           <div className="flex justify-center items-center mb-16">
             <motion.div variants={itemVariants} className="space-y-6">
-              <motion.h1 
+              <motion.h1
                 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-center"
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                Discover more{' '}
-                <motion.span 
+                Discover more{" "}
+                <motion.span
                   className="bg-Maincolor bg-clip-text text-transparent"
-                  animate={{ 
-                    backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+                  animate={{
+                    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
                   }}
-                  transition={{ 
+                  transition={{
                     duration: 3,
                     repeat: Infinity,
-                    ease: "linear"
+                    ease: "linear",
                   }}
                 >
                   insights!
                 </motion.span>
               </motion.h1>
-              
-              <motion.p 
+
+              <motion.p
                 className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-5xl text-center"
                 variants={itemVariants}
               >
-                Dive into our collection of insightful blogs covering a range of topics, from industry trends to expert tips. Discover valuable information, stay updated, and expand your knowledge.
+                Dive into our collection of insightful blogs covering a range of
+                topics, from industry trends to expert tips. Discover valuable
+                information, stay updated, and expand your knowledge.
               </motion.p>
             </motion.div>
           </div>
 
-
           {/* Blog Cards Grid */}
-          <motion.div 
+          <motion.div
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
             variants={containerVariants}
           >
@@ -105,28 +112,20 @@ const BlogInsights = () => {
               <motion.div
                 key={post.slug}
                 variants={cardVariants}
-                whileHover="hover"
                 onHoverStart={() => setHoveredCard(post.slug)}
                 onHoverEnd={() => setHoveredCard(null)}
-                className="group cursor-pointer"
+                className="group "
               >
                 <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
-                  {/* Category Badge */}
-                  <div className="p-6 pb-0">
-                    <motion.span 
-                      className={`inline-block px-4 py-2 rounded-full text-xs font-bold tracking-wider bg-Maincolor text-white`}
-                      animate={hoveredCard === post.slug ? { scale: 1.1 } : { scale: 1 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      {post.category}
-                    </motion.span>
-                  </div>
-
                   {/* Image Area */}
                   <div className="p-6">
-                    <motion.div 
+                    <motion.div
                       className="h-52 rounded-2xl relative overflow-hidden"
-                      animate={hoveredCard === post.slug ? { scale: 1.02 } : { scale: 1 }}
+                      animate={
+                        hoveredCard === post.slug
+                          ? { scale: 1.02 }
+                          : { scale: 1 }
+                      }
                       transition={{ duration: 0.3 }}
                     >
                       <img
@@ -135,13 +134,26 @@ const BlogInsights = () => {
                         className="w-full h-full object-cover"
                       />
                     </motion.div>
-
+                    {/* Category Badge */}
+                    <div className="py-4 pb-0">
+                      <motion.span
+                        className={`inline-block px-4 py-2 rounded-full text-xs font-bold tracking-wider bg-Maincolor text-white`}
+                        animate={
+                          hoveredCard === post.slug
+                            ? { scale: 1.1 }
+                            : { scale: 1 }
+                        }
+                      >
+                        {post.category}
+                      </motion.span>
+                    </div>
                     {/* Content */}
                     <div className="mt-6">
-                      <h3 className="text-xl font-bold mb-4 group-hover:text-Maincolor transition-colors">
-                        {post.title}
-                      </h3>
-                      <Link to={`/blog/${post.slug}`} className="flex items-center gap-2 text-Maincolor font-medium transition-colors">
+                      <h3 className="text-xl font-bold mb-4  ">{post.title}</h3>
+                      <Link
+                        to={`/blog/${post.slug}`}
+                        className="flex items-center gap-2 text-Maincolor font-medium transition-colors"
+                      >
                         Learn More
                         <ArrowRight className="w-4 h-4" />
                       </Link>
@@ -153,14 +165,14 @@ const BlogInsights = () => {
           </motion.div>
 
           {/* Bottom CTA */}
-          <motion.div 
-            variants={itemVariants}
-            className="text-center mt-16"
-          >
+          <motion.div variants={itemVariants} className="text-center mt-16">
             <Link to="/blogs">
               <motion.button
                 className="bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 px-8 py-4 rounded-full font-medium transition-all duration-300"
-                whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.15)' }}
+                whileHover={{
+                  scale: 1.05,
+                  backgroundColor: "rgba(255,255,255,0.15)",
+                }}
                 whileTap={{ scale: 0.95 }}
               >
                 Explore more...
