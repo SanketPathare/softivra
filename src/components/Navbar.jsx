@@ -18,10 +18,10 @@ const Navbar = () => {
   ];
 
   const socialIcons = [
-    { Icon: Twitter, href: '#', color: 'text-blue-400 hover:text-blue-300' },
-    { Icon: Facebook, href: '#', color: 'text-blue-600 hover:text-blue-500' },
-    { Icon: Instagram, href: '#', color: 'text-pink-500 hover:text-pink-400' },
-    { Icon: Linkedin, href: '#', color: 'text-blue-700 hover:text-blue-600' }
+    { Icon: Twitter, href: 'https://twitter.com/Nextdigit_Sw', color: 'text-blue-400 hover:text-blue-300' },
+    { Icon: Facebook, href: 'https://www.facebook.com/Nextdigit-Software/', color: 'text-blue-600 hover:text-blue-500' },
+    { Icon: Instagram, href: 'https://www.instagram.com/nextdigit_sw/', color: 'text-pink-500 hover:text-pink-400' },
+    { Icon: Linkedin, href: 'https://www.linkedin.com/company/nextdigit-software', color: 'text-blue-700 hover:text-blue-600' }
   ];
 
   useEffect(() => {
@@ -38,17 +38,21 @@ const Navbar = () => {
     <div className="w-full shadow-lg">
       {/* Top Contact Bar */}
       <div className="bg-blue-100 px-4 py-8 hidden md:block">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
+        <div className="max-w-8xl mx-auto flex justify-between items-center">
           <div className="flex items-center space-x-3 text-gray-700">
             {/* Logo */}
             <div className="flex items-center space-x-3">
+              <Link to="/">
               <img src='/logo.png' alt='logo' className='h-14 w-fit' />
+              </Link>
             </div>
           </div>
           <div className="flex space-x-3">
             <div className="flex items-center space-x-2">
               <Mail className="w-5 h-5 text-Maincolor" />
+              <Link target='_blank' to="mailto:contact@nextdigit.in">
               <span className="text-sm font-medium">contact@nextdigit.in</span>
+              </Link>
             </div>
             <div className='flex items-center-safe'>
               <Icon icon="ci:line-l" width="24" height="24" className='text-Maincolor' />
@@ -58,6 +62,7 @@ const Navbar = () => {
                 <Link
                   key={index}
                   to={href}
+                  target="_blank"
                   className={`bg-Maincolor transition-all duration-300 hover:scale-110 text-white p-3 rounded-full`}
                 >
                   <Icon className="w-4 h-4" />
