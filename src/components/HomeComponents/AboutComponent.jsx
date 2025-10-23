@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const AboutComponent = () => {
   const [images, setImages] = useState({
@@ -49,9 +50,9 @@ const AboutComponent = () => {
             </div>
             
             <div>
-              <button className="bg-Maincolor cursor-pointer text-white px-6 py-3 rounded-lg font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 active:scale-95">
+              <Link to='/about-us' className="bg-Maincolor cursor-pointer text-white px-6 py-3 rounded-lg font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 active:scale-95">
                 Know more ...
-              </button>
+              </Link>
             </div>
           </div>
 
