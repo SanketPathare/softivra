@@ -1,4 +1,5 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
+
 import { motion } from 'framer-motion';
 
 const ServicesShowcase = () => {
@@ -171,6 +172,7 @@ const ServicesShowcase = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.5, duration: 0.8 }}
         >
+          <Link to="/services"> 
           <motion.button
             variants={buttonVariants}
             whileHover="hover"
@@ -179,6 +181,7 @@ const ServicesShowcase = () => {
           >
             Find out more ...
           </motion.button>
+          </Link>
         </motion.div>
       </div>
 
