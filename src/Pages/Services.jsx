@@ -206,14 +206,14 @@ const Services = () => {
 
   // Animation variants for Framer Motion
   const serviceVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
   };
 
   return (
     <div className="min-h-screen bg-slate-800">
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8 inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20">
+      <section className="relative overflow-hidden py-12 md:py-20 px-4 sm:px-6 lg:px-8 inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20">
         <div className="relative max-w-7xl mx-auto text-center">
           <motion.div
             id="hero"
@@ -222,7 +222,7 @@ const Services = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-center mb-4 text-white">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-4 text-white">
               Services
             </h1>
           </motion.div>
@@ -230,13 +230,13 @@ const Services = () => {
       </section>
 
       {/* Services Designed for You Header */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8">
+      <section className="py-8 md:py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="text-3xl lg:text-4xl font-bold text-white mb-4"
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 px-4"
           >
             Services Designed for You
           </motion.h2>
@@ -244,8 +244,8 @@ const Services = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto space-y-30">
+      <section className="pb-12 md:pb-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto space-y-16 md:space-y-24 lg:space-y-30">
           {services.map((service, index) => (
             <motion.div
               key={service.id}
@@ -254,16 +254,18 @@ const Services = () => {
               variants={serviceVariants}
               initial="hidden"
               animate={isVisible[`service-${index}`] ? "visible" : "hidden"}
+              className="bg-slate-700/30 rounded-2xl p-6 md:p-8 lg:p-10 backdrop-blur-sm border border-slate-600/50"
             >
               {/* Service Image and Content */}
-              <div className="flex justify-between items-center gap-10">
-                <div className="w-1/2">
+              <div className="flex flex-col lg:flex-row justify-between items-center gap-8 md:gap-10">
+                {/* Image Section - Order changes on mobile */}
+                <div className={`w-full lg:w-1/2 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
                   <div className="relative">
                     <motion.img
                       src={service.image}
                       alt={`${service.title} illustration`}
-                      className="w-full h-120 object-contain rounded-lg"
-                      initial={{ opacity: 0, x: -50 }}
+                      className="w-full h-64 sm:h-64 md:h-80 lg:h-96 object-contain rounded-lg"
+                      initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
                     />
@@ -271,26 +273,26 @@ const Services = () => {
                 </div>
 
                 {/* Service Content */}
-                <div className="w-1/2">
+                <div className={`w-full lg:w-1/2 ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
                   <motion.h3
-                    className="text-3xl lg:text-4xl font-bold text-white mb-6"
-                    initial={{ opacity: 0, x: 50 }}
+                    className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 md:mb-6 text-center lg:text-left"
+                    initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
                   >
                     {service.title}
                   </motion.h3>
                   <motion.p
-                    className="text-lg text-blue-100 mb-6 leading-relaxed"
-                    initial={{ opacity: 0, x: 50 }}
+                    className="text-base sm:text-lg text-blue-100 mb-4 md:mb-6 leading-relaxed text-center lg:text-left"
+                    initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
                   >
                     {service.description}
                   </motion.p>
                   <motion.p
-                    className="text-base text-blue-200 mb-8 leading-relaxed"
-                    initial={{ opacity: 0, x: 50 }}
+                    className="text-sm sm:text-base text-blue-200 mb-6 md:mb-8 leading-relaxed text-center lg:text-left"
+                    initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
                   >
@@ -300,18 +302,24 @@ const Services = () => {
               </div>
 
               {/* Service Features */}
-              <div className="flex flex-col items-center justify-center mt-10">
-                <div className="flex flex-wrap gap-4">
+              <div className="flex flex-col items-center justify-center mt-8 md:mt-10">
+                <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 max-w-6xl">
                   {service.features.map((feature, featureIndex) => (
-                    <motion.button
+                    <motion.div
                       key={featureIndex}
-                      className="flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900 text-white rounded-full px-4 py-2 border border-gray-700 hover:bg-gray-700 transition-all duration-300"
+                      className="flex items-center bg-gradient-to-br from-gray-800 to-gray-900 text-white rounded-full px-3 py-2 sm:px-4 sm:py-2 border border-gray-700 hover:bg-gray-700 transition-all duration-300"
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.3, ease: "easeOut", delay: 0.7 + featureIndex * 0.1 }}
+                      transition={{ 
+                        duration: 0.3, 
+                        ease: "easeOut", 
+                        delay: 0.7 + featureIndex * 0.05 
+                      }}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
                     >
                       <svg
-                        className="w-5 h-5 text-blue-400 mr-2"
+                        className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400 mr-2 flex-shrink-0"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -324,10 +332,10 @@ const Services = () => {
                           d="M5 13l4 4L19 7"
                         />
                       </svg>
-                      <span className="text-sm font-medium text-white">
+                      <span className="text-xs sm:text-sm font-medium text-white whitespace-nowrap">
                         {feature}
                       </span>
-                    </motion.button>
+                    </motion.div>
                   ))}
                 </div>
               </div>
