@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const CTASection = () => {
   const containerVariants = {
@@ -132,6 +133,7 @@ const CTASection = () => {
 
           {/* CTA Button */}
           <motion.div variants={itemVariants}>
+            <Link to="/contact">      
             <motion.button
               variants={buttonVariants}
               whileHover="hover"
@@ -147,6 +149,7 @@ const CTASection = () => {
               <span className="relative z-10 group-hover:text-blue-700 transition-colors duration-300">
                 Let's Discuss
               </span>
+
 
               {/* Animated Arrow */}
               <motion.svg
@@ -169,6 +172,7 @@ const CTASection = () => {
                 transition={{ duration: 0.6 }}
               />
             </motion.button>
+            </Link>
           </motion.div>
         </div>
       </motion.div>
