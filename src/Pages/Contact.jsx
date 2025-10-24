@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import CTASection from "../components/HomeComponents/CTASection";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -61,7 +60,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-slate-800 text-white">
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8 inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20">
+      <section className="relative overflow-hidden py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600/20 to-purple-600/20">
         <div className="relative max-w-7xl mx-auto text-center">
           <motion.div
             id="hero"
@@ -70,7 +69,7 @@ const Contact = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-center mb-4 text-white">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-4 text-white">
               Contact Us
             </h1>
           </motion.div>
@@ -79,26 +78,26 @@ const Contact = () => {
 
       {/* Main Content */}
       <motion.section
-        className="py-12 sm:py-16"
+        className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         variants={staggerContainer}
       >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 max-w-6xl mx-auto">
+        <div className="container mx-auto max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
             {/* Contact Form */}
             <motion.div
-              className="bg-white/5 backdrop-blur-lg rounded-lg shadow-lg p-6 sm:p-8 border border-white/30"
+              className="bg-white/5 backdrop-blur-lg rounded-lg shadow-lg p-4 sm:p-6 lg:p-8 border border-white/30"
               variants={staggerContainer}
             >
               <motion.h2
-                className="text-2xl sm:text-3xl font-bold text-white mb-6"
+                className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6"
                 variants={fadeInUp}
               >
-                Send Us a <span className="text-Maincolor"> Message </span>
+                Send Us a <span className="text-Maincolor">Message</span>
               </motion.h2>
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 <motion.div variants={fadeInUp}>
                   <label
                     htmlFor="name"
@@ -113,7 +112,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-slate-700/50 border border-gray-500 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition text-white placeholder-gray-400"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-slate-700/50 border border-gray-500 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition text-white placeholder-gray-400 text-sm sm:text-base"
                     placeholder="Your name"
                   />
                 </motion.div>
@@ -132,7 +131,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-slate-700/50 border border-gray-500 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition text-white placeholder-gray-400"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-slate-700/50 border border-gray-500 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition text-white placeholder-gray-400 text-sm sm:text-base"
                     placeholder="Your email address"
                   />
                 </motion.div>
@@ -151,7 +150,7 @@ const Contact = () => {
                     value={formData.contactNo}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-slate-700/50 border border-gray-500 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition text-white placeholder-gray-400"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-slate-700/50 border border-gray-500 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition text-white placeholder-gray-400 text-sm sm:text-base"
                     placeholder="Your contact number"
                   />
                 </motion.div>
@@ -170,7 +169,7 @@ const Contact = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-slate-700/50 border border-gray-500 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition text-white placeholder-gray-400"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-slate-700/50 border border-gray-500 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition text-white placeholder-gray-400 text-sm sm:text-base"
                     placeholder="Message subject"
                   />
                 </motion.div>
@@ -188,16 +187,16 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    rows={5}
-                    className="w-full px-4 py-3 bg-slate-700/50 border border-gray-500 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition text-white placeholder-gray-400"
+                    rows={4}
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-slate-700/50 border border-gray-500 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition text-white placeholder-gray-400 text-sm sm:text-base"
                     placeholder="Your message"
                   ></textarea>
                 </motion.div>
 
                 <motion.button
-                  type="button"
+                  type="submit"
                   onClick={handleSubmit}
-                  className="w-full bg-white text-Maincolor font-bold py-3 px-6 rounded-full hover:bg-gray-100 transition-colors duration-300 shadow-lg"
+                  className="w-full bg-white text-Maincolor font-bold py-2 sm:py-3 px-4 sm:px-6 rounded-full hover:bg-gray-100 transition-colors duration-300 shadow-lg text-sm sm:text-base"
                   variants={scaleIn}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -209,29 +208,32 @@ const Contact = () => {
 
             {/* Contact Information */}
             <motion.div
-              className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 py-12 sm:py-16 md:py-20 backdrop-blur-lg rounded-lg shadow-lg p-6 sm:p-8 border border-white/30"
+              className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-lg shadow-lg p-4 sm:p-6 lg:p-8 border border-white/30"
               variants={staggerContainer}
             >
               <motion.h2
-                className="text-2xl sm:text-3xl font-bold text-Maincolor mb-6"
+                className="text-2xl sm:text-3xl font-bold text-Maincolor mb-4 sm:mb-6"
                 variants={fadeInUp}
               >
                 Get in Touch with Us
               </motion.h2>
-              <motion.p className="text-gray-200 mb-8" variants={fadeInUp}>
+              <motion.p
+                className="text-gray-200 mb-6 sm:mb-8 text-sm sm:text-base"
+                variants={fadeInUp}
+              >
                 Our team is ready to assist you with any inquiries or provide
                 the information you need.
               </motion.p>
 
-              <div className="space-y-6 mb-8">
+              <div className="space-y-4 sm:space-y-6 mb-6 sm:mb-8">
                 <motion.div
                   className="flex items-start"
                   variants={fadeInUp}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="bg-blue-600/50 p-3 rounded-full mr-4">
+                  <div className="bg-blue-600/50 p-2 sm:p-3 rounded-full mr-3 sm:mr-4">
                     <svg
-                      className="w-6 h-6"
+                      className="w-5 sm:w-6 h-5 sm:h-6"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -246,8 +248,12 @@ const Contact = () => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-medium text-white">Contact Number</h3>
-                    <p className="text-gray-200">+91 76206 63151</p>
+                    <h3 className="font-medium text-white text-sm sm:text-base">
+                      Contact Number
+                    </h3>
+                    <p className="text-gray-200 text-sm sm:text-base">
+                      +91 76206 63151
+                    </p>
                   </div>
                 </motion.div>
 
@@ -256,9 +262,9 @@ const Contact = () => {
                   variants={fadeInUp}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="bg-blue-600/50 p-3 rounded-full mr-4">
+                  <div className="bg-blue-600/50 p-2 sm:p-3 rounded-full mr-3 sm:mr-4">
                     <svg
-                      className="w-6 h-6"
+                      className="w-5 sm:w-6 h-5 sm:h-6"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -273,30 +279,34 @@ const Contact = () => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-medium text-white">Email Address</h3>
-                    <p className="text-gray-200">contact@nextdigit.in</p>
+                    <h3 className="font-medium text-white text-sm sm:text-base">
+                      Email Address
+                    </h3>
+                    <p className="text-gray-200 text-sm sm:text-base">
+                      contact@nextdigit.in
+                    </p>
                   </div>
                 </motion.div>
               </div>
 
               <motion.div
-                className="border-t border-gray-600 pt-8"
+                className="border-t border-gray-600 pt-6 sm:pt-8"
                 variants={fadeInUp}
               >
-                <h3 className="font-medium text-white mb-4">
+                <h3 className="font-medium text-white mb-4 text-sm sm:text-base">
                   Write Some Words
                 </h3>
-                <p className="text-gray-200 mb-6">
+                <p className="text-gray-200 mb-4 sm:mb-6 text-sm sm:text-base">
                   Download our eContact card to store us to your phone.
                 </p>
                 <motion.button
-                  className="bg-white text-Maincolor font-bold py-2 px-6 rounded-full hover:bg-gray-100 transition-colors duration-300 shadow-lg flex items-center"
+                  className="bg-white text-Maincolor font-bold py-2 sm:py-3 px-4 sm:px-6 rounded-full hover:bg-gray-100 transition-colors duration-300 shadow-lg flex items-center text-sm sm:text-base"
                   variants={scaleIn}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   <svg
-                    className="w-5 h-5 mr-2"
+                    className="w-4 sm:w-5 h-4 sm:h-5 mr-1 sm:mr-2"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -316,7 +326,6 @@ const Contact = () => {
           </div>
         </div>
       </motion.section>
-      <CTASection />
     </div>
   );
 };

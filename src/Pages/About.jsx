@@ -33,23 +33,23 @@ const About = () => {
 
   // Partner logos data
   const partners = [
-    { logo: "/public/AboutImages/1.jpg" },
-    { logo: "/public/AboutImages/2.jpg" },
-    { logo: "/public/AboutImages/3.png" },
-    { logo: "/public/AboutImages/4.jpg" },
-    { logo: "/public/AboutImages/5.jpg" },
-    { logo: "/public/AboutImages/6.jpg" },
-    { logo: "/public/AboutImages/7.jpg" },
-    { logo: "/public/AboutImages/8.jpg" },
-    { logo: "/public/AboutImages/9.jpg" },
-    { logo: "/public/AboutImages/10.png" },
-    { logo: "/public/AboutImages/11.png" },
-    { logo: "/public/AboutImages/12.png" },
-    { logo: "/public/AboutImages/13.png" },
-    { logo: "/public/AboutImages/14.png" },
-    { logo: "/public/AboutImages/15.png" },
-    { logo: "/public/AboutImages/16.png" },
-    { logo: "/public/AboutImages/17.png" },
+    { logo: "/AboutImages/1.jpg" },
+    { logo: "/AboutImages/2.jpg" },
+    { logo: "/AboutImages/3.png" },
+    { logo: "/AboutImages/4.jpg" },
+    { logo: "/AboutImages/5.jpg" },
+    { logo: "/AboutImages/6.jpg" },
+    { logo: "/AboutImages/7.jpg" },
+    { logo: "/AboutImages/8.jpg" },
+    { logo: "/AboutImages/9.jpg" },
+    { logo: "/AboutImages/10.png" },
+    { logo: "/AboutImages/11.png" },
+    { logo: "/AboutImages/12.png" },
+    { logo: "/AboutImages/13.png" },
+    { logo: "/AboutImages/14.png" },
+    { logo: "/AboutImages/15.png" },
+    { logo: "/AboutImages/16.png" },
+    { logo: "/AboutImages/17.png" },
   ];
 
   // Helper function to check if the logo is a valid image URL
@@ -63,7 +63,7 @@ const About = () => {
   return (
     <div className="min-h-screen bg-slate-800">
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8 inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20">
+      <section className="relative overflow-hidden py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600/20 to-purple-600/20">
         <div className="relative max-w-7xl mx-auto text-center">
           <motion.div
             id="hero"
@@ -72,7 +72,7 @@ const About = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-center mb-4 text-white">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-white">
               About Us
             </h1>
           </motion.div>
@@ -81,18 +81,18 @@ const About = () => {
 
       {/* Main Content */}
       <motion.section
-        className="py-16"
+        className="py-12 sm:py-16"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="max-w-4xl mx-auto text-center"
             variants={itemVariants}
           >
-            <p className="text-lg leading-relaxed text-gray-200">
+            <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-200">
               At{' '}
               <span className="text-Maincolor font-semibold">
                 NextDigit Software
@@ -111,17 +111,17 @@ const About = () => {
 
       {/* Who We Are Section */}
       <motion.section
-        className="py-16 bg-slate-800"
+        className="py-12 sm:py-16 bg-slate-800"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-8 sm:gap-12 max-w-6xl mx-auto">
             <motion.div variants={containerVariants}>
               <motion.h2
-                className="text-4xl font-bold text-Maincolor mb-6"
+                className="text-3xl sm:text-4xl font-bold text-Maincolor mb-6"
                 variants={itemVariants}
               >
                 Who we are
@@ -152,15 +152,15 @@ const About = () => {
               variants={scaleVariants}
               className="flex justify-center"
             >
-              <div className="relative">
+              <div className="relative w-full max-w-md">
                 <motion.div
-                  className="w-90 h-64 bg-gradient-to-br from-blue-100 to-purple-100 rounded-lg shadow-lg flex items-center justify-center"
+                  className="w-full h-48 sm:h-64 md:h-72 bg-gradient-to-br from-blue-100 to-purple-100 rounded-lg shadow-lg flex items-center justify-center"
                   variants={scaleVariants}
                 >
                   <img
                     src="https://images.unsplash.com/photo-1551836022-4c4c79ecde51?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     alt="image"
-                    className="h-full w-full rounded-lg"
+                    className="h-full w-full rounded-lg object-cover"
                   />
                 </motion.div>
               </div>
@@ -171,30 +171,30 @@ const About = () => {
 
       {/* Mission & Vision Section */}
       <motion.section
-        className="py-16 bg-slate-800"
+        className="py-12 sm:py-16 bg-slate-800"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-8 sm:gap-12 max-w-6xl mx-auto">
             <motion.div variants={itemVariants}>
-              <h2 className="text-5xl font-bold mb-6 mt-30 capitalize text-white">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 capitalize text-white">
                 Our Guiding <br />{' '}
                 <span className="text-Maincolor">Principles</span>
               </h2>
             </motion.div>
 
-            <motion.div className="space-y-8" variants={containerVariants}>
+            <motion.div className="space-y-6 sm:space-y-8" variants={containerVariants}>
               <motion.div
                 variants={itemVariants}
-                className="bg-white/20 backdrop-blur-lg text-white px-8 py-6 rounded-lg shadow-lg text-center border border-white/30"
+                className="bg-white/20 backdrop-blur-lg text-white px-6 sm:px-8 py-6 rounded-lg shadow-lg text-center border border-white/30"
               >
-                <h3 className="text-2xl font-bold text-Maincolor mb-4">
+                <h3 className="text-xl sm:text-2xl font-bold text-Maincolor mb-4">
                   Mission
                 </h3>
-                <p className="leading-relaxed">
+                <p className="leading-relaxed text-sm sm:text-base">
                   To empower businesses with innovative technology solutions
                   that drive growth, efficiency, and success. We are committed
                   to delivering tailored IT services that meet the unique needs
@@ -205,12 +205,12 @@ const About = () => {
 
               <motion.div
                 variants={itemVariants}
-                className="bg-white/20 backdrop-blur-lg text-white px-8 py-6 rounded-lg shadow-lg text-center border border-white/30"
+                className="bg-white/20 backdrop-blur-lg text-white px-6 sm:px-8 py-6 rounded-lg shadow-lg text-center border border-white/30"
               >
-                <h3 className="text-2xl font-bold text-Maincolor mb-4">
+                <h3 className="text-xl sm:text-2xl font-bold text-Maincolor mb-4">
                   Vision
                 </h3>
-                <p className="leading-relaxed">
+                <p className="leading-relaxed text-sm sm:text-base">
                   To be the leading provider of cutting-edge technology
                   solutions that transform businesses and set new standards of
                   excellence, enabling our clients to thrive in an ever-evolving
@@ -224,22 +224,22 @@ const About = () => {
 
       {/* Partners Section */}
       <motion.section
-        className="py-16 bg-slate-800"
+        className="py-12 sm:py-16 bg-slate-800"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
-        <div className="container mx-auto px-4">
-          <motion.div className="text-center mb-12" variants={containerVariants}>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div className="text-center mb-8 sm:mb-12" variants={containerVariants}>
             <motion.h2
-              className="text-5xl font-bold text-white mb-4"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4"
               variants={itemVariants}
             >
               Partners in <span className="text-Maincolor">Growth</span>
             </motion.h2>
             <motion.p
-              className="text-white max-w-2xl mx-auto"
+              className="text-white text-sm sm:text-base max-w-2xl mx-auto"
               variants={itemVariants}
             >
               We're proud to work with amazing partners who share our vision of
@@ -248,7 +248,7 @@ const About = () => {
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 mx-auto max-w-7xl"
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6 mx-auto max-w-7xl"
             variants={containerVariants}
           >
             {partners.map((partner, index) => (
@@ -259,7 +259,7 @@ const About = () => {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
               >
-                <div className="aspect-video overflow-hidden flex items-center justify-center bg-white">
+                <div className="aspect-square sm:aspect-video overflow-hidden flex items-center justify-center bg-white">
                   {isImageUrl(partner.logo) ? (
                     <motion.img
                       src={partner.logo}
@@ -269,7 +269,7 @@ const About = () => {
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center bg-gray-200">
-                      <span className="text-gray-500">Invalid Image</span>
+                      <span className="text-gray-500 text-xs sm:text-sm">Invalid Image</span>
                     </div>
                   )}
                 </div>
@@ -281,28 +281,28 @@ const About = () => {
 
       {/* CTA Section */}
       <motion.section
-        className="py-16 bg-gradient-to-b from-slate-800 via-slate-600/90 to-slate-800 text-white"
+        className="py-12 sm:py-16 bg-gradient-to-b from-slate-800 via-slate-600/90 to-slate-800 text-white"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
-        <div className="container mx-auto px-4 text-center">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h2
-            className="text-3xl md:text-4xl font-bold mb-6"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6"
             variants={itemVariants}
           >
             Ready to Transform Your Business?
           </motion.h2>
           <motion.p
-            className="text-xl mb-8 max-w-2xl mx-auto"
+            className="text-base sm:text-lg md:text-xl mb-8 max-w-2xl mx-auto"
             variants={itemVariants}
           >
             Let's work together to bring your digital vision to life with
             cutting-edge technology solutions.
           </motion.p>
           <motion.button
-            className="bg-white text-Maincolor font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition-colors duration-300 shadow-lg cursor-pointer"
+            className="bg-white text-Maincolor font-bold py-2 sm:py-3 px-6 sm:px-8 rounded-full hover:bg-gray-100 transition-colors duration-300 shadow-lg cursor-pointer"
             variants={scaleVariants}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

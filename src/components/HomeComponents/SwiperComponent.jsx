@@ -121,7 +121,7 @@ const ResponsiveSlider = () => {
 
               {/* Content */}
               <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in-up">
+                <h1 className="text-5xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in-up">
                   <span className="bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent">
                     {slide.title}
                   </span>
@@ -148,7 +148,7 @@ const ResponsiveSlider = () => {
                 </div> */}
 
                 {/* Action Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-600">
+                <div className="flex flex-row sm:flex-row gap-4 justify-center animate-fade-in-up delay-600">
                   <Link  to="/services" className="group px-8 py-4 bg-Maincolor cursor-pointer text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl">
                     <span className="flex items-center justify-center">
                       Our Services
@@ -164,13 +164,13 @@ const ResponsiveSlider = () => {
         ))}
 
         {/* Custom Navigation Arrows */}
-        <button className="swiper-button-prev absolute left-4 top-1/2 transform -translate-y-1/2 z-20 p-3 bg-white/10 backdrop-blur-sm rounded-full text-white hover:bg-white/20 transition-all duration-300 group">
+        {/* <button className="swiper-button-prev absolute left-4 top-1/2 transform -translate-y-1/2 z-20 p-3 bg-white/10 backdrop-blur-sm rounded-full text-white hover:bg-white/20 transition-all duration-300 group">
           <ChevronLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform" />
-        </button>
+        </button> */}
 
-        <button className="swiper-button-next absolute right-4 top-1/2 transform -translate-y-1/2 z-20 p-3 bg-white/10 backdrop-blur-sm rounded-full text-white hover:bg-white/20 transition-all duration-300 group">
+        {/* <button className="swiper-button-next absolute right-4 top-1/2 transform -translate-y-1/2 z-20 p-3 bg-white/10 backdrop-blur-sm rounded-full text-white hover:bg-white/20 transition-all duration-300 group">
           <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-        </button>
+        </button> */}
 
         {/* Custom Pagination */}
         <div className="swiper-pagination absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-3"></div>
