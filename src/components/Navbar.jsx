@@ -37,7 +37,7 @@ const Navbar = () => {
   return (
     <div className="w-full shadow-lg">
       {/* Top Contact Bar */}
-      <div className="bg-blue-100 px-4 py-8 hidden md:block">
+      <div className="bg-blue-100 px-4 py-5 hidden md:block">
         <div className="max-w-8xl mx-auto flex justify-between items-center">
           <div className="flex items-center space-x-3 text-gray-700">
             {/* Logo */}
