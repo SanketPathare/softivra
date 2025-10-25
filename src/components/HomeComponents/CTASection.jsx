@@ -104,7 +104,7 @@ const CTASection = () => {
       </div>
 
       {/* Gradient Overlay */}
-      <div className="" />
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-800 via-slate-600/90 to-slate-800" />
 
       {/* Content Container */}
       <motion.div 
