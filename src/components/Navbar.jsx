@@ -18,10 +18,10 @@ const Navbar = () => {
   ];
 
   const socialIcons = [
-    { Icon: Twitter, href: 'https://twitter.com/Nextdigit_Sw', color: 'text-blue-400 hover:text-blue-300' },
-    { Icon: Facebook, href: 'https://www.facebook.com/Nextdigit-Software/', color: 'text-blue-600 hover:text-blue-500' },
-    { Icon: Instagram, href: 'https://www.instagram.com/nextdigit_sw/', color: 'text-pink-500 hover:text-pink-400' },
-    { Icon: Linkedin, href: 'https://www.linkedin.com/company/nextdigit-software', color: 'text-blue-700 hover:text-blue-600' }
+    { Icon: Twitter, href: 'https://twitter.com/Nextdigit_Sw', color: 'bg-Maincolor text-white p-3 rounded-full' },
+    { Icon: Facebook, href: 'https://www.facebook.com/Nextdigit-Software/', color: 'bg-Maincolor text-white p-3 rounded-full' },
+    { Icon: Instagram, href: 'https://www.instagram.com/nextdigit_sw/', color: 'bg-Maincolor text-white p-3 rounded-full' },
+    { Icon: Linkedin, href: 'https://www.linkedin.com/company/nextdigit-software', color: 'bg-Maincolor text-white p-3 rounded-full' }
   ];
 
   useEffect(() => {
