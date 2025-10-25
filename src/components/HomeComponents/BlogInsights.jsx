@@ -168,7 +168,7 @@ const BlogInsights = () => {
           <motion.div variants={itemVariants} className="text-center mt-16">
             <Link to="/blogs">
               <motion.button
-                className="bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 px-8 py-4 rounded-full font-medium transition-all duration-300"
+                className="bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 px-8 py-4 rounded-full font-medium transition-all duration-300 cursor-pointer"
                 whileHover={{
                   scale: 1.05,
                   backgroundColor: "rgba(255,255,255,0.15)",
