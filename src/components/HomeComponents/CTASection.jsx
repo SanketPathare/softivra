@@ -104,7 +104,7 @@ const CTASection = () => {
       </div>
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-800 via-slate-600/90 to-slate-800" />
+      <div className="" />
 
       {/* Content Container */}
       <motion.div 
@@ -136,7 +136,6 @@ const CTASection = () => {
             <Link to="/contact">      
             <motion.button
               variants={buttonVariants}
-              whileHover="hover"
               whileTap="tap"
               className="inline-flex items-center justify-center px-8  py-4  bg-white text-blue-600 font-semibold text-lg sm:text-xl rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 group relative overflow-hidden cursor-pointer"
             >
