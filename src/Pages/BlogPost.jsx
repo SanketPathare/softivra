@@ -23,22 +23,22 @@ const BlogPost = () => {
 
  
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen ">
       {/* Hero Section with Animation */}
       <div className="overflow-hidden">
-        <div className=" inset-0 bg-gradient-to-b from-blue-600/20 to-transparent"></div>
-        <div className="max-w-5xl mx-auto px-4 pt-12 pb-8">
+        <div className=" inset-0 bg-gradient-to-b from-blue-600/20 to-transparent "></div>
+        <div className="max-w-7xl mx-auto px-4 pt-10 pb-8">
           {/* Back Button */}
 
           <Link
             to="/blogs"
-            className=" w-fit flex items-center justify-start gap-2 px-4 py-2 mb-6 text-slate-300 hover:text-white bg-slate-800/50 hover:bg-slate-800 rounded-lg  transition-all duration-300 group animate-fade-in"
+            className=" w-fit flex items-center justify-start gap-2 px-4 py-2 mb-6 text-slate-300 hover:text-white bg-slate-800/50 hover:bg-slate-800 rounded-lg  transition-all duration-300 group animate-fade-in text-sm sm:text-base"
           >
             <ArrowLeft
               size={18}
-              className="group-hover:-translate-x-1 transition-transform duration-300"
+              className="group-hover:-translate-x-1 transition-transform duration-300 "
             />
-            <span>Back to Blogs</span>
+            <span >Back to Blogs</span>
           </Link>
 
           <div className="mb-6 animate-slide-up">
@@ -48,7 +48,7 @@ const BlogPost = () => {
           </div>
 
           <h1
-            className="text-5xl md:text-5xl font-bold text-white mb-6 leading-tight animate-slide-up"
+            className="text-4xl md:text-5xl  text-center font-bold text-white mb-6 leading-tight animate-slide-up"
             style={{ animationDelay: "0.1s" }}
           >
             {post.title}
@@ -57,14 +57,14 @@ const BlogPost = () => {
       </div>
 
       {/* Featured Image with Animation */}
-      <div className="max-w-5xl mx-auto px-4 my-12">
-        <div className="flex flex-col lg:flex-row justify-around items-start gap-10">
+      <div className="max-w-5xl mx-auto px-4 mb-10 ">
+        <div className="flex flex-col lg:flex-row justify-around items-start gap-20">
           <div className="flex-1 animate-scale-in">
             <div className="rounded-2xl overflow-hidden shadow-2xl group relative">
               <img
                 src={post.image}
                 alt={post.title}
-                className="w-full h-auto object-cover"
+                className="w-auto h-auto object-contain"
               />
             </div>
           </div>
@@ -130,7 +130,7 @@ const BlogPost = () => {
       </div>
 
       {/* Content Section with Animation */}
-      <div className="max-w-6xl mx-auto px-4 pb-20">
+      <div className="max-w-7xl mx-auto px-4 pb-20">
         <div>
           {/* Main Content */}
           <article className="lg:col-span-8 space-y-8">
