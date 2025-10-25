@@ -124,14 +124,14 @@ const ServicesShowcase = () => {
               key={service.title}
               variants={cardVariants}
               whileHover="hover"
-              className="relative group cursor-pointer"
+              className="relative group"
             >
               {/* Gradient Border Wrapper */}
               <div
                 className={`relative rounded-tl-[40px] sm:rounded-tl-[50px] rounded-br-[20px] sm:rounded-br-[30px] p-[2px] bg-gradient-to-br ${service.color} shadow-lg transition-all duration-300`}
               >
                 {/* Inner Card */}
-                <div className="bg-slate-900 rounded-tl-[38px] sm:rounded-tl-[48px] rounded-br-[18px] sm:rounded-br-[28px] p-4 sm:p-6 lg:p-8 min-h-[300px] flex flex-col justify-between">
+                <div className="bg-slate-900 rounded-tl-[38px] sm:rounded-tl-[48px] rounded-br-[18px] sm:rounded-br-[28px] p-4 sm:p-6 lg:p-8 sm:min-h-[300px] flex flex-col justify-between">
                   {/* Hover Gradient Overlay */}
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-tl-[38px] sm:rounded-tl-[48px] rounded-br-[18px] sm:rounded-br-[28px]`}
@@ -140,7 +140,7 @@ const ServicesShowcase = () => {
                   {/* Card Content */}
                   <div className="relative z-10 flex flex-col h-full">
                     <motion.h3
-                      className="text-[#2b2a96] dark:text-white text-xl sm:text-2xl font-bold mb-4 sm:mb-6"
+                      className="text-white text-xl sm:text-2xl font-bold mb-4 sm:mb-6"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ delay: index * 0.1 + 0.6 }}
@@ -149,7 +149,7 @@ const ServicesShowcase = () => {
                     </motion.h3>
 
                     <motion.p
-                      className="text-[#444] dark:text-blue-100 text-sm sm:text-base leading-relaxed mb-4 sm:mb-6 line-clamp-4 sm:line-clamp-5"
+                      className="text-gray-300 text-sm sm:text-base leading-relaxed mb-4 sm:mb-6 line-clamp-5 sm:line-clamp-5"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ delay: index * 0.1 + 0.8 }}
