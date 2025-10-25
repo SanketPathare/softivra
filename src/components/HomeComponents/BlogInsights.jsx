@@ -116,40 +116,31 @@ const BlogInsights = () => {
                 onHoverEnd={() => setHoveredCard(null)}
                 className="group "
               >
-                <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+                <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
                   {/* Image Area */}
                   <div className="p-6">
                     <motion.div
-                      className="h-52 rounded-2xl relative overflow-hidden"
-                      animate={
-                        hoveredCard === post.slug
-                          ? { scale: 1.02 }
-                          : { scale: 1 }
-                      }
-                      transition={{ duration: 0.3 }}
+                      className="h-58 rounded-2xl relative overflow-hidden"
+                 
                     >
                       <img
                         src={post.image}
                         alt={post.title}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-fit"
                       />
                     </motion.div>
                     {/* Category Badge */}
                     <div className="py-4 pb-0">
                       <motion.span
-                        className={`inline-block px-4 py-2 rounded-full text-xs font-bold tracking-wider bg-Maincolor text-white`}
-                        animate={
-                          hoveredCard === post.slug
-                            ? { scale: 1.1 }
-                            : { scale: 1 }
-                        }
+                        className={`inline-block px-4 py-2 rounded-full text-xs  tracking-wider bg-Maincolor/20 text-white`}
+                   
                       >
                         {post.category}
                       </motion.span>
                     </div>
                     {/* Content */}
                     <div className="mt-6">
-                      <h3 className="text-xl font-bold mb-4  ">{post.title}</h3>
+                      <h3 className="text-xl font-semibold mb-4  ">{post.title}</h3>
                       <Link
                         to={`/blog/${post.slug}`}
                         className="flex items-center gap-2 text-Maincolor font-medium transition-colors"
