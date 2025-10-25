@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <>   
  <SwiperComponent/>
-    <div  className='max-w-[100rem] mx-auto '>
+    <div  className=' mx-auto '>
     
  <AboutComponent/>
  <ServicesShowcase/>
