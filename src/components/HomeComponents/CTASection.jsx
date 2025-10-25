@@ -137,15 +137,15 @@ const CTASection = () => {
             <motion.button
               variants={buttonVariants}
               whileTap="tap"
-              className="inline-flex items-center justify-center px-8  py-4  bg-white text-blue-600 font-semibold text-lg sm:text-xl rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 group relative overflow-hidden cursor-pointer"
+              className="inline-flex items-center justify-center px-8  py-4 border border-white/10 bg-white/10 text-white font-semibold text-lg sm:text-xl rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 group relative overflow-hidden cursor-pointer"
             >
               {/* Button Background Animation */}
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-blue-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                className="absolute inset-0  hover:bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 initial={false}
               />
               
-              <span className="relative z-10 group-hover:text-blue-700 transition-colors duration-300">
+              <span className="relative z-10  transition-colors duration-300">
                 Let's Discuss
               </span>
 
