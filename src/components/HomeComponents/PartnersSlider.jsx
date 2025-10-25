@@ -110,7 +110,7 @@ const PartnersSlider = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Partners in Success
+              Partners in <span className="text-Maincolor"> Success</span>
             </motion.h2>
             <motion.p
               className="text-blue-100 text-lg sm:text-xl leading-relaxed mb-8"
