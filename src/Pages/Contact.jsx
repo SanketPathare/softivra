@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-
+import { Link } from "react-router-dom";
+import { Download } from "lucide-react"; 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -290,38 +291,29 @@ const Contact = () => {
               </div>
 
               <motion.div
-                className="border-t border-gray-600 pt-6 sm:pt-8"
-                variants={fadeInUp}
-              >
-                <h3 className="font-medium text-white mb-4 text-sm sm:text-base">
-                  Write Some Words
-                </h3>
-                <p className="text-gray-200 mb-4 sm:mb-6 text-sm sm:text-base">
-                  Download our eContact card to store us to your phone.
-                </p>
-                <motion.button
-                  className="bg-white text-Maincolor font-bold py-2 sm:py-3 px-4 sm:px-6 rounded-full hover:bg-gray-100 transition-colors duration-300 shadow-lg flex items-center text-sm sm:text-base"
-                  variants={scaleIn}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <svg
-                    className="w-4 sm:w-5 h-4 sm:h-5 mr-1 sm:mr-2"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-                    />
-                  </svg>
-                  Download eVisiting Card
-                </motion.button>
-              </motion.div>
+      className="border-t border-gray-600 pt-6 sm:pt-8"
+      variants={fadeInUp}
+    >
+      <h3 className="font-medium text-white mb-4 text-sm sm:text-base">
+        Write Some Words
+      </h3>
+      <p className="text-gray-200 mb-4 sm:mb-6 text-sm sm:text-base">
+        Download our eContact card to store us to your phone.
+      </p>
+
+      {/* Download Button with Link */}
+      <motion.div variants={scaleIn}  whileTap={{ scale: 0.95 }}>
+        <Link
+          to="/nextdigit_software.vcf" 
+          target="_blank"
+          download="nextdigit_software.vcf"
+          className="bg-white text-Maincolor font-bold py-2 sm:py-3 px-4 sm:px-6 rounded-full hover:bg-gray-100 transition-colors duration-300 shadow-lg flex items-center justify-center gap-2 text-sm sm:text-base"
+        >
+          <Download className="w-4 sm:w-5 h-4 sm:h-5" />
+          Download eVisiting Card
+        </Link>
+      </motion.div>
+    </motion.div>
             </motion.div>
           </div>
         </div>
