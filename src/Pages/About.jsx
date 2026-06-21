@@ -153,7 +153,7 @@ const About = () => {
             >
               <div className="w-full max-w-sm rounded-xl overflow-hidden shadow-lg border border-slate-700/50 bg-slate-900/60 backdrop-blur-sm p-2">
                 <img
-                  src="https://images.unsplash.com/photo-1551836022-4c4c79ecde51?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"
+                  src="/softivra_team_about_page.png"
                   alt="Team collaborating at Softivra"
                   className="w-full h-48 sm:h-56 object-cover rounded-lg"
                 />
