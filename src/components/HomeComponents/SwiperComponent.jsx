@@ -40,7 +40,7 @@ const ResponsiveSlider = () => {
 
   return (
     <div className="relative w-full max-w-7xl mx-auto px-4 py-6 sm:py-10">
-      <div className="relative w-full h-[450px] sm:h-[550px] md:h-[600px] lg:h-[650px] rounded-2xl border-4 border-black overflow-hidden bg-white shadow-[8px_8px_0px_0px_#000]">
+      <div className="relative w-full h-[450px] sm:h-[550px] md:h-[550px] lg:h-[550px] rounded-2xl border-4 border-black overflow-hidden bg-white shadow-[8px_8px_0px_0px_#000]">
         <Swiper
           modules={[Navigation, Pagination, Autoplay, EffectFade]}
           spaceBetween={0}
@@ -105,8 +105,6 @@ const ResponsiveSlider = () => {
           <div className="swiper-pagination absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-3"></div>
         </Swiper>
 
-        {/* Brutalist border divider bottom */}
-        <div className="absolute bottom-0 left-0 w-full h-2 bg-black z-20"></div>
       </div>
     </div>
   );
