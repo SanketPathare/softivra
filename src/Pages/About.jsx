@@ -56,7 +56,7 @@ const About = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-800 pb-16">
+    <div className="min-h-screen bg-slate-900 pb-16">
       {/* Hero Section */}
       <section className="relative overflow-hidden py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-Maincolor/10 via-transparent to-Secondcolor/5">
         <div className="relative max-w-7xl mx-auto text-center">

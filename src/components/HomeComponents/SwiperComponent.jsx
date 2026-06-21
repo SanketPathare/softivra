@@ -46,14 +46,14 @@ const ResponsiveSlider = () => {
     },
   ];
 
-  const [heightClass, setHeightClass] = useState("h-[60vh] md:h-[75vh] lg:h-[90vh]");
+  const [heightClass, setHeightClass] = useState("h-[65vh] md:h-[75vh] lg:h-[85vh]");
 
   useEffect(() => {
     const updateHeight = () => {
       if (window.innerWidth < 640) {
-        setHeightClass("h-[55vh] md:h-[75vh] lg:h-[90vh]");
+        setHeightClass("h-[60vh] md:h-[75vh] lg:h-[85vh]");
       } else {
-        setHeightClass("h-[60vh] md:h-[75vh] lg:h-[90vh]");
+        setHeightClass("h-[65vh] md:h-[75vh] lg:h-[85vh]");
       }
     };
     updateHeight();
@@ -63,14 +63,14 @@ const ResponsiveSlider = () => {
 
   return (
     <div className="relative w-full max-w-7xl mx-auto px-2 sm:px-4 py-4 sm:py-6">
-      <div className={`relative w-full ${heightClass} rounded-3xl sm:rounded-5xl lg:rounded-7xl border border-slate-700/40 overflow-hidden shadow-2xl shadow-orange-500/10`}>
+      <div className={`relative w-full ${heightClass} rounded-3xl sm:rounded-5xl lg:rounded-7xl border border-slate-800 overflow-hidden shadow-2xl shadow-blue-950/20`}>
         <Swiper
           modules={[Navigation, Pagination, Autoplay, EffectFade]}
           spaceBetween={0}
           slidesPerView={1}
           effect="fade"
           fadeEffect={{ crossFade: true }}
-          speed={800}
+          speed={850}
           autoplay={{
             delay: 5000,
             disableOnInteraction: false,
@@ -79,7 +79,7 @@ const ResponsiveSlider = () => {
             el: ".swiper-pagination",
             clickable: true,
             renderBullet: (index, className) => {
-              return `<span class="${className} w-2.5 h-2.5 rounded-full transition-all duration-500 bg-white/30 hover:bg-white/60"></span>`;
+              return `<span class="${className} w-2.5 h-2.5 rounded-full transition-all duration-500 bg-white/20 hover:bg-white/50"></span>`;
             },
           }}
           loop={true}
@@ -95,30 +95,32 @@ const ResponsiveSlider = () => {
                   backgroundPosition: "center",
                 }}
               >
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/60 to-slate-950/30"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-orange-950/20 via-transparent to-blue-950/20"></div>
+                {/* Background Overlays */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/70 to-slate-950/45"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-950/20 via-transparent to-cyan-950/20"></div>
 
+                {/* Animated Radial Glows */}
                 <div className="absolute inset-0 overflow-hidden">
-                  <div className="absolute -top-40 -right-40 w-80 h-80 bg-orange-500/5 rounded-full blur-3xl animate-pulse"></div>
-                  <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-blue-500/5 rounded-full blur-3xl animate-pulse"></div>
+                  <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+                  <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-cyan-500/10 rounded-full blur-3xl animate-pulse"></div>
                 </div>
 
                 <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-                  <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 animate-fade-in-up">
-                    <span className="bg-gradient-to-r from-white via-orange-300 to-orange-400 bg-clip-text text-transparent">
+                  <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-3 sm:mb-4 tracking-tight">
+                    <span className="bg-gradient-to-r from-white via-blue-100 to-blue-300 bg-clip-text text-transparent">
                       {slide.title}
                     </span>
                   </h1>
 
-                  <p className="text-sm sm:text-base md:text-lg mb-6 sm:mb-8 text-blue-100 animate-fade-in-up delay-200 tracking-wide font-light">
+                  <p className="text-xs sm:text-sm md:text-base mb-6 sm:mb-8 text-blue-200/80 tracking-widest uppercase font-semibold">
                     {slide.subtitle}
                   </p>
 
-                  <div className="flex flex-row gap-3 sm:gap-4 justify-center animate-fade-in-up delay-300">
-                    <Link to="/services" className="group px-5 sm:px-7 py-2.5 sm:py-3 bg-gradient-to-r from-Maincolor to-Secondcolor hover:from-Secondcolor hover:to-Maincolor cursor-pointer text-white rounded-xl text-sm font-semibold transform hover:scale-105 transition-all duration-300 shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40">
+                  <div className="flex flex-row gap-3 sm:gap-4 justify-center">
+                    <Link to="/services" className="group px-5 sm:px-7 py-2.5 sm:py-3 bg-gradient-to-r from-Maincolor to-Secondcolor hover:from-Secondcolor hover:to-Maincolor cursor-pointer text-white rounded-xl text-xs font-bold transform hover:scale-[1.03] transition-all duration-300 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 uppercase tracking-wider">
                       Our Services
                     </Link>
-                    <Link to="/contact" className="px-5 sm:px-7 py-2.5 sm:py-3 border border-white/30 text-white rounded-xl text-sm font-semibold hover:bg-white/10 backdrop-blur-sm transition-all duration-300 hover:border-white/60 transform hover:scale-105 cursor-pointer">
+                    <Link to="/contact" className="px-5 sm:px-7 py-2.5 sm:py-3 border border-white/10 text-white rounded-xl text-xs font-bold hover:bg-white/5 backdrop-blur-sm transition-all duration-300 hover:border-white/20 transform hover:scale-[1.03] cursor-pointer uppercase tracking-wider">
                       Contact Us
                     </Link>
                   </div>

@@ -21,7 +21,7 @@ const BlogPost = () => {
   };
 
   return (
-    <div className="min-h-screen pb-16 bg-slate-800">
+    <div className="min-h-screen pb-16 bg-slate-900">
       {/* Back Navigation Bar */}
       <div className="max-w-5xl mx-auto px-4 pt-10">
         <Link

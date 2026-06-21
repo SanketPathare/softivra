@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const BlogPage = () => {
   return (
-    <div className="min-h-screen bg-slate-800 text-white pb-16">
+    <div className="min-h-screen bg-slate-900 text-white pb-16">
       {/* Hero Section */}
       <section className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-Maincolor/10 via-transparent to-Secondcolor/5">
         <div className="relative max-w-7xl mx-auto text-center">

@@ -12,7 +12,7 @@ const JobOpeningDetail = () => {
 
   if (!jobData) {
     return (
-      <div className="min-h-screen bg-slate-800 flex items-center justify-center px-4">
+      <div className="min-h-screen bg-slate-900 flex items-center justify-center px-4">
         <div className="text-center space-y-4">
           <h1 className="text-xl sm:text-2xl font-bold text-gray-100">Job Not Found</h1>
           <p className="text-xs sm:text-sm text-gray-300">The job you're looking for doesn't exist.</p>
@@ -29,7 +29,7 @@ const JobOpeningDetail = () => {
 
   return (
     <>
-      <div className="min-h-screen bg-slate-800 pb-16">
+      <div className="min-h-screen bg-slate-900 pb-16">
         {/* Hero Section */}
         <section className="bg-gradient-to-b from-Maincolor/10 via-transparent to-Secondcolor/5 text-white py-20 px-4">
           <div className="max-w-4xl mx-auto text-center">
