@@ -42,54 +42,13 @@ const Navbar = () => {
   }, [isOpen]);
 
   return (
-    <div className="w-full relative z-50">
-      {/* Top Contact Bar (Desktop Only) - Glass effect */}
-      <div className="hidden md:block bg-slate-950/60 backdrop-blur-sm border-b border-slate-800/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-9">
-            <div className="flex items-center gap-5">
-              <a
-                href="tel:+917620663151"
-                className="flex items-center gap-1.5 text-gray-400 hover:text-white transition-colors text-[11px]"
-              >
-                <Phone className="w-3 h-3 text-Maincolor" />
-                +91 76206 xxx
-              </a>
-              <a
-                href="mailto:contact@softivra.com"
-                className="flex items-center gap-1.5 text-gray-400 hover:text-white transition-colors text-[11px]"
-              >
-                <Mail className="w-3 h-3 text-Maincolor" />
-                contact@softivra.com
-              </a>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-[9px] uppercase font-semibold tracking-widest text-gray-500">
-                Follow:
-              </span>
-              {socialIcons.map(({ Icon, href, label }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={label}
-                  className="text-gray-500 hover:text-Maincolor transition-colors p-1"
-                >
-                  <Icon className="w-3 h-3" />
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
+    <div className="w-full fixed top-0 left-0 right-0 z-50">
       {/* Main Navbar - Glass morphism */}
       <nav
         className={`transition-all duration-300 ${
           isScrolled
-            ? 'bg-slate-900/85 backdrop-blur-xl shadow-lg shadow-black/10 border-b border-slate-800/50'
-            : 'bg-slate-900/30 backdrop-blur-md border-b border-transparent'
+            ? 'bg-slate-950/75 backdrop-blur-md border-b border-slate-800/50 shadow-lg shadow-slate-950/20'
+            : 'bg-slate-950/40 backdrop-blur-md border-b border-slate-900/10'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
