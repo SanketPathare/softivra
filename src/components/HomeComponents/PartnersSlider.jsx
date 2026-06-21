@@ -141,8 +141,7 @@ const PartnersSlider = () => {
   };
 
   return (
-    <section className="bg-slate-800 py-16 overflow-hidden relative border-t border-slate-700/50">
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-500/[0.02] to-transparent pointer-events-none"></div>
+    <section className="bg-slate-800 py-16 overflow-hidden relative border-t-2 border-slate-700">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="flex flex-col lg:flex-row items-start lg:items-center gap-10 lg:gap-14"
@@ -165,7 +164,7 @@ const PartnersSlider = () => {
             </motion.p>
             <Link to="/contact">
               <motion.button
-                className="bg-gradient-to-r from-Maincolor to-Secondcolor text-white px-5 py-2.5 rounded-full font-semibold text-xs shadow-lg shadow-blue-500/20 hover:shadow-blue-500/35 transition-all duration-300 cursor-pointer"
+                className="bg-gradient-to-r from-Maincolor to-Secondcolor text-white px-5 py-2.5 font-semibold text-xs transition-all duration-300 cursor-pointer"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
               >
@@ -181,12 +180,12 @@ const PartnersSlider = () => {
               spaceBetween={14}
               loop={true}
               autoplay={{ delay: 3000, disableOnInteraction: false }}
-              className="rounded-xl mx-auto"
+              className="mx-auto"
             >
               {partners.map((partner) => (
                 <SwiperSlide key={partner.id}>
                   <motion.div
-                    className="bg-white/5 backdrop-blur-xl rounded-xl p-4 h-28 sm:h-32 flex items-center justify-center border border-white/10 hover:border-blue-500/30 transition-all duration-300 shadow-md hover:shadow-blue-500/10"
+                    className="bg-slate-800 border-2 border-slate-700 p-4 h-28 sm:h-32 flex items-center justify-center hover:border-blue-500/30 transition-all duration-300"
                     whileHover={{ scale: 1.04, y: -3 }}
                     transition={{ duration: 0.2 }}
                   >

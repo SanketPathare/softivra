@@ -34,7 +34,7 @@ const BlogInsights = () => {
   };
 
   return (
-    <div className="bg-slate-900 text-white border-t border-slate-800/40">
+    <div className="bg-slate-900 text-white border-t-2 border-slate-700">
       <div className="container mx-auto px-4 py-16">
         <motion.div
           variants={containerVariants}
@@ -76,8 +76,8 @@ const BlogInsights = () => {
                 whileHover="hover"
                 className="group"
               >
-                <div className="bg-slate-950/40 backdrop-blur-lg border border-slate-800/60 rounded-2xl overflow-hidden shadow-lg hover:shadow-blue-500/5 transition-all duration-300 p-5">
-                  <div className="h-44 rounded-xl overflow-hidden relative">
+                <div className="bg-slate-900 border-2 border-slate-700 overflow-hidden transition-all duration-300 p-5">
+                  <div className="h-44 overflow-hidden relative">
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <img
                       src={post.image}
@@ -87,7 +87,7 @@ const BlogInsights = () => {
                   </div>
 
                   <div className="pt-4">
-                    <span className="inline-block px-3 py-1 rounded-full text-[10px] uppercase font-bold tracking-widest bg-gradient-to-r from-Maincolor/15 to-Secondcolor/15 text-blue-400 border border-blue-500/10">
+                    <span className="inline-block px-3 py-1 text-[10px] uppercase font-bold tracking-widest bg-blue-900 text-blue-400 border-2 border-blue-500/20">
                       {post.category}
                     </span>
                   </div>
@@ -112,7 +112,7 @@ const BlogInsights = () => {
           <motion.div variants={itemVariants} className="text-center mt-12">
             <Link to="/blogs">
               <motion.button
-                className="bg-gradient-to-r from-blue-500/10 to-indigo-600/10 backdrop-blur-sm border border-blue-500/30 hover:border-blue-500/50 px-6 py-2.5 rounded-full font-bold text-xs uppercase tracking-widest text-white transition-all duration-300 cursor-pointer"
+                className="bg-blue-900 border-2 border-blue-500/30 hover:border-blue-500/50 px-6 py-2.5 font-bold text-xs uppercase tracking-widest text-white transition-all duration-300 cursor-pointer"
                 whileTap={{ scale: 0.97 }}
               >
                 Explore all blogs

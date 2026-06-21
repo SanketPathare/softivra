@@ -25,7 +25,7 @@ const CareersPage = () => {
   return (
     <div className="min-h-screen bg-slate-900 pb-16">
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-Maincolor/10 via-transparent to-Secondcolor/5">
+      <section className="relative overflow-hidden py-16 px-4 sm:px-6 lg:px-8 bg-slate-800 border-b-2 border-slate-700">
         <div className="relative max-w-7xl mx-auto text-center">
           <motion.div
             id="hero"
@@ -33,7 +33,7 @@ const CareersPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
           >
-            <span className="inline-block px-3 py-1 bg-Maincolor/10 text-Maincolor rounded-full text-xs font-bold mb-4 border border-Maincolor/20">
+            <span className="inline-block px-3 py-1 bg-Maincolor text-white text-xs font-bold mb-4 border-2 border-Maincolor">
               We're Hiring!
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4">
@@ -91,7 +91,7 @@ const CareersPage = () => {
             >
               <Link to="/job-openings">
                 <motion.button
-                  className="bg-Maincolor hover:bg-Secondcolor text-white font-semibold py-3 px-6 rounded-xl text-sm cursor-pointer shadow-lg shadow-Maincolor/20 transition-all hover:shadow-Maincolor/30"
+                  className="bg-Maincolor hover:bg-Secondcolor text-white font-semibold py-3 px-6 text-sm cursor-pointer transition-all"
                   variants={itemVariants}
                   whileTap={{ scale: 0.97 }}
                 >
@@ -100,7 +100,7 @@ const CareersPage = () => {
               </Link>
               <Link to="/job-openings">
                 <motion.button
-                  className="border border-Maincolor/50 text-Maincolor hover:bg-Maincolor hover:text-white font-semibold py-3 px-6 rounded-xl text-sm cursor-pointer transition-all"
+                  className="border-2 border-Maincolor text-Maincolor hover:bg-Maincolor hover:text-white font-semibold py-3 px-6 text-sm cursor-pointer transition-all"
                   variants={itemVariants}
                   whileTap={{ scale: 0.97 }}
                 >
@@ -122,7 +122,7 @@ const CareersPage = () => {
       >
         <div className="max-w-4xl mx-auto">
           <motion.div
-            className="bg-slate-900/60 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-8 sm:p-12 text-center space-y-5 shadow-xl"
+            className="bg-slate-900 border-2 border-slate-700 p-8 sm:p-12 text-center space-y-5"
             variants={itemVariants}
           >
             <motion.h2
@@ -148,7 +148,7 @@ const CareersPage = () => {
               ].map((item, i) => (
                 <motion.div
                   key={i}
-                  className="bg-slate-800/50 border border-slate-700/30 rounded-xl p-5 backdrop-blur-sm"
+                  className="bg-slate-800 border-2 border-slate-700 p-5"
                   variants={itemVariants}
                 >
                   <div className="text-3xl mb-2">{item.icon}</div>
@@ -171,29 +171,28 @@ const CareersPage = () => {
       >
         <div className="max-w-4xl mx-auto">
           <motion.div
-            className="bg-gradient-to-br from-Maincolor to-Secondcolor rounded-2xl p-10 sm:p-14 text-center shadow-2xl relative overflow-hidden"
+            className="bg-Maincolor border-2 border-slate-700 p-10 sm:p-14 text-center"
             variants={itemVariants}
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
             <motion.h2
-              className="text-2xl sm:text-3xl font-bold text-white mb-4 relative"
+              className="text-2xl sm:text-3xl font-bold text-white mb-4"
               variants={itemVariants}
             >
               Ready to Shape the Future with Us?
             </motion.h2>
             <motion.p
-              className="text-sm sm:text-base text-white/80 max-w-xl mx-auto leading-relaxed mb-8 relative"
+              className="text-sm sm:text-base text-white max-w-xl mx-auto leading-relaxed mb-8"
               variants={itemVariants}
             >
               Join Softivra and be part of a team that's building innovative solutions for tomorrow's challenges.
             </motion.p>
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-center relative"
+              className="flex flex-col sm:flex-row gap-4 justify-center"
               variants={containerVariants}
             >
               <Link to="/job-openings">
                 <motion.button
-                  className="bg-white text-Maincolor hover:bg-gray-100 font-semibold py-3 px-8 rounded-xl text-sm cursor-pointer shadow-lg transition-all"
+                  className="bg-white text-Maincolor hover:bg-gray-100 font-semibold py-3 px-8 text-sm cursor-pointer border-2 border-white transition-all"
                   variants={itemVariants}
                   whileTap={{ scale: 0.97 }}
                 >
@@ -202,7 +201,7 @@ const CareersPage = () => {
               </Link>
               <Link to="/contact">
                 <motion.button
-                  className="border-2 border-white text-white hover:bg-white hover:text-Maincolor font-semibold py-3 px-8 rounded-xl text-sm cursor-pointer transition-all"
+                  className="border-2 border-white text-white hover:bg-white hover:text-Maincolor font-semibold py-3 px-8 text-sm cursor-pointer transition-all"
                   variants={itemVariants}
                   whileTap={{ scale: 0.97 }}
                 >

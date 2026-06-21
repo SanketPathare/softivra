@@ -27,20 +27,19 @@ const CTASection = () => {
     },
     hover: {
       scale: 1.03,
-      boxShadow: "0 10px 25px rgba(0, 122, 255, 0.3)",
       transition: { duration: 0.2, ease: "easeInOut" }
     },
     tap: { scale: 0.98 }
   };
 
   return (
-    <section className="relative overflow-hidden border-t border-slate-800/60 bg-slate-900">
-      {/* Animated Glowing Particles */}
+    <section className="relative overflow-hidden border-t-2 border-slate-700 bg-slate-900">
+      {/* Animated Particles */}
       <div className="absolute inset-0 opacity-40">
         {[...Array(12)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-blue-400 rounded-full"
+            className="absolute w-1 h-1 bg-blue-400"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -59,9 +58,6 @@ const CTASection = () => {
           />
         ))}
       </div>
-
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-transparent to-indigo-500/5"></div>
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-950/40 to-slate-900"></div>
 
       <motion.div
         className="relative z-10 py-16 sm:py-20 px-4 sm:px-6 lg:px-8"
@@ -92,7 +88,7 @@ const CTASection = () => {
                 variants={buttonVariants}
                 whileHover="hover"
                 whileTap="tap"
-                className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-Maincolor to-Secondcolor text-white font-bold text-xs uppercase tracking-widest rounded-full shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-300 group cursor-pointer"
+                className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-Maincolor to-Secondcolor text-white font-bold text-xs uppercase tracking-widest transition-all duration-300 group cursor-pointer"
               >
                 <span className="relative z-10 transition-colors duration-300">
                   Let's Discuss

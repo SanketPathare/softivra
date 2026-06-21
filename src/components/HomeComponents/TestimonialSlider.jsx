@@ -39,8 +39,7 @@ const TestimonialSection = () => {
   };
 
   return (
-    <div className="bg-slate-900 py-16 px-4 sm:px-6 lg:px-8 flex items-center relative overflow-hidden border-t border-slate-800/40">
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/[0.02] to-transparent pointer-events-none"></div>
+    <div className="bg-slate-900 py-16 px-4 sm:px-6 lg:px-8 flex items-center relative overflow-hidden border-t-2 border-slate-700">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-10 lg:gap-14 relative z-10 w-full">
         <div className="flex-1 text-white text-center lg:text-left space-y-4">
           <motion.div
@@ -56,7 +55,7 @@ const TestimonialSection = () => {
               Discover why clients trust us for their digital needs. Hear their stories of satisfaction and successful project deliveries.
             </p>
             <Link to="/contact">
-              <button className="bg-gradient-to-r from-Maincolor to-Secondcolor text-white px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-widest shadow-lg shadow-blue-500/20 hover:shadow-blue-500/35 transition-all duration-300 cursor-pointer">
+              <button className="bg-gradient-to-r from-Maincolor to-Secondcolor text-white px-5 py-2.5 font-bold text-xs uppercase tracking-widest transition-all duration-300 cursor-pointer">
                 Join them today!
               </button>
             </Link>
@@ -64,8 +63,8 @@ const TestimonialSection = () => {
         </div>
 
         <div className="flex-1 max-w-xl w-full relative">
-          <div className="relative bg-slate-950/40 backdrop-blur-2xl rounded-2xl p-6 sm:p-8 border border-slate-800/80 shadow-xl">
-            <div className="absolute -top-3 -left-3 w-9 h-9 bg-gradient-to-br from-Maincolor to-Secondcolor rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/25">
+          <div className="relative bg-slate-900 p-6 sm:p-8 border-2 border-slate-700">
+            <div className="absolute -top-3 -left-3 w-9 h-9 bg-gradient-to-br from-Maincolor to-Secondcolor flex items-center justify-center">
               <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z" />
               </svg>
@@ -85,7 +84,7 @@ const TestimonialSection = () => {
                   "{testimonials[currentIndex].text}"
                 </p>
 
-                <div className="border-t border-slate-800/80 pt-4">
+                <div className="border-t-2 border-slate-700 pt-4">
                   <p className="text-white font-bold text-xs">
                     {testimonials[currentIndex].author}
                   </p>
@@ -98,10 +97,10 @@ const TestimonialSection = () => {
                 <button
                   key={index}
                   onClick={() => setCurrentIndex(index)}
-                  className={`rounded-full transition-all duration-500 cursor-pointer ${
+                  className={`transition-all duration-500 cursor-pointer ${
                     index === currentIndex
-                      ? 'bg-gradient-to-r from-Maincolor to-Secondcolor w-8 h-2'
-                      : 'bg-white/10 hover:bg-white/20 w-2 h-2'
+                      ? 'bg-gradient-to-r from-Maincolor to-Secondcolor w-3 h-3'
+                      : 'bg-slate-700 hover:bg-slate-600 w-2.5 h-2.5'
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
                 />

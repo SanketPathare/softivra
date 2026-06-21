@@ -9,7 +9,7 @@ const JobOpenings = () => {
   return (
     <div className="min-h-screen bg-slate-900 pb-16">
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-Maincolor/10 via-transparent to-Secondcolor/5">
+      <section className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8 bg-slate-800 border-b-2 border-slate-700">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4">
             Current Openings
@@ -34,12 +34,12 @@ const JobOpenings = () => {
 
         {/* Tab Navigation */}
         <div className="flex justify-center mb-10">
-          <div className="inline-flex p-1 rounded-2xl bg-slate-900/60 backdrop-blur-xl border border-slate-700/50 shadow-lg" role="group">
+          <div className="inline-flex p-1 bg-slate-900 border-2 border-slate-700" role="group">
             <button
               type="button"
-              className={`px-6 py-2.5 text-sm font-semibold rounded-xl transition-all duration-300 cursor-pointer ${
+              className={`px-6 py-2.5 text-sm font-semibold transition-all duration-300 cursor-pointer ${
                 activeTab === "current"
-                  ? "bg-gradient-to-r from-Maincolor to-Secondcolor text-white shadow-lg shadow-Maincolor/20"
+                  ? "bg-Maincolor text-white"
                   : "text-gray-300 hover:text-white"
               }`}
               onClick={() => setActiveTab("current")}
@@ -48,9 +48,9 @@ const JobOpenings = () => {
             </button>
             <button
               type="button"
-              className={`px-6 py-2.5 text-sm font-semibold rounded-xl transition-all duration-300 cursor-pointer ${
+              className={`px-6 py-2.5 text-sm font-semibold transition-all duration-300 cursor-pointer ${
                 activeTab === "updates"
-                  ? "bg-gradient-to-r from-Maincolor to-Secondcolor text-white shadow-lg shadow-Maincolor/20"
+                  ? "bg-Maincolor text-white"
                   : "text-gray-300 hover:text-white"
               }`}
               onClick={() => setActiveTab("updates")}
@@ -62,9 +62,9 @@ const JobOpenings = () => {
 
         {/* Content based on active tab */}
         {activeTab === "current" ? (
-          <div className="bg-slate-900/60 backdrop-blur-xl rounded-2xl shadow-xl border border-slate-700/50 overflow-hidden">
+          <div className="bg-slate-900 border-2 border-slate-700 overflow-hidden">
             {/* Intro Section */}
-            <div className="bg-gradient-to-r from-Maincolor/20 via-Maincolor/10 to-transparent text-white p-8 border-b border-slate-700/50">
+            <div className="bg-slate-800 text-white p-8 border-b-2 border-slate-700">
               <h3 className="text-xl font-bold mb-3">
                 Forge a New Path!
               </h3>
@@ -89,7 +89,7 @@ const JobOpenings = () => {
                 {jobOpenings.map((job) => (
                   <div
                     key={job.id}
-                    className="group bg-slate-800/40 backdrop-blur-sm border border-slate-700/30 rounded-xl p-6 hover:border-Maincolor/30 transition-all duration-300 hover:shadow-lg hover:shadow-Maincolor/5"
+                    className="group bg-slate-800 border-2 border-slate-700 p-6 hover:border-Maincolor transition-all duration-300"
                   >
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                       <div>
@@ -97,22 +97,22 @@ const JobOpenings = () => {
                           {job.title}
                         </h4>
                         <div className="flex flex-wrap gap-2 mt-3">
-                          <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold bg-Maincolor/15 text-Maincolor border border-Maincolor/20">
+                          <span className="inline-flex items-center px-3 py-1 text-[10px] font-bold bg-Maincolor text-white border-2 border-Maincolor">
                             {job.department}
                           </span>
-                          <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-bold bg-Maincolor/15 text-Maincolor border border-Maincolor/20">
+                          <span className="inline-flex items-center px-3 py-1 text-[10px] font-bold bg-slate-900 text-gray-300 border-2 border-slate-700">
                             {job.experience}
                           </span>
                         </div>
                       </div>
                       <Link
                         to={`/job-openings/${job.slug}`}
-                        className="px-5 py-2.5 bg-Maincolor hover:bg-Secondcolor text-white rounded-xl transition-all duration-300 text-xs font-semibold text-center shadow-lg shadow-Maincolor/20"
+                        className="px-5 py-2.5 bg-Maincolor hover:bg-Secondcolor text-white transition-all duration-300 text-xs font-semibold text-center"
                       >
                         View Details
                       </Link>
                     </div>
-                    <div className="mt-5 pt-4 border-t border-slate-700/30">
+                    <div className="mt-5 pt-4 border-t-2 border-slate-700">
                       <div className="grid grid-cols-2 gap-3 text-xs text-gray-400">
                         <div>
                           <span className="font-semibold text-gray-300">Post:</span>{" "}
@@ -131,12 +131,12 @@ const JobOpenings = () => {
           </div>
         ) : (
           /* Stay Updated Section */
-          <div className="bg-slate-900/60 backdrop-blur-xl rounded-2xl shadow-xl border border-slate-700/50 p-8 sm:p-10 text-center">
+          <div className="bg-slate-900 border-2 border-slate-700 p-8 sm:p-10 text-center">
             <div className="max-w-xl mx-auto space-y-8">
               <h2 className="text-xl sm:text-2xl font-bold text-white">
                 Stay Connected for New Positions
               </h2>
-              <div className="bg-slate-800/40 backdrop-blur-sm rounded-xl p-6 border border-slate-700/30 text-left">
+              <div className="bg-slate-800 border-2 border-slate-700 p-6 text-left">
                 <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-4">
                   Not found your position? Don't worry! Stay updated on our
                   latest job openings by regularly visiting our career page or
@@ -182,7 +182,7 @@ const JobOpenings = () => {
               <div className="pt-2">
                 <button
                   onClick={() => setActiveTab("current")}
-                  className="px-6 py-3 bg-Maincolor hover:bg-Secondcolor text-white rounded-xl transition-all duration-300 font-semibold text-sm cursor-pointer shadow-lg shadow-Maincolor/20"
+                  className="px-6 py-3 bg-Maincolor hover:bg-Secondcolor text-white transition-all duration-300 font-semibold text-sm cursor-pointer"
                 >
                   Visit Our Career Page
                 </button>

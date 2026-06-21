@@ -26,7 +26,7 @@ const BlogPost = () => {
       <div className="max-w-5xl mx-auto px-4 pt-10">
         <Link
           to="/blogs"
-          className="w-fit flex items-center gap-2 px-4 py-2 text-sm text-slate-300 hover:text-white bg-slate-900/60 backdrop-blur-xl border border-slate-700/50 hover:bg-slate-800/80 rounded-xl transition-all duration-300 group"
+          className="w-fit flex items-center gap-2 px-4 py-2 text-sm text-slate-300 hover:text-white bg-slate-900 border-2 border-slate-700 hover:bg-slate-800 transition-all duration-300 group"
         >
           <ArrowLeft
             size={16}
@@ -39,7 +39,7 @@ const BlogPost = () => {
       {/* Hero Section */}
       <div className="max-w-4xl mx-auto px-4 pt-8 pb-6 text-center space-y-5">
         <div>
-          <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-Maincolor to-Secondcolor text-white rounded-full text-xs font-bold shadow-lg shadow-Maincolor/20">
+          <span className="inline-block px-4 py-1.5 bg-Maincolor text-white text-xs font-bold">
             {post.category}
           </span>
         </div>
@@ -53,7 +53,7 @@ const BlogPost = () => {
         <div className="flex flex-col lg:flex-row gap-8 items-start">
           {/* Main Article Image & Content */}
           <div className="flex-1 w-full space-y-8">
-            <div className="rounded-2xl overflow-hidden border border-slate-700/50 shadow-xl">
+            <div className="border-2 border-slate-700 overflow-hidden">
               <img
                 src={post.image}
                 alt={post.title}
@@ -78,35 +78,35 @@ const BlogPost = () => {
           {/* Sidebar */}
           <div className="w-full lg:w-64 space-y-6 lg:sticky lg:top-8">
             {/* Share Card */}
-            <div className="bg-slate-900/60 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 space-y-4 shadow-lg">
+            <div className="bg-slate-900 border-2 border-slate-700 p-6 space-y-4">
               <h3 className="text-white text-sm font-bold uppercase tracking-wider">
                 Share Article
               </h3>
               <div className="grid grid-cols-2 gap-2.5">
                 <button
                   onClick={() => window.open(post.socialLinks[1].TwitterUrl, "_blank")}
-                  className="flex items-center justify-center gap-2 p-2.5 bg-slate-800/80 hover:bg-Maincolor/20 text-Maincolor rounded-xl transition-all border border-slate-700/50 text-xs font-semibold hover:border-Maincolor/30"
+                  className="flex items-center justify-center gap-2 p-2.5 bg-slate-800 hover:bg-Maincolor hover:text-white text-Maincolor transition-all border-2 border-slate-700 text-xs font-semibold hover:border-Maincolor"
                 >
                   <Twitter size={14} />
                   <span>Twitter</span>
                 </button>
                 <button
                   onClick={() => window.open(post.socialLinks[0].FacebookUrl, "_blank")}
-                  className="flex items-center justify-center gap-2 p-2.5 bg-slate-800/80 hover:bg-Maincolor/20 text-Maincolor rounded-xl transition-all border border-slate-700/50 text-xs font-semibold hover:border-Maincolor/30"
+                  className="flex items-center justify-center gap-2 p-2.5 bg-slate-800 hover:bg-Maincolor hover:text-white text-Maincolor transition-all border-2 border-slate-700 text-xs font-semibold hover:border-Maincolor"
                 >
                   <Facebook size={14} />
                   <span>Facebook</span>
                 </button>
                 <button
                   onClick={() => window.open(post.socialLinks[2].LinkedinUrl, "_blank")}
-                  className="flex items-center justify-center gap-2 p-2.5 bg-slate-800/80 hover:bg-Maincolor/20 text-Maincolor rounded-xl transition-all border border-slate-700/50 text-xs font-semibold hover:border-Maincolor/30"
+                  className="flex items-center justify-center gap-2 p-2.5 bg-slate-800 hover:bg-Maincolor hover:text-white text-Maincolor transition-all border-2 border-slate-700 text-xs font-semibold hover:border-Maincolor"
                 >
                   <Linkedin size={14} />
                   <span>LinkedIn</span>
                 </button>
                 <button
                   onClick={handleCopyLink}
-                  className="flex items-center justify-center gap-2 p-2.5 bg-slate-800/80 hover:bg-Maincolor/20 text-Maincolor rounded-xl transition-all border border-slate-700/50 text-xs font-semibold hover:border-Maincolor/30"
+                  className="flex items-center justify-center gap-2 p-2.5 bg-slate-800 hover:bg-Maincolor hover:text-white text-Maincolor transition-all border-2 border-slate-700 text-xs font-semibold hover:border-Maincolor"
                 >
                   <Link2 size={14} />
                   <span>Copy</span>
@@ -119,7 +119,7 @@ const BlogPost = () => {
               {post.tags.map((tag, index) => (
                 <span
                   key={index}
-                  className="px-3 py-1.5 bg-slate-900/60 backdrop-blur-sm border border-slate-700/50 text-gray-300 rounded-full text-xs font-bold hover:border-Maincolor/30 transition-colors"
+                  className="px-3 py-1.5 bg-slate-800 border-2 border-slate-700 text-gray-300 text-xs font-bold hover:border-Maincolor transition-colors"
                 >
                   #{tag.replace(/\s+/g, "")}
                 </span>

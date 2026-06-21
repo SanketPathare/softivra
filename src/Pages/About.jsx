@@ -58,7 +58,7 @@ const About = () => {
   return (
     <div className="min-h-screen bg-slate-900 pb-16">
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-Maincolor/10 via-transparent to-Secondcolor/5">
+      <section className="relative overflow-hidden py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-slate-800 border-b-2 border-slate-700">
         <div className="relative max-w-7xl mx-auto text-center">
           <motion.div
             id="hero"
@@ -151,11 +151,11 @@ const About = () => {
               variants={scaleVariants}
               className="order-1 md:order-2 flex justify-center"
             >
-              <div className="w-full max-w-sm rounded-xl overflow-hidden shadow-lg border border-slate-700/50 bg-slate-900/60 backdrop-blur-sm p-2">
+              <div className="w-full max-w-sm border-2 border-slate-700 bg-slate-800 p-2">
                 <img
                   src="/softivra_team_about_page.png"
                   alt="Team collaborating at Softivra"
-                  className="w-full h-48 sm:h-56 object-cover rounded-lg"
+                  className="w-full h-48 sm:h-56 object-cover"
                 />
               </div>
             </motion.div>
@@ -165,7 +165,7 @@ const About = () => {
 
       {/* Mission & Vision Section */}
       <motion.section
-        className="py-12 sm:py-16 bg-slate-900/30"
+        className="py-12 sm:py-16 bg-slate-800"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -182,7 +182,7 @@ const About = () => {
             {/* Mission Card */}
             <motion.div
               variants={itemVariants}
-              className="relative bg-slate-900/60 backdrop-blur-sm border border-slate-700/50 rounded-xl p-6 sm:p-8 overflow-hidden"
+              className="relative bg-slate-900 border-2 border-slate-700 p-6 sm:p-8"
             >
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-Maincolor to-Secondcolor"></div>
               <h3 className="text-lg sm:text-xl font-bold text-Maincolor mb-3">
@@ -200,7 +200,7 @@ const About = () => {
             {/* Vision Card */}
             <motion.div
               variants={itemVariants}
-              className="relative bg-slate-900/60 backdrop-blur-sm border border-slate-700/50 rounded-xl p-6 sm:p-8 overflow-hidden"
+              className="relative bg-slate-900 border-2 border-slate-700 p-6 sm:p-8"
             >
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-Maincolor to-Secondcolor"></div>
               <h3 className="text-lg sm:text-xl font-bold text-Maincolor mb-3">
@@ -249,7 +249,7 @@ const About = () => {
             {partners.map((partner, index) => (
               <motion.div
                 key={index}
-                className="rounded-xl overflow-hidden bg-slate-900/60 backdrop-blur-sm border border-slate-700/50 hover:border-Maincolor/40 transition-all duration-300"
+                className="border-2 border-slate-700 bg-slate-900 hover:border-Maincolor transition-all duration-300"
                 variants={scaleVariants}
                 whileHover={{ scale: 1.05, y: -2 }}
               >
@@ -274,7 +274,7 @@ const About = () => {
 
       {/* CTA Section */}
       <motion.section
-        className="py-16 sm:py-20 bg-gradient-to-r from-Maincolor/20 via-Maincolor/10 to-Secondcolor/5 text-white"
+        className="py-16 sm:py-20 bg-slate-800 border-t-2 border-b-2 border-slate-700 text-white"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -295,7 +295,7 @@ const About = () => {
             cutting-edge technology solutions.
           </motion.p>
           <motion.button
-            className="bg-white hover:bg-slate-100 text-Maincolor font-bold py-3 px-7 rounded-full text-sm shadow-lg transition-colors cursor-pointer"
+            className="bg-white hover:bg-slate-100 text-Maincolor font-bold py-3 px-7 text-sm border-2 border-slate-700 cursor-pointer transition-colors"
             variants={scaleVariants}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}

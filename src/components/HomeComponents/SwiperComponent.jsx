@@ -63,7 +63,12 @@ const ResponsiveSlider = () => {
 
   return (
     <div className="relative w-full max-w-7xl mx-auto px-2 sm:px-4 py-4 sm:py-6">
-      <div className={`relative w-full ${heightClass} rounded-3xl sm:rounded-5xl lg:rounded-7xl border border-slate-800 overflow-hidden shadow-2xl shadow-blue-950/20`}>
+      <div className={`relative w-full ${heightClass} border-2 border-slate-700 overflow-hidden`}>
+        <style>{`
+          .swiper-pagination-bullet {
+            border-radius: 0 !important;
+          }
+        `}</style>
         <Swiper
           modules={[Navigation, Pagination, Autoplay, EffectFade]}
           spaceBetween={0}
@@ -79,11 +84,11 @@ const ResponsiveSlider = () => {
             el: ".swiper-pagination",
             clickable: true,
             renderBullet: (index, className) => {
-              return `<span class="${className} w-2.5 h-2.5 rounded-full transition-all duration-500 bg-white/20 hover:bg-white/50"></span>`;
+              return `<span class="${className} w-2.5 h-2.5 transition-all duration-500"></span>`;
             },
           }}
           loop={true}
-          className="h-full rounded-3xl sm:rounded-5xl lg:rounded-7xl"
+          className="h-full"
         >
           {slidesData.map((slide, index) => (
             <SwiperSlide key={index}>
@@ -95,15 +100,8 @@ const ResponsiveSlider = () => {
                   backgroundPosition: "center",
                 }}
               >
-                {/* Background Overlays */}
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/70 to-slate-950/45"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-slate-950/45"></div>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-950/20 via-transparent to-cyan-950/20"></div>
-
-                {/* Animated Radial Glows */}
-                <div className="absolute inset-0 overflow-hidden">
-                  <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
-                  <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-cyan-500/10 rounded-full blur-3xl animate-pulse"></div>
-                </div>
 
                 <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
                   <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-3 sm:mb-4 tracking-tight">
@@ -117,10 +115,10 @@ const ResponsiveSlider = () => {
                   </p>
 
                   <div className="flex flex-row gap-3 sm:gap-4 justify-center">
-                    <Link to="/services" className="group px-5 sm:px-7 py-2.5 sm:py-3 bg-gradient-to-r from-Maincolor to-Secondcolor hover:from-Secondcolor hover:to-Maincolor cursor-pointer text-white rounded-xl text-xs font-bold transform hover:scale-[1.03] transition-all duration-300 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 uppercase tracking-wider">
+                    <Link to="/services" className="group px-5 sm:px-7 py-2.5 sm:py-3 bg-gradient-to-r from-Maincolor to-Secondcolor hover:from-Secondcolor hover:to-Maincolor cursor-pointer text-white text-xs font-bold transform hover:scale-[1.03] transition-all duration-300 uppercase tracking-wider">
                       Our Services
                     </Link>
-                    <Link to="/contact" className="px-5 sm:px-7 py-2.5 sm:py-3 border border-white/10 text-white rounded-xl text-xs font-bold hover:bg-white/5 backdrop-blur-sm transition-all duration-300 hover:border-white/20 transform hover:scale-[1.03] cursor-pointer uppercase tracking-wider">
+                    <Link to="/contact" className="px-5 sm:px-7 py-2.5 sm:py-3 border-2 border-slate-600 text-white text-xs font-bold hover:bg-slate-700 transition-all duration-300 hover:border-slate-500 transform hover:scale-[1.03] cursor-pointer uppercase tracking-wider">
                       Contact Us
                     </Link>
                   </div>
@@ -129,11 +127,22 @@ const ResponsiveSlider = () => {
             </SwiperSlide>
           ))}
 
-          <div className="swiper-pagination absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2"></div>
+          <div
+            className="swiper-pagination absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2"
+            style={{
+              "--swiper-pagination-bullet-border-radius": "0px",
+              "--swiper-pagination-bullet-inactive-color": "#475569",
+              "--swiper-pagination-bullet-inactive-opacity": "1",
+              "--swiper-pagination-bullet-width": "10px",
+              "--swiper-pagination-bullet-height": "10px",
+              "--swiper-pagination-bullet-active-color": "#007aff",
+              "--swiper-pagination-bullet-active-opacity": "1",
+            }}
+          ></div>
         </Swiper>
 
-        <div className="absolute bottom-0 left-0 w-full h-1 bg-white/5 z-20 rounded-b-3xl sm:rounded-b-5xl lg:rounded-b-7xl">
-          <div className="h-full bg-gradient-to-r from-Maincolor to-Secondcolor rounded-b-3xl sm:rounded-b-5xl lg:rounded-b-7xl swiper-progress-bar"></div>
+        <div className="absolute bottom-0 left-0 w-full h-1 z-20">
+          <div className="h-full bg-gradient-to-r from-Maincolor to-Secondcolor swiper-progress-bar"></div>
         </div>
       </div>
     </div>

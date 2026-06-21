@@ -212,7 +212,7 @@ const Services = () => {
   return (
     <div className="min-h-screen bg-slate-900 pb-16">
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-Maincolor/10 via-transparent to-Secondcolor/5">
+      <section className="relative overflow-hidden py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-slate-800 border-b-2 border-slate-700">
         <div className="relative max-w-7xl mx-auto text-center">
           <motion.div
             id="hero"
@@ -241,7 +241,7 @@ const Services = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.15 }}
-              className="bg-slate-900/60 backdrop-blur-sm border border-slate-700/50 rounded-xl p-6 sm:p-8 hover:border-Maincolor/30 transition-all duration-500"
+              className="bg-slate-900 border-2 border-slate-700 p-6 sm:p-8 hover:border-Maincolor transition-all duration-500"
             >
               {/* Service Row */}
               <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
@@ -250,7 +250,7 @@ const Services = () => {
                   <img
                     src={service.image}
                     alt={`${service.title} illustration`}
-                    className="w-full max-w-[260px] sm:max-w-[300px] md:max-w-[340px] h-auto object-contain drop-shadow-lg"
+                    className="w-full max-w-[260px] sm:max-w-[300px] md:max-w-[340px] h-auto object-contain"
                   />
                 </div>
 
@@ -269,12 +269,12 @@ const Services = () => {
               </div>
 
               {/* Feature Tags */}
-              <div className="mt-8 border-t border-slate-700/40 pt-6">
+              <div className="mt-8 border-t-2 border-slate-700 pt-6">
                 <div className="flex flex-wrap justify-center lg:justify-start gap-2 max-w-4xl">
                   {service.features.map((feature, featureIndex) => (
                     <motion.div
                       key={featureIndex}
-                      className="flex items-center bg-slate-950/50 text-white rounded-full px-3 py-1.5 border border-slate-700/50 hover:border-Maincolor/40 transition-all duration-300"
+                      className="flex items-center bg-slate-800 text-white px-3 py-1.5 border-2 border-slate-700 hover:border-Maincolor transition-all duration-300"
                       whileHover={{ scale: 1.04 }}
                     >
                       <svg

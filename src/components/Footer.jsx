@@ -29,11 +29,10 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative bg-slate-950 border-t border-slate-800/50">
+    <footer className="relative bg-slate-950 border-t-2 border-slate-700">
       {/* Top CTA */}
-      <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-Maincolor/10 to-transparent" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 border-b-2 border-slate-800">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -57,7 +56,7 @@ const Footer = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-Maincolor hover:bg-blue-600 text-white px-6 py-2.5 rounded-lg font-semibold text-sm shadow-lg shadow-Maincolor/20 transition-all cursor-pointer"
+                className="bg-Maincolor hover:bg-blue-600 text-white px-6 py-2.5 font-semibold text-sm transition-all cursor-pointer border-2 border-blue-500"
                 aria-label="Get Started"
               >
                 Get Started
@@ -215,7 +214,7 @@ const Footer = () => {
                       rel="noopener noreferrer"
                       aria-label={social.label}
                       whileHover={{ scale: 1.1, y: -2 }}
-                      className="p-2.5 bg-slate-900/80 backdrop-blur-sm border border-slate-800/50 text-gray-400 hover:text-Maincolor hover:border-Maincolor/30 rounded-xl transition-all duration-200"
+                      className="p-2.5 bg-slate-900 border-2 border-slate-700 text-gray-400 hover:text-Maincolor hover:border-Maincolor transition-all duration-200"
                     >
                       <social.icon className="w-4 h-4" />
                     </motion.a>
@@ -233,7 +232,7 @@ const Footer = () => {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.3 }}
         viewport={{ once: true }}
-        className="border-t border-slate-800/50"
+        className="border-t-2 border-slate-800"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 text-center text-xs text-gray-500">
           <p>© 2026 Softivra. All Rights Reserved.</p>

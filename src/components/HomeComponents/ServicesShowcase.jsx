@@ -74,7 +74,7 @@ const ServicesShowcase = () => {
   };
 
   return (
-    <div className="bg-slate-900 py-16 px-4 sm:px-6 lg:px-8 relative border-t border-slate-800/40">
+    <div className="bg-slate-900 py-16 px-4 sm:px-6 lg:px-8 relative border-t-2 border-slate-700">
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="text-center mb-12"
@@ -111,53 +111,49 @@ const ServicesShowcase = () => {
               whileHover="hover"
               className="relative group"
             >
-              <div
-                className={`relative rounded-2xl p-[1.5px] bg-gradient-to-br ${service.color} shadow-lg shadow-blue-500/5 transition-all duration-300 group-hover:shadow-blue-500/20`}
-              >
-                <div className="bg-slate-950 rounded-2xl p-6 lg:p-7 min-h-[250px] flex flex-col justify-between relative overflow-hidden">
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
-                  ></div>
+              <div className="bg-slate-900 border-2 border-slate-700 p-6 lg:p-7 min-h-[250px] flex flex-col justify-between relative overflow-hidden">
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
+                ></div>
 
-                  <div className="relative z-10 flex flex-col h-full space-y-4">
-                    <div className="flex items-center gap-3">
-                      <div className="p-2 bg-blue-500/10 rounded-lg border border-blue-500/20">
-                        {service.icon}
-                      </div>
-                      <motion.h3
-                        className="text-white text-base sm:text-lg font-bold"
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: index * 0.05 + 0.3 }}
-                      >
-                        {service.title}
-                      </motion.h3>
+                <div className="relative z-10 flex flex-col h-full space-y-4">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 bg-blue-500/10 border-2 border-blue-500/20">
+                      {service.icon}
                     </div>
-
-                    <motion.p
-                      className="text-gray-400 text-xs sm:text-sm leading-relaxed line-clamp-4 font-light"
+                    <motion.h3
+                      className="text-white text-base sm:text-lg font-bold"
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
                       viewport={{ once: true }}
-                      transition={{ delay: index * 0.05 + 0.4 }}
+                      transition={{ delay: index * 0.05 + 0.3 }}
                     >
-                      {service.description}
-                    </motion.p>
+                      {service.title}
+                    </motion.h3>
+                  </div>
 
-                    <div className="mt-auto pt-2">
-                      <Link to="/services">
-                        <motion.button
-                          variants={buttonVariants}
-                          whileHover="hover"
-                          whileTap="tap"
-                          className="text-blue-400 cursor-pointer font-bold text-xs hover:text-blue-300 transition-all duration-300 flex items-center gap-1.5 group/link uppercase tracking-wider"
-                        >
-                          Find out more
-                          <span className="group-hover/link:translate-x-1 transition-transform duration-300">&rarr;</span>
-                        </motion.button>
-                      </Link>
-                    </div>
+                  <motion.p
+                    className="text-gray-400 text-xs sm:text-sm leading-relaxed line-clamp-4 font-light"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.05 + 0.4 }}
+                  >
+                    {service.description}
+                  </motion.p>
+
+                  <div className="mt-auto pt-2">
+                    <Link to="/services">
+                      <motion.button
+                        variants={buttonVariants}
+                        whileHover="hover"
+                        whileTap="tap"
+                        className="text-blue-400 cursor-pointer font-bold text-xs hover:text-blue-300 transition-all duration-300 flex items-center gap-1.5 group/link uppercase tracking-wider"
+                      >
+                        Find out more
+                        <span className="group-hover/link:translate-x-1 transition-transform duration-300">&rarr;</span>
+                      </motion.button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -177,7 +173,7 @@ const ServicesShowcase = () => {
               variants={buttonVariants}
               whileHover="hover"
               whileTap="tap"
-              className="bg-gradient-to-r from-blue-500/10 to-indigo-600/10 backdrop-blur-lg text-white px-6 py-2.5 rounded-full font-bold text-xs border border-blue-500/30 hover:border-blue-500/50 transition-all duration-300 shadow-md cursor-pointer uppercase tracking-wider"
+              className="bg-blue-900 text-white px-6 py-2.5 font-bold text-xs border-2 border-blue-500/30 hover:border-blue-500/50 transition-all duration-300 cursor-pointer uppercase tracking-wider"
             >
               View Detailed Services
             </motion.button>

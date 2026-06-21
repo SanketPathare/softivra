@@ -52,7 +52,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-slate-900 pb-16">
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-Maincolor/10 via-transparent to-Secondcolor/5">
+      <section className="relative overflow-hidden py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-slate-800 border-b-2 border-slate-700">
         <div className="relative max-w-7xl mx-auto text-center">
           <motion.div
             id="hero"
@@ -82,7 +82,7 @@ const Contact = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             {/* Contact Form */}
             <motion.div
-              className="bg-slate-900/60 backdrop-blur-sm border border-slate-700/50 rounded-xl shadow-lg p-5 sm:p-6 lg:p-8"
+              className="bg-slate-900 border-2 border-slate-700 p-5 sm:p-6 lg:p-8"
               variants={staggerContainer}
             >
               <motion.h2
@@ -103,7 +103,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-slate-950/60 border border-slate-700/50 rounded-lg focus:ring-2 focus:ring-Maincolor/50 focus:border-Maincolor/50 transition-all text-white placeholder-gray-500 text-sm outline-none"
+                    className="w-full px-4 py-3 bg-slate-800 border-2 border-slate-700 text-white placeholder-gray-500 text-sm outline-none"
                     placeholder="Your name"
                   />
                 </motion.div>
@@ -119,7 +119,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-slate-950/60 border border-slate-700/50 rounded-lg focus:ring-2 focus:ring-Maincolor/50 focus:border-Maincolor/50 transition-all text-white placeholder-gray-500 text-sm outline-none"
+                    className="w-full px-4 py-3 bg-slate-800 border-2 border-slate-700 text-white placeholder-gray-500 text-sm outline-none"
                     placeholder="Your email address"
                   />
                 </motion.div>
@@ -135,7 +135,7 @@ const Contact = () => {
                     value={formData.contactNo}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-slate-950/60 border border-slate-700/50 rounded-lg focus:ring-2 focus:ring-Maincolor/50 focus:border-Maincolor/50 transition-all text-white placeholder-gray-500 text-sm outline-none"
+                    className="w-full px-4 py-3 bg-slate-800 border-2 border-slate-700 text-white placeholder-gray-500 text-sm outline-none"
                     placeholder="Your contact number"
                   />
                 </motion.div>
@@ -151,7 +151,7 @@ const Contact = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-slate-950/60 border border-slate-700/50 rounded-lg focus:ring-2 focus:ring-Maincolor/50 focus:border-Maincolor/50 transition-all text-white placeholder-gray-500 text-sm outline-none"
+                    className="w-full px-4 py-3 bg-slate-800 border-2 border-slate-700 text-white placeholder-gray-500 text-sm outline-none"
                     placeholder="Message subject"
                   />
                 </motion.div>
@@ -167,14 +167,14 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     rows={4}
-                    className="w-full px-4 py-3 bg-slate-950/60 border border-slate-700/50 rounded-lg focus:ring-2 focus:ring-Maincolor/50 focus:border-Maincolor/50 transition-all text-white placeholder-gray-500 text-sm outline-none resize-none"
+                    className="w-full px-4 py-3 bg-slate-800 border-2 border-slate-700 text-white placeholder-gray-500 text-sm outline-none resize-none"
                     placeholder="Your message"
                   ></textarea>
                 </motion.div>
 
                 <motion.button
                   type="submit"
-                  className="w-full bg-Maincolor hover:bg-Secondcolor text-white font-bold py-3 px-4 rounded-lg text-sm cursor-pointer shadow-lg transition-all duration-300 hover:shadow-Maincolor/25"
+                  className="w-full bg-Maincolor hover:bg-Secondcolor text-white font-bold py-3 px-4 text-sm cursor-pointer transition-all duration-300"
                   variants={fadeInUp}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -185,7 +185,7 @@ const Contact = () => {
 
             {/* Contact Information */}
             <motion.div
-              className="bg-slate-900/60 backdrop-blur-sm border border-slate-700/50 rounded-xl shadow-lg p-5 sm:p-6 lg:p-8 space-y-6"
+              className="bg-slate-900 border-2 border-slate-700 p-5 sm:p-6 lg:p-8 space-y-6"
               variants={staggerContainer}
             >
               <div>
@@ -209,7 +209,7 @@ const Contact = () => {
                   className="flex items-center gap-4"
                   variants={fadeInUp}
                 >
-                  <div className="bg-slate-950/60 p-3 rounded-xl border border-slate-700/50 text-Maincolor">
+                  <div className="bg-slate-800 p-3 border-2 border-slate-700 text-Maincolor">
                     <Phone size={18} />
                   </div>
                   <div>
@@ -226,7 +226,7 @@ const Contact = () => {
                   className="flex items-center gap-4"
                   variants={fadeInUp}
                 >
-                  <div className="bg-slate-950/60 p-3 rounded-xl border border-slate-700/50 text-Maincolor">
+                  <div className="bg-slate-800 p-3 border-2 border-slate-700 text-Maincolor">
                     <Mail size={18} />
                   </div>
                   <div>
@@ -241,7 +241,7 @@ const Contact = () => {
               </div>
 
               <motion.div
-                className="border-t border-slate-700/40 pt-6 space-y-4"
+                className="border-t-2 border-slate-700 pt-6 space-y-4"
                 variants={fadeInUp}
               >
                 <h3 className="font-bold text-white text-xs sm:text-sm uppercase tracking-wider">
@@ -255,7 +255,7 @@ const Contact = () => {
                   to="/softivra.vcf" 
                   target="_blank"
                   download="softivra.vcf"
-                  className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-Maincolor to-Secondcolor hover:from-Maincolor/90 hover:to-Secondcolor/90 text-white font-bold py-3 px-5 rounded-lg text-sm shadow-lg transition-all duration-300 w-full"
+                  className="inline-flex items-center justify-center gap-2 bg-Maincolor hover:bg-Secondcolor text-white font-bold py-3 px-5 text-sm transition-all duration-300 w-full"
                 >
                   <Download className="w-4 h-4" />
                   Download eVisiting Card

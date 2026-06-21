@@ -6,7 +6,7 @@ const BlogPage = () => {
   return (
     <div className="min-h-screen bg-slate-900 text-white pb-16">
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-Maincolor/10 via-transparent to-Secondcolor/5">
+      <section className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8 bg-slate-800 border-b-2 border-slate-700">
         <div className="relative max-w-7xl mx-auto text-center">
           <motion.div
             id="hero"
@@ -55,7 +55,7 @@ const BlogPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 * index, duration: 0.5 }}
               whileHover={{ y: -8 }}
-              className="group bg-slate-900/60 backdrop-blur-xl border border-slate-700/50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-Maincolor/5 transition-all duration-500 flex flex-col"
+              className="group bg-slate-900 border-2 border-slate-700 overflow-hidden hover:border-Maincolor transition-all duration-500 flex flex-col"
             >
               <div className="relative overflow-hidden">
                 <img
@@ -63,10 +63,9 @@ const BlogPage = () => {
                   alt={post.title}
                   className="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
               <div className="p-6 flex flex-col flex-1">
-                <span className="inline-block w-fit px-3 py-1 rounded-full text-[10px] uppercase font-bold tracking-wider bg-gradient-to-r from-Maincolor to-Secondcolor text-white mb-3 shadow-lg shadow-Maincolor/20">
+                <span className="inline-block w-fit px-3 py-1 text-[10px] uppercase font-bold tracking-wider bg-Maincolor text-white mb-3">
                   {post.category}
                 </span>
                 <h3 className="text-sm sm:text-base font-bold mb-3 line-clamp-2 text-white group-hover:text-Maincolor transition-colors duration-300">

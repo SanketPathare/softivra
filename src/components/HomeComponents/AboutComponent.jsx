@@ -20,13 +20,7 @@ const AboutComponent = () => {
   ];
 
   return (
-    <div className="bg-slate-900 px-4 py-16 sm:px-6 lg:px-8 relative overflow-hidden border-t border-b border-slate-800/40">
-      {/* Subtle Background Glows */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-indigo-500/5 rounded-full blur-3xl animate-pulse"></div>
-      </div>
-
+    <div className="bg-slate-900 px-4 py-16 sm:px-6 lg:px-8 relative overflow-hidden border-t-2 border-b-2 border-slate-700">
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header Section */}
         <motion.div
@@ -36,8 +30,8 @@ const AboutComponent = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 mb-5">
-            <div className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-ping"></div>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-500/10 border-2 border-blue-500/20 mb-5">
+            <div className="w-1.5 h-1.5 bg-blue-400 animate-ping"></div>
             <span className="text-blue-400 text-[10px] font-bold uppercase tracking-widest">Brand Identity</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-5 leading-tight tracking-tight">
@@ -60,10 +54,9 @@ const AboutComponent = () => {
             transition={{ duration: 0.6 }}
           >
             {/* Card 1 */}
-            <div className="relative p-6 bg-slate-950/40 rounded-2xl border border-slate-800/60 hover:border-blue-500/30 transition-all duration-500 backdrop-blur-sm group">
-              <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="relative p-6 bg-slate-900 border-2 border-slate-700 hover:border-blue-500/30 transition-all duration-300 group">
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center flex-shrink-0 border border-blue-500/20 group-hover:bg-blue-500/20 transition-all duration-300">
+                <div className="w-10 h-10 bg-blue-500/10 flex items-center justify-center flex-shrink-0 border-2 border-blue-500/20 group-hover:bg-blue-500/20 transition-all duration-300">
                   <Terminal className="w-5 h-5 text-blue-400" />
                 </div>
                 <div>
@@ -76,10 +69,9 @@ const AboutComponent = () => {
             </div>
 
             {/* Card 2 */}
-            <div className="relative p-6 bg-slate-950/40 rounded-2xl border border-slate-800/60 hover:border-blue-500/30 transition-all duration-500 backdrop-blur-sm group">
-              <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="relative p-6 bg-slate-900 border-2 border-slate-700 hover:border-blue-500/30 transition-all duration-300 group">
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center flex-shrink-0 border border-blue-500/20 group-hover:bg-blue-500/20 transition-all duration-300">
+                <div className="w-10 h-10 bg-blue-500/10 flex items-center justify-center flex-shrink-0 border-2 border-blue-500/20 group-hover:bg-blue-500/20 transition-all duration-300">
                   <Code2 className="w-5 h-5 text-blue-400" />
                 </div>
                 <div>
@@ -112,17 +104,13 @@ const AboutComponent = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <div className="relative group">
-              {/* Outer Blue Glow */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-3xl blur-2xl opacity-40 group-hover:opacity-60 transition duration-700"></div>
-              
               {/* Main Image Border Container */}
-              <div className="relative rounded-3xl overflow-hidden border border-slate-800/80 bg-slate-950 p-2 shadow-2xl">
+              <div className="relative overflow-hidden border-2 border-slate-700 bg-slate-950 p-2">
                 <img
                   src="/softivra_team_about.png"
                   alt="Softivra team workspace"
-                  className="w-full h-auto object-cover rounded-2xl transform group-hover:scale-[1.02] transition duration-700"
+                  className="w-full h-auto object-cover transform group-hover:scale-[1.02] transition duration-700"
                 />
-                {/* Visual Glass Tint */}
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none"></div>
               </div>
 
@@ -131,7 +119,7 @@ const AboutComponent = () => {
                 {values.map((v, i) => (
                   <div
                     key={i}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-slate-950/85 backdrop-blur-md rounded-full border border-white/5 text-[10px] font-semibold text-gray-300 shadow-lg shadow-black/35 hover:border-blue-500/25 transition-all duration-300"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-slate-800 border-2 border-slate-700 text-[10px] font-semibold text-gray-300 hover:border-blue-500/25 transition-all duration-300"
                   >
                     {v.icon}
                     {v.label}
@@ -159,7 +147,7 @@ const AboutComponent = () => {
               key={index}
               custom={index}
               variants={fadeInUp}
-              className="group relative p-5 bg-gradient-to-br from-slate-950/60 to-slate-900/30 rounded-2xl border border-slate-800/60 hover:border-blue-500/30 transition-all duration-300 hover:-translate-y-1 backdrop-blur-sm text-center shadow-lg shadow-black/10"
+              className="group relative p-5 bg-slate-900 border-2 border-slate-700 hover:border-blue-500/30 transition-all duration-300 hover:-translate-y-1 text-center"
             >
               <div className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent mb-1.5">
                 {stat.number}

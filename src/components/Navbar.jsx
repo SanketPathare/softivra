@@ -43,12 +43,11 @@ const Navbar = () => {
 
   return (
     <div className="w-full fixed top-0 left-0 right-0 z-50">
-      {/* Main Navbar - Glass morphism */}
       <nav
         className={`transition-all duration-300 ${
           isScrolled
-            ? 'bg-slate-950/75 backdrop-blur-md border-b border-slate-800/50 shadow-lg shadow-slate-950/20'
-            : 'bg-slate-950/40 backdrop-blur-md border-b border-slate-900/10'
+            ? 'bg-slate-950 border-b-2 border-slate-700'
+            : 'bg-slate-950 border-b-2 border-slate-800'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -65,7 +64,7 @@ const Navbar = () => {
                   <Link
                     key={item.name}
                     to={item.path}
-                    className={`relative px-3 lg:px-4 py-2 text-[11px] lg:text-xs font-semibold tracking-wider uppercase rounded-lg transition-all duration-200 ${
+                    className={`relative px-3 lg:px-4 py-2 text-[11px] lg:text-xs font-semibold tracking-wider uppercase transition-all duration-200 ${
                       isActive
                         ? 'text-Maincolor bg-Maincolor/10'
                         : 'text-gray-300 hover:text-white hover:bg-white/5'
@@ -73,7 +72,7 @@ const Navbar = () => {
                   >
                     {item.name}
                     {isActive && (
-                      <span className="absolute -bottom-px left-3 lg:left-4 right-3 lg:right-4 h-[2px] bg-Maincolor rounded-full" />
+                      <span className="absolute -bottom-px left-3 lg:left-4 right-3 lg:right-4 h-[2px] bg-Maincolor" />
                     )}
                   </Link>
                 );
@@ -83,7 +82,7 @@ const Navbar = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden relative p-2 text-gray-300 hover:text-white rounded-lg transition-colors cursor-pointer z-50"
+              className="md:hidden relative p-2 text-gray-300 hover:text-white transition-colors cursor-pointer z-50"
               aria-label={isOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={isOpen}
             >
@@ -110,7 +109,7 @@ const Navbar = () => {
 
       {/* Mobile Overlay */}
       <div
-        className={`fixed inset-0 bg-black/50 backdrop-blur-sm transition-all duration-300 md:hidden ${
+        className={`fixed inset-0 bg-black/80 transition-all duration-300 md:hidden ${
           isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
         onClick={() => setIsOpen(false)}
@@ -118,7 +117,7 @@ const Navbar = () => {
 
       {/* Mobile Slide-in Panel */}
       <div
-        className={`fixed top-0 right-0 h-full w-full max-w-sm bg-slate-900/95 backdrop-blur-xl border-l border-slate-800/50 shadow-2xl transition-all duration-300 ease-in-out md:hidden z-40 ${
+        className={`fixed top-0 right-0 h-full w-full max-w-sm bg-slate-900 border-l-2 border-slate-700 transition-all duration-300 ease-in-out md:hidden z-40 ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
@@ -130,7 +129,7 @@ const Navbar = () => {
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`block px-4 py-3 text-sm font-semibold tracking-wider uppercase rounded-xl transition-all duration-200 ${
+                  className={`block px-4 py-3 text-sm font-semibold tracking-wider uppercase transition-all duration-200 ${
                     isActive
                       ? 'bg-Maincolor/10 text-Maincolor border-l-2 border-Maincolor'
                       : 'text-gray-300 hover:text-white hover:bg-white/5 border-l-2 border-transparent'
@@ -144,12 +143,12 @@ const Navbar = () => {
           </div>
 
           <div className="mt-auto pb-10">
-            <div className="border-t border-slate-800/50 pt-6 space-y-4">
+            <div className="border-t border-slate-700 pt-6 space-y-4">
               <a
                 href="tel:+917620663151"
                 className="flex items-center gap-3 text-sm text-gray-400 hover:text-white transition-colors group"
               >
-                <span className="p-2 bg-Maincolor/10 rounded-lg group-hover:bg-Maincolor/20 transition-colors">
+                <span className="p-2 bg-Maincolor/10 group-hover:bg-Maincolor/20 transition-colors">
                   <Phone className="w-4 h-4 text-Maincolor" />
                 </span>
                 +91 76206 xxx
@@ -158,7 +157,7 @@ const Navbar = () => {
                 href="mailto:contact@softivra.com"
                 className="flex items-center gap-3 text-sm text-gray-400 hover:text-white transition-colors group"
               >
-                <span className="p-2 bg-Maincolor/10 rounded-lg group-hover:bg-Maincolor/20 transition-colors">
+                <span className="p-2 bg-Maincolor/10 group-hover:bg-Maincolor/20 transition-colors">
                   <Mail className="w-4 h-4 text-Maincolor" />
                 </span>
                 contact@softivra.com
@@ -173,7 +172,7 @@ const Navbar = () => {
                       target="_blank"
                       rel="noreferrer"
                       aria-label={label}
-                      className="p-2 bg-slate-800/50 text-gray-400 hover:text-Maincolor hover:bg-Maincolor/10 rounded-lg transition-all duration-200"
+                      className="p-2 bg-slate-800 text-gray-400 hover:text-Maincolor hover:bg-Maincolor/10 transition-all duration-200"
                     >
                       <Icon className="w-4 h-4" />
                     </a>
