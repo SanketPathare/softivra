@@ -17,7 +17,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <main className="bg-slate-800">
+      <main className="">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about-us" element={<About />} />

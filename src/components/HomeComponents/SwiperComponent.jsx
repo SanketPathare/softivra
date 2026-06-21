@@ -81,7 +81,7 @@ const ResponsiveSlider = () => {
               }}
             >
               {/* Dark Overlay for Better Text Readability */}
-              <div className="absolute inset-0 bg-gradient-to-b to-Maincolor/30 via-black/85 from-Maincolor/30"></div>
+              <div className="absolute inset-0 bg-gradient-to-b to-blue-950/70 via-black/90 from-blue-950/50"></div>
 
               {/* Animated Background Elements */}
               <div className="absolute inset-0 overflow-hidden">

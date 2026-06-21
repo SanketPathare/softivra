@@ -66,7 +66,7 @@ const JobOpeningDetail = () => {
                 <div className="sm:text-right flex flex-col gap-2">
                   <button 
                     onClick={() => setShowApplicationForm(true)}
-                    className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold text-xs transition-colors duration-300 shadow-md cursor-pointer w-fit sm:ml-auto"
+                    className="bg-Maincolor hover:bg-Secondcolor text-white px-4 py-2 rounded-lg font-semibold text-xs transition-colors duration-300 shadow-md cursor-pointer w-fit sm:ml-auto"
                   >
                     Apply Now
                   </button>
@@ -192,7 +192,7 @@ const JobOpeningDetail = () => {
               </p>
               <button 
                 onClick={() => setShowApplicationForm(true)}
-                className="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2.5 rounded-lg font-semibold text-xs cursor-pointer shadow-md transition-colors"
+                className="bg-Maincolor hover:bg-Secondcolor text-white px-5 py-2.5 rounded-lg font-semibold text-xs cursor-pointer shadow-md transition-colors"
               >
                 Apply Now
               </button>

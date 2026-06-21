@@ -24,7 +24,7 @@ const AboutComponent = () => {
           {/* Text Content */}
           <div className="space-y-6 animate-slide-in-left">
             <div className="space-y-5">
-              <div className="p-5 sm:p-6 bg-slate-800/50 rounded-2xl backdrop-blur-sm border border-slate-700/50 hover:border-blue-500/30 transition-all duration-500">
+              <div className="p-5 sm:p-6 bg-slate-950/40 rounded-2xl backdrop-blur-sm border border-slate-700/50 hover:border-blue-500/30 transition-all duration-500">
                 <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2.5">
                   <div className="w-2.5 h-2.5 bg-blue-500 rounded-full"></div>
                   Our Beginning
@@ -37,7 +37,7 @@ const AboutComponent = () => {
                 </p>
               </div>
 
-              <div className="p-5 sm:p-6 bg-slate-800/50 rounded-2xl backdrop-blur-sm border border-slate-700/50 hover:border-purple-500/30 transition-all duration-500">
+              <div className="p-5 sm:p-6 bg-slate-950/40 rounded-2xl backdrop-blur-sm border border-slate-700/50 hover:border-purple-500/30 transition-all duration-500">
                 <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2.5">
                   <div className="w-2.5 h-2.5 bg-Maincolor rounded-full"></div>
                   Our Journey
@@ -75,7 +75,7 @@ const AboutComponent = () => {
             ].map((stat, index) => (
               <div
                 key={index}
-                className="group p-5 sm:p-6 bg-slate-800/30 rounded-xl backdrop-blur-sm border border-slate-700 hover:border-slate-600 transition-all duration-300 hover:transform hover:scale-[1.02]"
+                className="group p-5 sm:p-6 bg-slate-950/20 rounded-xl backdrop-blur-sm border border-slate-700 hover:border-slate-600 transition-all duration-300 hover:transform hover:scale-[1.02]"
               >
                 <div className="text-3xl sm:text-4xl font-bold text-Maincolor mb-1.5">
                   {stat.number}

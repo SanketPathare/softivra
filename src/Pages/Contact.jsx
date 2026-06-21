@@ -175,7 +175,7 @@ const Contact = () => {
 
                 <motion.button
                   type="submit"
-                  className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg text-xs cursor-pointer shadow transition-colors duration-300"
+                  className="w-full bg-Maincolor hover:bg-Secondcolor text-white font-bold py-2 px-4 rounded-lg text-xs cursor-pointer shadow transition-colors duration-300"
                   variants={fadeInUp}
                   whileTap={{ scale: 0.98 }}
                 >

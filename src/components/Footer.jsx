@@ -213,25 +213,25 @@ const Footer = () => {
                     {
                       to: "https://www.facebook.com/softivra",
                       icon: FaFacebook,
-                      color: "bg-blue-700 hover:bg-blue-600",
+                      color: "bg-slate-700 hover:bg-slate-600",
                       label: "Facebook",
                     },
                     {
                       to: "https://twitter.com/softivra",
                       icon: FaTwitter,
-                      color: "bg-blue-500 hover:bg-blue-400",
+                      color: "bg-slate-700 hover:bg-slate-600",
                       label: "Twitter",
                     },
                     {
                       to: "https://www.instagram.com/softivra",
                       icon: FaInstagram,
-                      color: "bg-pink-600 hover:bg-pink-500",
+                      color: "bg-slate-700 hover:bg-slate-600",
                       label: "Instagram",
                     },
                     {
                       to: "https://www.linkedin.com/company/softivra",
                       icon: FaLinkedin,
-                      color: "bg-blue-600 hover:bg-blue-500",
+                      color: "bg-slate-700 hover:bg-slate-600",
                       label: "LinkedIn",
                     },
                   ].map((social) => (
@@ -263,7 +263,7 @@ const Footer = () => {
         target="_blank"
         rel="noopener noreferrer"
         whileHover={{ scale: 1.1 }}
-        className="fixed bottom-5 left-5 z-50 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-all cursor-pointer"
+        className="fixed bottom-5 left-5 z-50 bg-Maincolor text-white p-3 rounded-full shadow-lg hover:bg-Secondcolor transition-all cursor-pointer"
         aria-label="Chat on WhatsApp"
       >
         <FaWhatsapp size={24} />

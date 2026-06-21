@@ -78,7 +78,7 @@ const CareersPage = () => {
             >
               <Link to="/job-openings">
                 <motion.button
-                  className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2.5 px-5 rounded-lg text-xs cursor-pointer shadow-md transition-colors"
+                  className="bg-Maincolor hover:bg-Secondcolor text-white font-semibold py-2.5 px-5 rounded-lg text-xs cursor-pointer shadow-md transition-colors"
                   variants={itemVariants}
                   whileTap={{ scale: 0.97 }}
                 >
@@ -135,7 +135,7 @@ const CareersPage = () => {
 
       {/* CTA Section */}
       <motion.section
-        className="bg-blue-500 py-12 px-4 sm:px-6 lg:px-8 text-white border-t border-blue-600"
+        className="bg-Maincolor py-12 px-4 sm:px-6 lg:px-8 text-white border-t border-Secondcolor"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"

@@ -107,7 +107,7 @@ const JobOpenings = () => {
                       </div>
                       <Link
                         to={`/job-openings/${job.slug}`}
-                        className="px-3.5 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors duration-300 text-xs font-semibold text-center"
+                        className="px-3.5 py-2 bg-Maincolor hover:bg-Secondcolor text-white rounded-lg transition-colors duration-300 text-xs font-semibold text-center"
                       >
                         View Details
                       </Link>
@@ -182,7 +182,7 @@ const JobOpenings = () => {
               <div className="pt-2">
                 <button
                   onClick={() => setActiveTab("current")}
-                  className="px-4 py-2.5 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors duration-300 font-semibold text-xs cursor-pointer"
+                  className="px-4 py-2.5 bg-Maincolor hover:bg-Secondcolor text-white rounded-lg transition-colors duration-300 font-semibold text-xs cursor-pointer"
                 >
                   Visit Our Career Page
                 </button>
