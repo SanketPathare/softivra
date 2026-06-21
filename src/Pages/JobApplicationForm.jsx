@@ -35,29 +35,29 @@ const JobApplicationForm = ({ jobTitle, onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-black/80 flex items-center justify-center p-4 z-50 animate-fade-in">
-      <div className="bg-slate-900 border-2 border-slate-700 max-w-lg w-full max-h-[90vh] flex flex-col overflow-hidden">
+    <div className="fixed inset-0 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 z-50 animate-fade-in">
+      <div className="bg-white border-3 border-black max-w-lg w-full max-h-[90vh] flex flex-col overflow-hidden shadow-[6px_6px_0_0_#000]">
         {/* Header */}
-        <div className="bg-slate-800 text-white p-6 border-b-2 border-slate-700">
+        <div className="bg-[#ffd13b] text-black p-6 border-b-3 border-black">
           <div className="flex justify-between items-center">
-            <h2 className="text-lg sm:text-xl font-bold">Apply for {jobTitle}</h2>
+            <h2 className="text-lg sm:text-xl font-black uppercase tracking-tight">Apply for {jobTitle}</h2>
             <button
               onClick={onClose}
-              className="text-gray-400 hover:text-white text-xl cursor-pointer transition-colors hover:bg-white/5 p-1.5"
+              className="text-black hover:bg-white/30 text-xl cursor-pointer transition-colors p-1 border-2 border-black bg-white shadow-[1px_1px_0_0_#000]"
             >
-              <IoCloseSharp />
+              <IoCloseSharp className="stroke-[2px]" />
             </button>
           </div>
-          <p className="text-gray-300 text-xs mt-1.5">
+          <p className="text-black font-semibold text-xs mt-1.5">
             Fill out the form below to submit your application.
           </p>
         </div>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="p-6 space-y-5 overflow-y-auto">
+        <form onSubmit={handleSubmit} className="p-6 space-y-5 overflow-y-auto bg-white text-black">
           {/* Name */}
           <div className="space-y-1.5">
-            <label className="block text-xs font-semibold text-gray-300">
+            <label className="block text-xs font-black text-black uppercase tracking-wider">
               Name *
             </label>
             <input
@@ -66,14 +66,14 @@ const JobApplicationForm = ({ jobTitle, onClose }) => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full px-4 py-2.5 bg-slate-800 border-2 border-slate-700 text-sm text-white placeholder-gray-600"
+              className="w-full px-4 py-2.5 bg-white border-2 border-black text-sm text-black placeholder-gray-500 font-bold outline-none focus:bg-[#ffd13b]/10 focus:shadow-[2px_2px_0_0_#000] transition-all"
               placeholder="Enter your full name"
             />
           </div>
 
           {/* Contact Number */}
           <div className="space-y-1.5">
-            <label className="block text-xs font-semibold text-gray-300">
+            <label className="block text-xs font-black text-black uppercase tracking-wider">
               Contact No. *
             </label>
             <input
@@ -82,14 +82,14 @@ const JobApplicationForm = ({ jobTitle, onClose }) => {
               value={formData.contactNo}
               onChange={handleChange}
               required
-              className="w-full px-4 py-2.5 bg-slate-800 border-2 border-slate-700 text-sm text-white placeholder-gray-600"
+              className="w-full px-4 py-2.5 bg-white border-2 border-black text-sm text-black placeholder-gray-500 font-bold outline-none focus:bg-[#ffd13b]/10 focus:shadow-[2px_2px_0_0_#000] transition-all"
               placeholder="Enter your contact number"
             />
           </div>
 
           {/* Email */}
           <div className="space-y-1.5">
-            <label className="block text-xs font-semibold text-gray-300">
+            <label className="block text-xs font-black text-black uppercase tracking-wider">
               Email *
             </label>
             <input
@@ -98,7 +98,7 @@ const JobApplicationForm = ({ jobTitle, onClose }) => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-2.5 bg-slate-800 border-2 border-slate-700 text-sm text-white placeholder-gray-600"
+              className="w-full px-4 py-2.5 bg-white border-2 border-black text-sm text-black placeholder-gray-500 font-bold outline-none focus:bg-[#ffd13b]/10 focus:shadow-[2px_2px_0_0_#000] transition-all"
               placeholder="Enter your email address"
             />
           </div>
@@ -106,7 +106,7 @@ const JobApplicationForm = ({ jobTitle, onClose }) => {
           {/* Experience Fields */}
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-1.5">
-              <label className="block text-xs font-semibold text-gray-300">
+              <label className="block text-xs font-black text-black uppercase tracking-wider">
                 Total Exp. (Yrs) *
               </label>
               <input
@@ -115,12 +115,12 @@ const JobApplicationForm = ({ jobTitle, onClose }) => {
                 value={formData.totalExperience}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2.5 bg-slate-800 border-2 border-slate-700 text-sm text-white placeholder-gray-600"
+                className="w-full px-4 py-2.5 bg-white border-2 border-black text-sm text-black placeholder-gray-500 font-bold outline-none focus:bg-[#ffd13b]/10 focus:shadow-[2px_2px_0_0_#000] transition-all"
                 placeholder="e.g., 3 Yrs"
               />
             </div>
             <div className="space-y-1.5">
-              <label className="block text-xs font-semibold text-gray-300">
+              <label className="block text-xs font-black text-black uppercase tracking-wider">
                 Relevant Exp. (Yrs) *
               </label>
               <input
@@ -129,7 +129,7 @@ const JobApplicationForm = ({ jobTitle, onClose }) => {
                 value={formData.relevantExperience}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2.5 bg-slate-800 border-2 border-slate-700 text-sm text-white placeholder-gray-600"
+                className="w-full px-4 py-2.5 bg-white border-2 border-black text-sm text-black placeholder-gray-500 font-bold outline-none focus:bg-[#ffd13b]/10 focus:shadow-[2px_2px_0_0_#000] transition-all"
                 placeholder="e.g., 2 Yrs"
               />
             </div>
@@ -137,7 +137,7 @@ const JobApplicationForm = ({ jobTitle, onClose }) => {
 
           {/* File Upload */}
           <div className="space-y-1.5">
-            <label className="block text-xs font-semibold text-gray-300">
+            <label className="block text-xs font-black text-black uppercase tracking-wider">
               Upload Resume
             </label>
             <div className="flex items-center gap-3">
@@ -149,14 +149,14 @@ const JobApplicationForm = ({ jobTitle, onClose }) => {
                   accept=".pdf,.doc,.docx"
                   className="hidden"
                 />
-                <div className="w-full px-4 py-2.5 bg-slate-800 border-2 border-slate-700 hover:bg-slate-900 transition-all text-gray-300 text-sm font-medium flex items-center gap-2">
-                  <svg className="w-4 h-4 text-Maincolor" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                <div className="w-full px-4 py-2.5 bg-white border-2 border-black hover:bg-[#ffd13b]/20 transition-all text-black text-xs font-black uppercase tracking-wider flex items-center gap-2 shadow-[2px_2px_0_0_#000]">
+                  <svg className="w-4 h-4 text-black stroke-[2.5px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                   </svg>
                   {formData.resume ? formData.resume.name : 'Choose File'}
                 </div>
               </label>
-              <span className="text-xs text-gray-400">
+              <span className="text-xs font-black text-black uppercase">
                 {formData.resume ? 'File chosen' : 'No file chosen'}
               </span>
             </div>
@@ -164,7 +164,7 @@ const JobApplicationForm = ({ jobTitle, onClose }) => {
 
           {/* Cover Letter */}
           <div className="space-y-1.5">
-            <label className="block text-xs font-semibold text-gray-300">
+            <label className="block text-xs font-black text-black uppercase tracking-wider">
               Cover Letter / Key Skills / Portfolio *
             </label>
             <textarea
@@ -173,7 +173,7 @@ const JobApplicationForm = ({ jobTitle, onClose }) => {
               onChange={handleChange}
               required
               rows={3}
-              className="w-full px-4 py-2.5 bg-slate-800 border-2 border-slate-700 text-sm text-white placeholder-gray-600 resize-none"
+              className="w-full px-4 py-2.5 bg-white border-2 border-black text-sm text-black placeholder-gray-500 font-bold outline-none resize-none focus:bg-[#ffd13b]/10 focus:shadow-[2px_2px_0_0_#000] transition-all"
               placeholder="Key skills, portfolio link, etc..."
             />
           </div>
@@ -183,13 +183,13 @@ const JobApplicationForm = ({ jobTitle, onClose }) => {
             <button
               type="button"
               onClick={onClose}
-              className="flex-1 px-4 py-2.5 border-2 border-slate-700 hover:bg-slate-800 text-gray-300 text-sm font-semibold transition-all cursor-pointer"
+              className="flex-1 px-4 py-2.5 bg-white border-2 border-black text-black text-xs font-black uppercase shadow-[2px_2px_0_0_#000] hover:bg-[#ff4a77] hover:-translate-x-[1px] hover:-translate-y-[1px] active:translate-x-0 active:translate-y-0 active:shadow-[1px_1px_0_0_#000] transition-all cursor-pointer text-center"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="flex-1 px-4 py-2.5 bg-Maincolor hover:bg-Secondcolor text-white text-sm font-semibold transition-all cursor-pointer"
+              className="flex-1 px-4 py-2.5 bg-Maincolor text-black border-2 border-black text-xs font-black uppercase shadow-[2px_2px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:-translate-x-[1px] hover:-translate-y-[1px] active:translate-x-0 active:translate-y-0 active:shadow-[1px_1px_0_0_#000] transition-all cursor-pointer text-center"
             >
               Send Application
             </button>

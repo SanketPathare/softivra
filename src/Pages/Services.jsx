@@ -49,8 +49,6 @@ const Services = () => {
         "Web Design Consultation",
         "Website Maintenance & Updates",
       ],
-      gradient: "from-blue-600 to-purple-600",
-      bgColor: "bg-gradient-to-br from-blue-50 to-purple-50",
     },
     {
       id: "web-development",
@@ -74,8 +72,6 @@ const Services = () => {
         "Progressive Web Apps",
         "Performance Optimization",
       ],
-      gradient: "from-green-600 to-teal-600",
-      bgColor: "bg-gradient-to-br from-green-50 to-teal-50",
     },
     {
       id: "custom-software",
@@ -99,8 +95,6 @@ const Services = () => {
         "API Development",
         "Database Management Systems",
       ],
-      gradient: "from-purple-600 to-pink-600",
-      bgColor: "bg-gradient-to-br from-purple-50 to-pink-50",
     },
     {
       id: "logo-branding",
@@ -124,8 +118,6 @@ const Services = () => {
         "Typography Design",
         "Color Palette Development",
       ],
-      gradient: "from-orange-600 to-red-600",
-      bgColor: "bg-gradient-to-br from-orange-50 to-red-50",
     },
     {
       id: "graphic-design",
@@ -149,8 +141,6 @@ const Services = () => {
         "Infographic Design",
         "Presentation Design",
       ],
-      gradient: "from-indigo-600 to-blue-600",
-      bgColor: "bg-gradient-to-br from-indigo-50 to-blue-50",
     },
     {
       id: "digital-marketing",
@@ -174,8 +164,6 @@ const Services = () => {
         "Marketing Automation",
         "Digital Strategy Consulting",
       ],
-      gradient: "from-cyan-600 to-blue-600",
-      bgColor: "bg-gradient-to-br from-cyan-50 to-blue-50",
     },
     {
       id: "miscellaneous",
@@ -199,9 +187,14 @@ const Services = () => {
         "Training and Documentation",
         "Technical Support Services",
       ],
-      gradient: "from-gray-600 to-slate-600",
-      bgColor: "bg-gradient-to-br from-gray-50 to-slate-50",
     },
+  ];
+
+  const accentColors = [
+    "bg-[#ffd13b]", // Yellow
+    "bg-[#00b8a9]", // Teal
+    "bg-[#ff4a77]", // Pink
+    "bg-[#2563eb]", // Blue
   ];
 
   const serviceVariants = {
@@ -210,9 +203,9 @@ const Services = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900 pb-16">
+    <div className="min-h-screen bg-[#faf6ee] pb-16">
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-slate-800 border-b-2 border-slate-700">
+      <section className="relative overflow-hidden py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white border-b-4 border-black">
         <div className="relative max-w-7xl mx-auto text-center">
           <motion.div
             id="hero"
@@ -220,10 +213,10 @@ const Services = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-2">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-black mb-4 uppercase tracking-tight">
               Our Services
             </h1>
-            <p className="text-transparent bg-clip-text bg-gradient-to-r from-Maincolor to-Secondcolor font-semibold text-sm sm:text-base max-w-lg mx-auto">
+            <p className="font-bold text-xs sm:text-sm max-w-lg mx-auto text-black border-2 border-black bg-[#ffd13b] px-4 py-2 inline-block shadow-[3px_3px_0px_0px_#000] tracking-wider uppercase">
               Explore how Softivra helps you build, scale, and thrive online.
             </p>
           </motion.div>
@@ -241,44 +234,46 @@ const Services = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.15 }}
-              className="bg-slate-900 border-2 border-slate-700 p-6 sm:p-8 hover:border-Maincolor transition-all duration-500"
+              className="bg-white border-3 border-black p-6 sm:p-8 shadow-[4px_4px_0_0_#000] hover:shadow-[8px_8px_0_0_#000] hover:-translate-x-1 hover:-translate-y-1 transition-all duration-200"
             >
               {/* Service Row */}
               <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
                 {/* Image Section - always on top on mobile */}
                 <div className={`w-full lg:w-1/2 flex justify-center ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                  <img
-                    src={service.image}
-                    alt={`${service.title} illustration`}
-                    className="w-full max-w-[260px] sm:max-w-[300px] md:max-w-[340px] h-auto object-contain"
-                  />
+                  <div className={`p-6 border-3 border-black shadow-[4px_4px_0_0_#000] transition-all duration-350 ${accentColors[index % accentColors.length]}`}>
+                    <img
+                      src={service.image}
+                      alt={`${service.title} illustration`}
+                      className="w-full max-w-[220px] sm:max-w-[260px] md:max-w-[300px] h-auto object-contain grayscale contrast-125 hover:grayscale-0 transition-all duration-300"
+                    />
+                  </div>
                 </div>
 
                 {/* Content Section */}
                 <div className={`w-full lg:w-1/2 space-y-4 text-center lg:text-left ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                  <h3 className="text-xl sm:text-2xl font-bold text-white">
+                  <h3 className="text-xl sm:text-2xl font-black text-black uppercase tracking-wide border-b-2 border-black pb-2 inline-block">
                     {service.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-gray-200 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-black font-bold leading-relaxed">
                     {service.description}
                   </p>
-                  <p className="text-xs text-gray-400 leading-relaxed font-light">
+                  <p className="text-xs text-black/75 leading-relaxed font-semibold">
                     {service.detailText}
                   </p>
                 </div>
               </div>
 
               {/* Feature Tags */}
-              <div className="mt-8 border-t-2 border-slate-700 pt-6">
+              <div className="mt-8 border-t-3 border-black pt-6">
                 <div className="flex flex-wrap justify-center lg:justify-start gap-2 max-w-4xl">
                   {service.features.map((feature, featureIndex) => (
                     <motion.div
                       key={featureIndex}
-                      className="flex items-center bg-slate-800 text-white px-3 py-1.5 border-2 border-slate-700 hover:border-Maincolor transition-all duration-300"
-                      whileHover={{ scale: 1.04 }}
+                      className="flex items-center bg-white text-black px-3 py-1.5 border-2 border-black font-bold shadow-[2px_2px_0px_0px_#000] hover:bg-Maincolor hover:-translate-x-[1px] hover:-translate-y-[1px] transition-all cursor-default"
+                      whileHover={{ scale: 1.02 }}
                     >
                       <svg
-                        className="w-3.5 h-3.5 text-Maincolor mr-1.5 flex-shrink-0"
+                        className="w-3.5 h-3.5 text-black mr-1.5 flex-shrink-0"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -287,11 +282,11 @@ const Services = () => {
                         <path
                           strokeLinecap="round"
                           strokeLinejoin="round"
-                          strokeWidth="2.5"
+                          strokeWidth="3.5"
                           d="M5 13l4 4L19 7"
                         />
                       </svg>
-                      <span className="text-[10px] sm:text-xs font-medium text-gray-200">
+                      <span className="text-[10px] sm:text-xs tracking-wider uppercase font-black">
                         {feature}
                       </span>
                     </motion.div>

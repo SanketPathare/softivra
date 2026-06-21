@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 
 const BlogPage = () => {
   return (
-    <div className="min-h-screen bg-slate-900 text-white pb-16">
+    <div className="min-h-screen bg-[#faf6ee] pb-16">
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8 bg-slate-800 border-b-2 border-slate-700">
+      <section className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8 bg-white border-b-4 border-black text-black">
         <div className="relative max-w-7xl mx-auto text-center">
           <motion.div
             id="hero"
@@ -14,10 +14,10 @@ const BlogPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-black mb-4 uppercase tracking-tight">
               Blogs
             </h1>
-            <p className="text-gray-300 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+            <p className="text-black text-xs sm:text-sm font-bold max-w-xl mx-auto leading-relaxed">
               Read Softivra's latest insights and thoughts.
             </p>
           </motion.div>
@@ -37,10 +37,10 @@ const BlogPage = () => {
           transition={{ delay: 0.3, duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-2xl sm:text-3xl font-bold mb-3">
+          <h2 className="text-2xl sm:text-3xl font-black mb-3 text-black uppercase tracking-tight">
             Discover more insights!
           </h2>
-          <p className="text-center max-w-2xl mx-auto text-sm sm:text-base text-gray-400 leading-relaxed">
+          <p className="text-center max-w-2xl mx-auto text-xs sm:text-sm text-black font-bold leading-relaxed">
             Dive into our collection of insightful blogs covering a range of
             topics, from industry trends to expert tips. Discover valuable
             information, stay updated, and expand your knowledge.
@@ -54,30 +54,29 @@ const BlogPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 * index, duration: 0.5 }}
-              whileHover={{ y: -8 }}
-              className="group bg-slate-900 border-2 border-slate-700 overflow-hidden hover:border-Maincolor transition-all duration-500 flex flex-col"
+              className="group bg-white border-3 border-black overflow-hidden shadow-[4px_4px_0_0_#000] hover:shadow-[8px_8px_0_0_#000] hover:-translate-x-1 hover:-translate-y-1 transition-all duration-200 flex flex-col"
             >
-              <div className="relative overflow-hidden">
+              <div className="relative overflow-hidden border-b-3 border-black bg-[#ffd13b]">
                 <img
                   src={post.image}
                   alt={post.title}
-                  className="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-48 object-cover transition-all duration-500 grayscale contrast-125 hover:grayscale-0 group-hover:scale-105"
                 />
               </div>
               <div className="p-6 flex flex-col flex-1">
-                <span className="inline-block w-fit px-3 py-1 text-[10px] uppercase font-bold tracking-wider bg-Maincolor text-white mb-3">
+                <span className="inline-block w-fit px-2 py-0.5 text-[9px] uppercase font-black tracking-wider bg-[#ff4a77] text-black mb-3 border border-black shadow-[1px_1px_0px_0px_#000]">
                   {post.category}
                 </span>
-                <h3 className="text-sm sm:text-base font-bold mb-3 line-clamp-2 text-white group-hover:text-Maincolor transition-colors duration-300">
+                <h3 className="text-sm sm:text-base font-black mb-3 line-clamp-2 text-black uppercase tracking-tight leading-snug">
                   {post.title}
                 </h3>
                 <div className="mt-auto pt-3">
                   <Link
                     to={`/blog/${post.slug}`}
-                    className="inline-flex items-center gap-1.5 text-Maincolor hover:text-Secondcolor text-xs font-semibold transition-all duration-300 group/link"
+                    className="inline-flex items-center gap-1.5 bg-white text-black border-2 border-black px-3 py-1.5 text-xs font-black shadow-[2px_2px_0px_0px_#000] hover:bg-Maincolor transition-all"
                   >
                     <span>Read More</span>
-                    <span className="transform transition-transform duration-300 group-hover/link:translate-x-1">&rarr;</span>
+                    <span className="transform transition-transform duration-300 group-hover:translate-x-1 font-bold">&rarr;</span>
                   </Link>
                 </div>
               </div>

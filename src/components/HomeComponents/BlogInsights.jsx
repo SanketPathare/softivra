@@ -34,7 +34,7 @@ const BlogInsights = () => {
   };
 
   return (
-    <div className="bg-slate-900 text-white border-t-2 border-slate-700">
+    <div className="bg-slate-900 text-black border-b-4 border-black">
       <div className="container mx-auto px-4 py-16">
         <motion.div
           variants={containerVariants}
@@ -43,30 +43,35 @@ const BlogInsights = () => {
           viewport={{ once: true, margin: "-100px" }}
           className="max-w-7xl mx-auto"
         >
-          <div className="flex justify-center items-center mb-12">
+          {/* Header */}
+          <div className="flex justify-center items-center mb-16">
             <motion.div variants={itemVariants} className="space-y-4 text-center">
+              <div className="inline-block px-3 py-1 border-2 border-black bg-Secondcolor text-white font-black text-[9px] uppercase tracking-widest shadow-[2px_2px_0px_0px_#000]">
+                OUR WRITINGS
+              </div>
               <motion.h2
-                className="text-3xl sm:text-4xl font-black leading-tight tracking-tight"
+                className="text-3xl sm:text-5xl font-black leading-none tracking-tighter uppercase"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
                 Discover More{" "}
-                <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Insights</span>
+                <span className="inline-block px-3 py-1 bg-Maincolor border-3 border-black text-black shadow-[4px_4px_0_0_#000] rotate-[1deg]">Insights</span>
               </motion.h2>
 
               <motion.p
-                className="text-xs sm:text-sm text-gray-500 leading-relaxed max-w-xl mx-auto font-light"
+                className="text-gray-500 text-xs sm:text-sm leading-relaxed max-w-xl mx-auto font-bold uppercase tracking-wide"
                 variants={itemVariants}
               >
-                Dive into our collection of insightful blogs covering a range of topics, from industry trends to expert tips. Discover valuable information, stay updated, and expand your knowledge.
+                Dive into our collection of insightful blogs covering industry trends and expert tips to expand your knowledge.
               </motion.p>
             </motion.div>
           </div>
 
+          {/* Cards Grid */}
           <motion.div
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
             variants={containerVariants}
           >
             {blogData.slice(0, 3).map((post) => (
@@ -76,32 +81,32 @@ const BlogInsights = () => {
                 whileHover="hover"
                 className="group"
               >
-                <div className="bg-slate-900 border-2 border-slate-700 overflow-hidden transition-all duration-300 p-5">
-                  <div className="h-44 overflow-hidden relative">
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="bg-white border-3 border-black rounded-none overflow-hidden shadow-[4px_4px_0px_0px_#000] hover:shadow-[8px_8px_0px_0px_#000] hover:-translate-x-[2px] hover:-translate-y-[2px] transition-all duration-200 p-5">
+                  {/* Grayscaled Card Image */}
+                  <div className="h-44 border-2 border-black overflow-hidden relative">
                     <img
                       src={post.image}
                       alt={post.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-cover grayscale contrast-[1.3] brightness-[0.9] group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
 
                   <div className="pt-4">
-                    <span className="inline-block px-3 py-1 text-[10px] uppercase font-bold tracking-widest bg-blue-900 text-blue-400 border-2 border-blue-500/20">
+                    <span className="inline-block px-3 py-1 rounded-none text-[9px] uppercase font-black tracking-widest bg-teal-accent text-black border-2 border-black shadow-[2px_2px_0px_0px_#000]">
                       {post.category}
                     </span>
                   </div>
 
-                  <div className="mt-4 space-y-3">
-                    <h3 className="text-base font-bold text-white leading-snug line-clamp-2 group-hover:text-blue-400 transition-colors">
+                  <div className="mt-4 space-y-4">
+                    <h3 className="text-base sm:text-lg font-black text-black leading-snug line-clamp-2 uppercase tracking-wide group-hover:text-Secondcolor transition-colors duration-150">
                       {post.title}
                     </h3>
                     <Link
                       to={`/blog/${post.slug}`}
-                      className="inline-flex items-center gap-1.5 text-blue-400 text-xs font-bold uppercase tracking-wider hover:text-blue-300 transition-colors group/link cursor-pointer"
+                      className="inline-flex items-center gap-1.5 text-black text-xs font-black uppercase tracking-widest border-b-2 border-black hover:border-transparent transition-all cursor-pointer"
                     >
                       Learn More
-                      <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform duration-300" />
+                      <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
                 </div>
@@ -109,10 +114,11 @@ const BlogInsights = () => {
             ))}
           </motion.div>
 
-          <motion.div variants={itemVariants} className="text-center mt-12">
+          {/* Bottom Button */}
+          <motion.div variants={itemVariants} className="text-center mt-14">
             <Link to="/blogs">
               <motion.button
-                className="bg-blue-900 border-2 border-blue-500/30 hover:border-blue-500/50 px-6 py-2.5 font-bold text-xs uppercase tracking-widest text-white transition-all duration-300 cursor-pointer"
+                className="bg-white border-3 border-black px-6 py-3 font-black text-xs uppercase tracking-widest text-black hover:bg-black hover:text-white transition-all shadow-[4px_4px_0px_0px_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0px_0px_#000] cursor-pointer"
                 whileTap={{ scale: 0.97 }}
               >
                 Explore all blogs

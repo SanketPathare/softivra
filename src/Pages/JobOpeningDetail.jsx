@@ -12,13 +12,13 @@ const JobOpeningDetail = () => {
 
   if (!jobData) {
     return (
-      <div className="min-h-screen bg-slate-900 flex items-center justify-center px-4">
-        <div className="text-center space-y-4">
-          <h1 className="text-xl sm:text-2xl font-bold text-gray-100">Job Not Found</h1>
-          <p className="text-xs sm:text-sm text-gray-300">The job you're looking for doesn't exist.</p>
+      <div className="min-h-screen bg-[#faf6ee] flex items-center justify-center px-4">
+        <div className="text-center space-y-4 bg-white border-3 border-black p-8 shadow-[4px_4px_0_0_#000]">
+          <h1 className="text-xl sm:text-2xl font-black text-black uppercase tracking-tight">Job Not Found</h1>
+          <p className="text-xs sm:text-sm text-black/80 font-semibold">The job you're looking for doesn't exist.</p>
           <Link
             to="/job-openings"
-            className="inline-block bg-Maincolor text-white px-4 py-2 text-xs font-semibold hover:bg-Secondcolor transition-colors"
+            className="inline-block bg-[#ffd13b] text-black border-2 border-black px-4 py-2 text-xs font-black shadow-[2px_2px_0px_0px_#000] hover:bg-Maincolor hover:-translate-x-[1px] hover:-translate-y-[1px] transition-all uppercase tracking-wider"
           >
             Back to Job Openings
           </Link>
@@ -29,12 +29,12 @@ const JobOpeningDetail = () => {
 
   return (
     <>
-      <div className="min-h-screen bg-slate-900 pb-16">
+      <div className="min-h-screen bg-[#faf6ee] pb-16">
         {/* Hero Section */}
-        <section className="bg-slate-800 text-white py-20 px-4 border-b-2 border-slate-700">
+        <section className="bg-white text-black py-20 px-4 border-b-4 border-black">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">Current Opening</h1>
-            <p className="text-sm sm:text-base text-gray-300 max-w-2xl mx-auto leading-relaxed">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-4 uppercase tracking-tight">Current Opening</h1>
+            <p className="text-xs sm:text-sm text-black font-bold max-w-2xl mx-auto leading-relaxed">
               Join our team and be part of an innovative environment where your skills make a real impact.
             </p>
           </div>
@@ -42,21 +42,21 @@ const JobOpeningDetail = () => {
 
         {/* Main Content */}
         <div className="max-w-4xl mx-auto px-4 mt-8">
-          <div className="bg-slate-900 border-2 border-slate-700 overflow-hidden">
+          <div className="bg-white border-3 border-black shadow-[4px_4px_0_0_#000] overflow-hidden">
             {/* Job Header */}
-            <div className="bg-slate-800 text-white p-8 border-b-2 border-slate-700">
+            <div className="bg-[#00b8a9] text-black p-8 border-b-3 border-black">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <div>
-                  <h1 className="text-xl sm:text-2xl font-bold mb-1">{jobData.title}</h1>
-                  <p className="text-sm sm:text-base text-gray-300 mb-3">{jobData.position}</p>
+                  <h1 className="text-xl sm:text-2xl font-black mb-1 uppercase tracking-tight">{jobData.title}</h1>
+                  <p className="text-xs sm:text-sm text-black font-bold mb-3 uppercase tracking-wider">{jobData.position}</p>
                   <div className="flex flex-wrap gap-2">
-                    <span className="inline-flex items-center px-3 py-1 text-[10px] font-bold bg-Maincolor text-white border-2 border-Maincolor">
+                    <span className="inline-flex items-center px-3 py-1 text-[9px] font-black bg-[#ff4a77] text-black border-2 border-black shadow-[1px_1px_0_0_#000] uppercase tracking-wider">
                       {jobData.department}
                     </span>
-                    <span className="inline-flex items-center px-3 py-1 text-[10px] font-bold bg-slate-900 text-gray-300 border-2 border-slate-700">
+                    <span className="inline-flex items-center px-3 py-1 text-[9px] font-black bg-white text-black border-2 border-black shadow-[1px_1px_0_0_#000] uppercase tracking-wider">
                       {jobData.experience}
                     </span>
-                    <span className="inline-flex items-center px-3 py-1 text-[10px] font-bold bg-slate-900 text-gray-300 border-2 border-slate-700">
+                    <span className="inline-flex items-center px-3 py-1 text-[9px] font-black bg-white text-black border-2 border-black shadow-[1px_1px_0_0_#000] uppercase tracking-wider">
                       {jobData.location}
                     </span>
                   </div>
@@ -64,26 +64,26 @@ const JobOpeningDetail = () => {
                 <div className="sm:text-right flex flex-col gap-2">
                   <button 
                     onClick={() => setShowApplicationForm(true)}
-                    className="bg-Maincolor hover:bg-Secondcolor text-white px-6 py-2.5 font-semibold text-sm transition-all duration-300 cursor-pointer w-fit sm:ml-auto"
+                    className="bg-[#ffd13b] text-black border-2 border-black shadow-[2px_2px_0px_0px_#000] hover:bg-Maincolor hover:-translate-x-[1px] hover:-translate-y-[1px] active:translate-x-0 active:translate-y-0 active:shadow-[1px_1px_0px_0px_#000] px-6 py-2.5 font-black text-xs transition-all cursor-pointer w-fit sm:ml-auto uppercase tracking-wider"
                   >
                     Apply Now
                   </button>
-                  <p className="text-gray-400 text-[10px]">Joining: {jobData.joining}</p>
+                  <p className="text-black font-semibold text-[10px] uppercase tracking-wider">Joining: {jobData.joining}</p>
                 </div>
               </div>
             </div>
 
             {/* Tab Navigation */}
-            <div className="border-b-2 border-slate-700 bg-slate-800">
+            <div className="border-b-3 border-black bg-white">
               <div className="px-8">
                 <nav className="flex gap-8">
                   {['details', 'process', 'requirements'].map((tab) => (
                     <button
                       key={tab}
-                      className={`py-4 px-1 border-b-2 font-semibold text-sm capitalize cursor-pointer transition-all duration-300 ${
+                      className={`py-4 px-1 border-b-4 font-black text-xs uppercase tracking-wider cursor-pointer transition-all duration-300 ${
                         activeTab === tab
-                          ? 'border-Maincolor text-Maincolor'
-                          : 'border-transparent text-gray-400 hover:text-gray-200'
+                          ? 'border-black text-black'
+                          : 'border-transparent text-black/60 hover:text-black hover:border-black/30'
                       }`}
                       onClick={() => setActiveTab(tab)}
                     >
@@ -95,25 +95,25 @@ const JobOpeningDetail = () => {
             </div>
 
             {/* Tab Content */}
-            <div className="p-8">
+            <div className="p-8 bg-white text-black">
               {activeTab === 'details' && (
                 <div className="space-y-8">
                   <section className="space-y-3">
-                    <h2 className="text-sm font-bold text-white uppercase tracking-wider">Job Summary</h2>
-                    <div className="bg-slate-800 border-2 border-slate-700 p-5">
-                      <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+                    <h2 className="text-xs font-black text-black uppercase tracking-wider">Job Summary</h2>
+                    <div className="bg-[#faf6ee] border-2 border-black p-5 shadow-[2px_2px_0_0_#000]">
+                      <p className="text-black text-xs sm:text-sm font-semibold leading-relaxed">
                         {jobData.description}
                       </p>
                     </div>
                   </section>
                   
                   <section className="space-y-3">
-                    <h2 className="text-sm font-bold text-white uppercase tracking-wider">Key Responsibilities</h2>
-                    <div className="bg-slate-800 border-2 border-slate-700 p-5">
-                      <ul className="space-y-3 text-gray-300 text-sm sm:text-base">
+                    <h2 className="text-xs font-black text-black uppercase tracking-wider">Key Responsibilities</h2>
+                    <div className="bg-[#faf6ee] border-2 border-black p-5 shadow-[2px_2px_0_0_#000]">
+                      <ul className="space-y-3 text-black text-xs sm:text-sm font-semibold">
                         {jobData.responsibilities.map((responsibility, index) => (
                           <li key={index} className="flex items-start">
-                            <span className="text-Maincolor mr-3 mt-0.5">•</span>
+                            <span className="text-black font-black mr-3 mt-0.5">•</span>
                             {responsibility}
                           </li>
                         ))}
@@ -125,24 +125,24 @@ const JobOpeningDetail = () => {
 
               {activeTab === 'process' && (
                 <div className="space-y-8">
-                  <h2 className="text-sm font-bold text-white uppercase tracking-wider mb-2">Hiring Process</h2>
+                  <h2 className="text-xs font-black text-black uppercase tracking-wider mb-2">Hiring Process</h2>
                   <div className="space-y-6">
                     {hiringProcess.map((step) => (
                       <div key={step.step} className="flex items-start space-x-4">
                         <div className="flex-shrink-0">
-                          <div className="w-9 h-9 bg-Maincolor text-white flex items-center justify-center font-bold text-sm">
+                          <div className="w-9 h-9 bg-[#ffd13b] border-2 border-black text-black flex items-center justify-center font-black text-sm shadow-[2px_2px_0px_0px_#000]">
                             {step.step}
                           </div>
                         </div>
                         <div className="flex-1 space-y-1.5">
-                          <h3 className="text-sm sm:text-base font-bold text-white">{step.title}</h3>
-                          <p className="text-gray-400 text-sm leading-relaxed">{step.description}</p>
+                          <h3 className="text-sm sm:text-base font-black text-black uppercase tracking-wider">{step.title}</h3>
+                          <p className="text-black/85 text-xs sm:text-sm font-semibold leading-relaxed">{step.description}</p>
                         </div>
                       </div>
                     ))}
                   </div>
-                  <div className="bg-slate-800 border-2 border-Maincolor p-5">
-                    <p className="text-Maincolor text-sm font-semibold">
+                  <div className="bg-[#00b8a9] border-2 border-black p-5 shadow-[2px_2px_0_0_#000]">
+                    <p className="text-black text-xs sm:text-sm font-black uppercase tracking-wider">
                       Note: Joining Required: {jobData.joining.toLowerCase()}
                     </p>
                   </div>
@@ -152,12 +152,12 @@ const JobOpeningDetail = () => {
               {activeTab === 'requirements' && (
                 <div className="space-y-8">
                   <section className="space-y-3">
-                    <h2 className="text-sm font-bold text-white uppercase tracking-wider">Required Skills</h2>
-                    <div className="bg-slate-800 border-2 border-slate-700 p-5">
-                      <ul className="space-y-3 text-gray-300 text-sm sm:text-base">
+                    <h2 className="text-xs font-black text-black uppercase tracking-wider">Required Skills</h2>
+                    <div className="bg-[#faf6ee] border-2 border-black p-5 shadow-[2px_2px_0_0_#000]">
+                      <ul className="space-y-3 text-black text-xs sm:text-sm font-semibold">
                         {jobData.requiredSkills.map((skill, index) => (
                           <li key={index} className="flex items-start">
-                            <span className="text-Maincolor mr-3 mt-0.5">•</span>
+                            <span className="text-black font-black mr-3 mt-0.5">•</span>
                             {skill}
                           </li>
                         ))}
@@ -166,12 +166,12 @@ const JobOpeningDetail = () => {
                   </section>
                   
                   <section className="space-y-3">
-                    <h2 className="text-sm font-bold text-white uppercase tracking-wider">Nice to Have</h2>
-                    <div className="bg-slate-800 border-2 border-slate-700 p-5">
-                      <ul className="space-y-3 text-gray-300 text-sm sm:text-base">
+                    <h2 className="text-xs font-black text-black uppercase tracking-wider">Nice to Have</h2>
+                    <div className="bg-[#faf6ee] border-2 border-black p-5 shadow-[2px_2px_0_0_#000]">
+                      <ul className="space-y-3 text-black text-xs sm:text-sm font-semibold">
                         {jobData.niceToHave.map((skill, index) => (
                           <li key={index} className="flex items-start">
-                            <span className="text-green-400 mr-3 mt-0.5">•</span>
+                            <span className="text-black font-black mr-3 mt-0.5">•</span>
                             {skill}
                           </li>
                         ))}
@@ -183,14 +183,14 @@ const JobOpeningDetail = () => {
             </div>
 
             {/* Apply Now Section */}
-            <div className="bg-slate-800 border-t-2 border-slate-700 p-8 text-center space-y-4">
-              <h3 className="text-xl font-bold text-white">Ready to Join Our Team?</h3>
-              <p className="text-gray-300 text-sm leading-relaxed max-w-lg mx-auto">
+            <div className="bg-[#ff4a77] border-t-3 border-black p-8 text-center space-y-4 shadow-inner">
+              <h3 className="text-xl font-black text-black uppercase tracking-tight">Ready to Join Our Team?</h3>
+              <p className="text-black text-xs sm:text-sm font-bold leading-relaxed max-w-lg mx-auto">
                 Take the next step in your career journey. Apply now and become part of our innovative team where your skills will be valued and your growth supported.
               </p>
               <button 
                 onClick={() => setShowApplicationForm(true)}
-                className="bg-Maincolor hover:bg-Secondcolor text-white px-8 py-3 font-semibold text-sm cursor-pointer transition-all"
+                className="bg-[#ffd13b] text-black font-black py-3 px-8 text-xs cursor-pointer border-2 border-black shadow-[3px_3px_0px_0px_#000] hover:shadow-[5px_5px_0px_0px_#000] hover:-translate-x-[2px] hover:-translate-y-[2px] active:translate-x-0 active:translate-y-0 uppercase tracking-widest transition-all"
               >
                 Apply Now
               </button>

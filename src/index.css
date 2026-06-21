@@ -1,34 +1,35 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
 
 :root {
-  --bg-primary: #030712;
-  --bg-secondary: #0b0f19;
-  --bg-tertiary: #111827;
-  --bg-card: #1f2937;
-  --accent: #007aff;
-  --accent-hover: #0056b3;
-  --text-primary: #f9fafb;
-  --text-secondary: #d1d5db;
-  --text-muted: #9ca3af;
-  --border: #1f2937;
-  --border-light: #374151;
+  --bg-primary: #faf6ee;
+  --bg-secondary: #faf6ee;
+  --bg-tertiary: #faf6ee;
+  --bg-card: #ffffff;
+  --accent: #ffd13b;
+  --accent-hover: #ff4a77;
+  --text-primary: #000000;
+  --text-secondary: #1f2937;
+  --text-muted: #4b5563;
+  --border: #000000;
 }
 
 @theme {
-  --font-family-biscotti: "Bricolage Grotesque", sans-serif;
-  --color-slate-950: #030712;
-  --color-slate-900: #0b0f19;
-  --color-slate-800: #111827;
-  --color-slate-700: #1f2937;
-  --color-Maincolor: #007aff;
-  --color-Secondcolor: #0056b3;
-  --color-blue-500: #007aff;
-  --color-blue-600: #0056b3;
-  --color-blue-400: #3b82f6;
-  --color-blue-200: #93c5fd;
-  --color-blue-950: #001f3f;
-  --color-blue-100: #e6f2ff;
+  --color-slate-950: #faf6ee; /* Warm cream background */
+  --color-slate-900: #faf6ee; /* Warm cream background */
+  --color-slate-800: #faf6ee; /* Warm cream background */
+  --color-slate-700: #000000; /* Solid Black */
+  
+  --color-Maincolor: #ffd13b; /* Vibrant Yellow */
+  --color-Secondcolor: #ff4a77; /* Saturated Pink */
+  --color-teal-accent: #00b8a9; /* Saturated Teal */
+  --color-blue-accent: #2563eb; /* Saturated Blue */
+  
+  /* Remap text colors so they display in high-contrast black/charcoal on cream */
+  --color-gray-400: #27272a;
+  --color-gray-300: #18181b;
+  --color-gray-200: #09090b;
+  --color-gray-500: #3f3f46;
+  
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
@@ -38,34 +39,86 @@
   --font-size-3xl: 1.875rem;
   --font-size-4xl: 2.25rem;
   --font-size-5xl: 3rem;
+  --radius-7xl: 0px; /* Brutalist sharp corners */
+  --radius-card: 0px;
 }
 
 body {
-  background-color: #030712;
-  color: #f9fafb;
+  background-color: #faf6ee;
+  color: #000000;
   margin: 0;
   padding: 0;
-  font-family: "Bricolage Grotesque", sans-serif;
 }
 
 ::selection {
-  background-color: #007aff;
-  color: #ffffff;
+  background-color: #ffd13b;
+  color: #000000;
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0b0f19;
+  background: #faf6ee;
+  border-left: 3px solid #000000;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #007aff;
+  background: #ff4a77;
+  border: 3px solid #000000;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #0056b3;
+  background: #ffd13b;
+}
+
+/* Custom Brutalist Utilities */
+.brutalist-border {
+  border: 3px solid #000000;
+}
+
+.brutalist-border-sm {
+  border: 2px solid #000000;
+}
+
+.brutalist-shadow-sm {
+  box-shadow: 3px 3px 0px 0px #000000;
+}
+
+.brutalist-shadow {
+  box-shadow: 6px 6px 0px 0px #000000;
+}
+
+.brutalist-shadow-lg {
+  box-shadow: 10px 10px 0px 0px #000000;
+}
+
+/* Mechanical Click Button Motion */
+.brutalist-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #000000;
+  background-color: #ffd13b;
+  color: #000000;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.75rem 1.5rem;
+  box-shadow: 4px 4px 0px 0px #000000;
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+}
+
+.brutalist-btn:hover {
+  background-color: #ff4a77;
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px #000000;
+}
+
+.brutalist-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px #000000;
 }

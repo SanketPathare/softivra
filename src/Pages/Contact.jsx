@@ -50,9 +50,9 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900 pb-16">
+    <div className="min-h-screen bg-[#faf6ee] pb-16">
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-slate-800 border-b-2 border-slate-700">
+      <section className="relative overflow-hidden py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white border-b-4 border-black">
         <div className="relative max-w-7xl mx-auto text-center">
           <motion.div
             id="hero"
@@ -60,10 +60,10 @@ const Contact = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-white mb-3">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-center text-black mb-4 uppercase tracking-tight">
               Contact Us
             </h1>
-            <p className="text-transparent bg-clip-text bg-gradient-to-r from-Maincolor to-Secondcolor font-semibold text-sm sm:text-base max-w-lg mx-auto">
+            <p className="font-bold text-xs sm:text-sm max-w-lg mx-auto text-black border-2 border-black bg-[#ffd13b] px-4 py-2 inline-block shadow-[3px_3px_0px_0px_#000] uppercase tracking-wider">
               Get in touch with the Softivra team for solutions and support.
             </p>
           </motion.div>
@@ -82,18 +82,18 @@ const Contact = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             {/* Contact Form */}
             <motion.div
-              className="bg-slate-900 border-2 border-slate-700 p-5 sm:p-6 lg:p-8"
+              className="bg-white border-3 border-black p-5 sm:p-6 lg:p-8 shadow-[4px_4px_0_0_#000]"
               variants={staggerContainer}
             >
               <motion.h2
-                className="text-lg sm:text-xl font-bold text-white mb-5"
+                className="text-lg sm:text-xl font-black text-black mb-5 uppercase tracking-tight"
                 variants={fadeInUp}
               >
-                Send Us a <span className="text-Maincolor">Message</span>
+                Send Us a <span className="bg-[#ffd13b] border-2 border-black px-1.5 shadow-[1px_1px_0_0_#000] inline-block">Message</span>
               </motion.h2>
               <form onSubmit={handleSubmit} className="space-y-5">
                 <motion.div variants={fadeInUp} className="space-y-1.5">
-                  <label htmlFor="name" className="block text-xs font-semibold text-gray-400">
+                  <label htmlFor="name" className="block text-xs font-black text-black uppercase tracking-wider">
                     Name *
                   </label>
                   <input
@@ -103,13 +103,13 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-slate-800 border-2 border-slate-700 text-white placeholder-gray-500 text-sm outline-none"
+                    className="w-full px-4 py-3 bg-white border-2 border-black text-black placeholder-gray-500 text-sm font-bold outline-none focus:bg-[#ffd13b]/10 focus:shadow-[2px_2px_0px_0px_#000] transition-all"
                     placeholder="Your name"
                   />
                 </motion.div>
 
                 <motion.div variants={fadeInUp} className="space-y-1.5">
-                  <label htmlFor="email" className="block text-xs font-semibold text-gray-400">
+                  <label htmlFor="email" className="block text-xs font-black text-black uppercase tracking-wider">
                     Email *
                   </label>
                   <input
@@ -119,13 +119,13 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-slate-800 border-2 border-slate-700 text-white placeholder-gray-500 text-sm outline-none"
+                    className="w-full px-4 py-3 bg-white border-2 border-black text-black placeholder-gray-500 text-sm font-bold outline-none focus:bg-[#ffd13b]/10 focus:shadow-[2px_2px_0px_0px_#000] transition-all"
                     placeholder="Your email address"
                   />
                 </motion.div>
 
                 <motion.div variants={fadeInUp} className="space-y-1.5">
-                  <label htmlFor="contactNo" className="block text-xs font-semibold text-gray-400">
+                  <label htmlFor="contactNo" className="block text-xs font-black text-black uppercase tracking-wider">
                     Contact No. *
                   </label>
                   <input
@@ -135,13 +135,13 @@ const Contact = () => {
                     value={formData.contactNo}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-slate-800 border-2 border-slate-700 text-white placeholder-gray-500 text-sm outline-none"
+                    className="w-full px-4 py-3 bg-white border-2 border-black text-black placeholder-gray-500 text-sm font-bold outline-none focus:bg-[#ffd13b]/10 focus:shadow-[2px_2px_0px_0px_#000] transition-all"
                     placeholder="Your contact number"
                   />
                 </motion.div>
 
                 <motion.div variants={fadeInUp} className="space-y-1.5">
-                  <label htmlFor="subject" className="block text-xs font-semibold text-gray-400">
+                  <label htmlFor="subject" className="block text-xs font-black text-black uppercase tracking-wider">
                     Subject *
                   </label>
                   <input
@@ -151,13 +151,13 @@ const Contact = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-slate-800 border-2 border-slate-700 text-white placeholder-gray-500 text-sm outline-none"
+                    className="w-full px-4 py-3 bg-white border-2 border-black text-black placeholder-gray-500 text-sm font-bold outline-none focus:bg-[#ffd13b]/10 focus:shadow-[2px_2px_0px_0px_#000] transition-all"
                     placeholder="Message subject"
                   />
                 </motion.div>
 
                 <motion.div variants={fadeInUp} className="space-y-1.5">
-                  <label htmlFor="message" className="block text-xs font-semibold text-gray-400">
+                  <label htmlFor="message" className="block text-xs font-black text-black uppercase tracking-wider">
                     Message *
                   </label>
                   <textarea
@@ -167,14 +167,14 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     rows={4}
-                    className="w-full px-4 py-3 bg-slate-800 border-2 border-slate-700 text-white placeholder-gray-500 text-sm outline-none resize-none"
+                    className="w-full px-4 py-3 bg-white border-2 border-black text-black placeholder-gray-500 text-sm font-bold outline-none resize-none focus:bg-[#ffd13b]/10 focus:shadow-[2px_2px_0px_0px_#000] transition-all"
                     placeholder="Your message"
                   ></textarea>
                 </motion.div>
 
                 <motion.button
                   type="submit"
-                  className="w-full bg-Maincolor hover:bg-Secondcolor text-white font-bold py-3 px-4 text-sm cursor-pointer transition-all duration-300"
+                  className="w-full bg-[#ff4a77] text-black font-black uppercase py-3 px-4 text-xs cursor-pointer border-2 border-black shadow-[3px_3px_0px_0px_#000] hover:shadow-[5px_5px_0px_0px_#000] hover:-translate-x-[2px] hover:-translate-y-[2px] active:translate-x-0 active:translate-y-0 active:shadow-[1px_1px_0px_0px_#000] tracking-wider transition-all"
                   variants={fadeInUp}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -185,18 +185,18 @@ const Contact = () => {
 
             {/* Contact Information */}
             <motion.div
-              className="bg-slate-900 border-2 border-slate-700 p-5 sm:p-6 lg:p-8 space-y-6"
+              className="bg-white border-3 border-black p-5 sm:p-6 lg:p-8 space-y-6 shadow-[4px_4px_0_0_#000]"
               variants={staggerContainer}
             >
               <div>
                 <motion.h2
-                  className="text-lg sm:text-xl font-bold text-white mb-2"
+                  className="text-lg sm:text-xl font-black text-black mb-2 uppercase tracking-tight"
                   variants={fadeInUp}
                 >
                   Get in Touch
                 </motion.h2>
                 <motion.p
-                  className="text-gray-400 text-sm leading-relaxed"
+                  className="text-black/85 text-xs sm:text-sm font-semibold leading-relaxed"
                   variants={fadeInUp}
                 >
                   Our team is ready to assist you with any inquiries or provide
@@ -209,14 +209,14 @@ const Contact = () => {
                   className="flex items-center gap-4"
                   variants={fadeInUp}
                 >
-                  <div className="bg-slate-800 p-3 border-2 border-slate-700 text-Maincolor">
-                    <Phone size={18} />
+                  <div className="bg-[#00b8a9] p-3 border-2 border-black text-black shadow-[2px_2px_0px_0px_#000]">
+                    <Phone size={18} className="stroke-[2.5px]" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-white text-xs sm:text-sm">
+                    <h3 className="font-black text-black text-xs sm:text-sm uppercase tracking-wider">
                       Phone Number
                     </h3>
-                    <p className="text-gray-300 text-sm">
+                    <p className="text-black font-bold text-sm">
                       +91 76206 xxx
                     </p>
                   </div>
@@ -226,14 +226,14 @@ const Contact = () => {
                   className="flex items-center gap-4"
                   variants={fadeInUp}
                 >
-                  <div className="bg-slate-800 p-3 border-2 border-slate-700 text-Maincolor">
-                    <Mail size={18} />
+                  <div className="bg-[#00b8a9] p-3 border-2 border-black text-black shadow-[2px_2px_0px_0px_#000]">
+                    <Mail size={18} className="stroke-[2.5px]" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-white text-xs sm:text-sm">
+                    <h3 className="font-black text-black text-xs sm:text-sm uppercase tracking-wider">
                       Email Address
                     </h3>
-                    <p className="text-gray-300 text-sm">
+                    <p className="text-black font-bold text-sm">
                       contact@softivra.com
                     </p>
                   </div>
@@ -241,13 +241,13 @@ const Contact = () => {
               </div>
 
               <motion.div
-                className="border-t-2 border-slate-700 pt-6 space-y-4"
+                className="border-t-3 border-black pt-6 space-y-4"
                 variants={fadeInUp}
               >
-                <h3 className="font-bold text-white text-xs sm:text-sm uppercase tracking-wider">
+                <h3 className="font-black text-black text-xs sm:text-sm uppercase tracking-wider">
                   Download Contact Card
                 </h3>
-                <p className="text-gray-400 text-sm leading-relaxed">
+                <p className="text-black/80 text-xs sm:text-sm font-semibold leading-relaxed">
                   Download our official eContact card (vCard) to save our details directly to your mobile device or address book.
                 </p>
 
@@ -255,9 +255,9 @@ const Contact = () => {
                   to="/softivra.vcf" 
                   target="_blank"
                   download="softivra.vcf"
-                  className="inline-flex items-center justify-center gap-2 bg-Maincolor hover:bg-Secondcolor text-white font-bold py-3 px-5 text-sm transition-all duration-300 w-full"
+                  className="inline-flex items-center justify-center gap-2 bg-[#ffd13b] text-black font-black py-3 px-5 text-xs uppercase border-2 border-black shadow-[3px_3px_0px_0px_#000] hover:shadow-[5px_5px_0px_0px_#000] hover:-translate-x-[2px] hover:-translate-y-[2px] active:translate-x-0 active:translate-y-0 active:shadow-[1px_1px_0px_0px_#000] w-full transition-all tracking-wider"
                 >
-                  <Download className="w-4 h-4" />
+                  <Download className="w-4 h-4 stroke-[2.5px]" />
                   Download eVisiting Card
                 </Link>
               </motion.div>

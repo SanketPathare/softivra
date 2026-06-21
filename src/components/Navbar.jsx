@@ -5,7 +5,6 @@ import SoftivraLogo from './SoftivraLogo';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
   const navItems = [
@@ -25,14 +24,6 @@ const Navbar = () => {
   ];
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -43,37 +34,29 @@ const Navbar = () => {
 
   return (
     <div className="w-full fixed top-0 left-0 right-0 z-50">
-      <nav
-        className={`transition-all duration-300 ${
-          isScrolled
-            ? 'bg-slate-950 border-b-2 border-slate-700'
-            : 'bg-slate-950 border-b-2 border-slate-800'
-        }`}
-      >
+      {/* Main Navbar - Brutalist design */}
+      <nav className="bg-white border-b-4 border-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-14 lg:h-16">
-            <Link to="/" className="flex-shrink-0">
-              <SoftivraLogo className="h-8 lg:h-9" textColor="text-white" lightMode={true} />
+          <div className="flex justify-between items-center h-16 sm:h-20">
+            <Link to="/" className="flex-shrink-0 cursor-pointer">
+              <SoftivraLogo className="h-8 lg:h-9" textColor="text-black" lightMode={false} />
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-0.5">
+            <div className="hidden md:flex items-center gap-2">
               {navItems.map((item) => {
                 const isActive = location.pathname === item.path;
                 return (
                   <Link
                     key={item.name}
                     to={item.path}
-                    className={`relative px-3 lg:px-4 py-2 text-[11px] lg:text-xs font-semibold tracking-wider uppercase transition-all duration-200 ${
+                    className={`px-3 lg:px-4 py-2 text-xs font-black tracking-widest uppercase transition-all duration-150 border-2 ${
                       isActive
-                        ? 'text-Maincolor bg-Maincolor/10'
-                        : 'text-gray-300 hover:text-white hover:bg-white/5'
+                        ? 'bg-Maincolor border-black shadow-[2px_2px_0px_0px_#000] text-black -translate-x-[1px] -translate-y-[1px]'
+                        : 'text-black border-transparent hover:bg-Maincolor/30 hover:border-black hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-x-[1px] hover:-translate-y-[1px]'
                     }`}
                   >
                     {item.name}
-                    {isActive && (
-                      <span className="absolute -bottom-px left-3 lg:left-4 right-3 lg:right-4 h-[2px] bg-Maincolor" />
-                    )}
                   </Link>
                 );
               })}
@@ -82,7 +65,7 @@ const Navbar = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden relative p-2 text-gray-300 hover:text-white transition-colors cursor-pointer z-50"
+              className="md:hidden p-2 text-black bg-Maincolor border-2 border-black shadow-[2px_2px_0px_0px_#000] hover:bg-Secondcolor hover:text-white transition-all cursor-pointer z-50"
               aria-label={isOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={isOpen}
             >
@@ -92,14 +75,14 @@ const Navbar = () => {
                     isOpen ? 'opacity-0 rotate-90 scale-75' : 'opacity-100 rotate-0 scale-100'
                   }`}
                 >
-                  <Menu className="w-5 h-5" />
+                  <Menu className="w-5 h-5 stroke-[3px]" />
                 </span>
                 <span
                   className={`absolute inset-0 transition-all duration-300 ${
                     isOpen ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-75'
                   }`}
                 >
-                  <X className="w-5 h-5" />
+                  <X className="w-5 h-5 stroke-[3px]" />
                 </span>
               </div>
             </button>
@@ -109,7 +92,7 @@ const Navbar = () => {
 
       {/* Mobile Overlay */}
       <div
-        className={`fixed inset-0 bg-black/80 transition-all duration-300 md:hidden ${
+        className={`fixed inset-0 bg-black/60 backdrop-blur-xs transition-all duration-300 md:hidden ${
           isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
         onClick={() => setIsOpen(false)}
@@ -117,22 +100,22 @@ const Navbar = () => {
 
       {/* Mobile Slide-in Panel */}
       <div
-        className={`fixed top-0 right-0 h-full w-full max-w-sm bg-slate-900 border-l-2 border-slate-700 transition-all duration-300 ease-in-out md:hidden z-40 ${
+        className={`fixed top-0 right-0 h-full w-full max-w-xs bg-white border-l-4 border-black transition-all duration-300 ease-in-out md:hidden z-40 ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        <div className="flex flex-col h-full pt-20 px-6">
-          <div className="space-y-1">
+        <div className="flex flex-col h-full pt-24 px-6 pb-8">
+          <div className="space-y-3">
             {navItems.map((item) => {
               const isActive = location.pathname === item.path;
               return (
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`block px-4 py-3 text-sm font-semibold tracking-wider uppercase transition-all duration-200 ${
+                  className={`block px-4 py-3 text-sm font-black tracking-widest uppercase border-2 border-black transition-all shadow-[2px_2px_0px_0px_#000] ${
                     isActive
-                      ? 'bg-Maincolor/10 text-Maincolor border-l-2 border-Maincolor'
-                      : 'text-gray-300 hover:text-white hover:bg-white/5 border-l-2 border-transparent'
+                      ? 'bg-Maincolor text-black'
+                      : 'bg-white text-black hover:bg-Maincolor'
                   }`}
                   onClick={() => setIsOpen(false)}
                 >
@@ -142,28 +125,28 @@ const Navbar = () => {
             })}
           </div>
 
-          <div className="mt-auto pb-10">
-            <div className="border-t border-slate-700 pt-6 space-y-4">
+          <div className="mt-auto">
+            <div className="border-t-2 border-black pt-6 space-y-4">
               <a
                 href="tel:+917620663151"
-                className="flex items-center gap-3 text-sm text-gray-400 hover:text-white transition-colors group"
+                className="flex items-center gap-3 text-xs font-black uppercase text-black hover:text-Maincolor transition-colors group"
               >
-                <span className="p-2 bg-Maincolor/10 group-hover:bg-Maincolor/20 transition-colors">
-                  <Phone className="w-4 h-4 text-Maincolor" />
+                <span className="p-1.5 bg-white border-2 border-black rounded-none shadow-[2px_2px_0px_0px_#000]">
+                  <Phone className="w-3.5 h-3.5 text-black" />
                 </span>
                 +91 76206 xxx
               </a>
               <a
                 href="mailto:contact@softivra.com"
-                className="flex items-center gap-3 text-sm text-gray-400 hover:text-white transition-colors group"
+                className="flex items-center gap-3 text-xs font-black uppercase text-black hover:text-Maincolor transition-colors group"
               >
-                <span className="p-2 bg-Maincolor/10 group-hover:bg-Maincolor/20 transition-colors">
-                  <Mail className="w-4 h-4 text-Maincolor" />
+                <span className="p-1.5 bg-white border-2 border-black rounded-none shadow-[2px_2px_0px_0px_#000]">
+                  <Mail className="w-3.5 h-3.5 text-black" />
                 </span>
                 contact@softivra.com
               </a>
               <div className="flex items-center gap-3 pt-2">
-                <span className="text-[10px] uppercase tracking-widest text-gray-500">Follow:</span>
+                <span className="text-[9px] font-black uppercase tracking-widest text-black">Follow:</span>
                 <div className="flex gap-2">
                   {socialIcons.map(({ Icon, href, label }) => (
                     <a
@@ -172,9 +155,9 @@ const Navbar = () => {
                       target="_blank"
                       rel="noreferrer"
                       aria-label={label}
-                      className="p-2 bg-slate-800 text-gray-400 hover:text-Maincolor hover:bg-Maincolor/10 transition-all duration-200"
+                      className="p-1.5 bg-white text-black border-2 border-black shadow-[2px_2px_0px_0px_#000] hover:bg-Maincolor transition-all"
                     >
-                      <Icon className="w-4 h-4" />
+                      <Icon className="w-3.5 h-3.5" />
                     </a>
                   ))}
                 </div>
