@@ -3,7 +3,7 @@ export const blogData = [
   {
     slug: "how-to-grow-your-business-with-technology",
     title: "How to Grow Your Business with Technology",
-    category: "Business Technology",
+    category: "Business Tech",
     image: "/growBusiness.png",
     sections: [
       {
@@ -12,32 +12,20 @@ export const blogData = [
           "In today's rapidly evolving digital landscape, leveraging technology is essential for business growth and success. A professional website and active social media profiles ensure your business is easily found by potential customers and enhance credibility. Optimize your website for user-friendly navigation and mobile responsiveness.",
       },
       {
-        heading: "Leverage Digital Marketing",
+        heading: "Leverage Modern Digital Marketing",
         content:
-          "Utilize SEO, content marketing, and paid ads to increase visibility and attract targeted audiences. Social media campaigns can further boost engagement and drive traffic to your business.",
+          "Utilize SEO, content marketing, and targeted search engine outreach to increase visibility and attract targeted audiences. Organic campaigns can further boost engagement and drive high-converting traffic to your services.",
       },
       {
         heading: "Automate Business Processes",
         content:
-          "Tools like CRM systems and project management software streamline operations, improve productivity, and reduce manual errors. Automation allows your team to focus on high-value tasks while technology handles repetitive work.",
-      },
-      {
-        heading: "Embrace Data Analytics",
-        content:
-          "Use data analytics tools to gain insights into customer behavior, market trends, and business performance. Data-driven decisions can significantly improve your strategic planning and ROI.",
-      },
-      {
-        heading: "Implement Cloud Solutions",
-        content:
-          "Cloud computing offers scalability, flexibility, and cost-efficiency. Migrating to cloud-based solutions enables remote work, enhances collaboration, and provides robust data security.",
+          "Tools like CRM systems and customized task pipelines streamline operations, improve productivity, and reduce manual errors. Automation allows your team to focus on high-value tasks while technology handles repetitive work.",
       },
     ],
     tags: [
       "Business Growth",
       "Digital Transformation",
-      "Tech Solutions for Business",
-      "Business Innovation",
-      "Technology Strategy",
+      "Tech Strategy",
     ],
     socialLinks: [
       { FacebookUrl: "#" },
@@ -46,43 +34,26 @@ export const blogData = [
     ],
   },
   {
-    slug: "how-to-grow-your-business-with-technology",
-    title: "How to Grow Your Business with Technology",
-    category: "Business Technology",
-    image: "/growBusiness.png",
+    slug: "power-of-modern-web-design-and-branding",
+    title: "The Power of Modern Web Design and Branding",
+    category: "Branding",
+    image: "/slider_1.webp",
     sections: [
       {
-        heading: "Establish a Strong Online Presence",
+        heading: "First Impressions Are Everything",
         content:
-          "In today's rapidly evolving digital landscape, leveraging technology is essential for business growth and success. A professional website and active social media profiles ensure your business is easily found by potential customers and enhance credibility. Optimize your website for user-friendly navigation and mobile responsiveness.",
+          "Your website is often the primary point of contact for potential customers. A sleek, fast-loading visual design combined with clean, modern typography and custom branding establish instant authority in your industry.",
       },
       {
-        heading: "Leverage Digital Marketing",
+        heading: "Consistent Cross-Device Identity",
         content:
-          "Utilize SEO, content marketing, and paid ads to increase visibility and attract targeted audiences. Social media campaigns can further boost engagement and drive traffic to your business.",
-      },
-      {
-        heading: "Automate Business Processes",
-        content:
-          "Tools like CRM systems and project management software streamline operations, improve productivity, and reduce manual errors. Automation allows your team to focus on high-value tasks while technology handles repetitive work.",
-      },
-      {
-        heading: "Embrace Data Analytics",
-        content:
-          "Use data analytics tools to gain insights into customer behavior, market trends, and business performance. Data-driven decisions can significantly improve your strategic planning and ROI.",
-      },
-      {
-        heading: "Implement Cloud Solutions",
-        content:
-          "Cloud computing offers scalability, flexibility, and cost-efficiency. Migrating to cloud-based solutions enables remote work, enhances collaboration, and provides robust data security.",
+          "Branding is not just a logo; it's a unified system. Ensuring that your colors, design patterns, and voice align perfectly across your mobile application, desktop site, and print media creates a trusted, memorable user experience.",
       },
     ],
     tags: [
-      "Business Growth",
-      "Digital Transformation",
-      "Tech Solutions for Business",
-      "Business Innovation",
-      "Technology Strategy",
+      "Branding & Design",
+      "UI/UX Design",
+      "Typography",
     ],
     socialLinks: [
       { FacebookUrl: "#" },
@@ -91,43 +62,26 @@ export const blogData = [
     ],
   },
   {
-    slug: "how-to-grow-your-business-with-technology",
-    title: "How to Grow Your Business with Technology",
-    category: "Business Technology",
-    image: "/growBusiness.png",
+    slug: "why-custom-software-beats-off-the-shelf",
+    title: "Why Custom Software Beats Off-the-Shelf Solutions",
+    category: "Software Development",
+    image: "/slider_2.webp",
     sections: [
       {
-        heading: "Establish a Strong Online Presence",
+        heading: "Built Around Your Unique Workflows",
         content:
-          "In today's rapidly evolving digital landscape, leveraging technology is essential for business growth and success. A professional website and active social media profiles ensure your business is easily found by potential customers and enhance credibility. Optimize your website for user-friendly navigation and mobile responsiveness.",
+          "Pre-packaged software forces your business to adapt its workflows to match the vendor's rigid systems. Custom software is designed from the ground up to automate your specific business logic, leading to massive gains in efficiency.",
       },
       {
-        heading: "Leverage Digital Marketing",
+        heading: "Scalability Without Ongoing Fees",
         content:
-          "Utilize SEO, content marketing, and paid ads to increase visibility and attract targeted audiences. Social media campaigns can further boost engagement and drive traffic to your business.",
-      },
-      {
-        heading: "Automate Business Processes",
-        content:
-          "Tools like CRM systems and project management software streamline operations, improve productivity, and reduce manual errors. Automation allows your team to focus on high-value tasks while technology handles repetitive work.",
-      },
-      {
-        heading: "Embrace Data Analytics",
-        content:
-          "Use data analytics tools to gain insights into customer behavior, market trends, and business performance. Data-driven decisions can significantly improve your strategic planning and ROI.",
-      },
-      {
-        heading: "Implement Cloud Solutions",
-        content:
-          "Cloud computing offers scalability, flexibility, and cost-efficiency. Migrating to cloud-based solutions enables remote work, enhances collaboration, and provides robust data security.",
+          "Off-the-shelf platforms charge high monthly per-user licensing fees. Custom proprietary software scales infinitely as your team grows, keeping operational costs predictable while adding unique enterprise equity to your business.",
       },
     ],
     tags: [
-      "Business Growth",
-      "Digital Transformation",
-      "Tech Solutions for Business",
-      "Business Innovation",
-      "Technology Strategy",
+      "Custom Software",
+      "Business Efficiency",
+      "Enterprise Tech",
     ],
     socialLinks: [
       { FacebookUrl: "#" },
@@ -136,43 +90,26 @@ export const blogData = [
     ],
   },
   {
-    slug: "how-to-grow-your-business-with-technology",
-    title: "How to Grow Your Business with Technology",
-    category: "Business Technology",
-    image: "/growBusiness.png",
+    slug: "best-practices-for-building-responsive-web-apps",
+    title: "Best Practices for Building Responsive & Fast Web Apps",
+    category: "Web Engineering",
+    image: "/slider_3.webp",
     sections: [
       {
-        heading: "Establish a Strong Online Presence",
+        heading: "Adopt a Mobile-First Layout Strategy",
         content:
-          "In today's rapidly evolving digital landscape, leveraging technology is essential for business growth and success. A professional website and active social media profiles ensure your business is easily found by potential customers and enhance credibility. Optimize your website for user-friendly navigation and mobile responsiveness.",
+          "With over 55% of global web traffic originating from mobile devices, designing pages from the smallest viewport upwards ensures that elements wrap gracefully. Avoiding rigid fixed dimensions keeps layouts fluid.",
       },
       {
-        heading: "Leverage Digital Marketing",
+        heading: "Asset Optimization & Bundle Sizing",
         content:
-          "Utilize SEO, content marketing, and paid ads to increase visibility and attract targeted audiences. Social media campaigns can further boost engagement and drive traffic to your business.",
-      },
-      {
-        heading: "Automate Business Processes",
-        content:
-          "Tools like CRM systems and project management software streamline operations, improve productivity, and reduce manual errors. Automation allows your team to focus on high-value tasks while technology handles repetitive work.",
-      },
-      {
-        heading: "Embrace Data Analytics",
-        content:
-          "Use data analytics tools to gain insights into customer behavior, market trends, and business performance. Data-driven decisions can significantly improve your strategic planning and ROI.",
-      },
-      {
-        heading: "Implement Cloud Solutions",
-        content:
-          "Cloud computing offers scalability, flexibility, and cost-efficiency. Migrating to cloud-based solutions enables remote work, enhances collaboration, and provides robust data security.",
+          "To achieve premium, lag-free user experiences, keep assets optimized. Compressing graphics, lazy-loading heavy UI elements, and using modern CSS layout rules like Flexbox and Grid will keep your rendering smooth.",
       },
     ],
     tags: [
-      "Business Growth",
-      "Digital Transformation",
-      "Tech Solutions for Business",
-      "Business Innovation",
-      "Technology Strategy",
+      "Web Performance",
+      "Mobile-First Design",
+      "Responsive Layouts",
     ],
     socialLinks: [
       { FacebookUrl: "#" },

@@ -2,10 +2,8 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 
 const PartnersSlider = () => {
   // Mock partner data
@@ -49,8 +47,6 @@ const PartnersSlider = () => {
     const updateSlidesPerView = () => {
       if (window.innerWidth < 640) {
         setSlidesPerView(2);
-      } else if (window.innerWidth < 1024) {
-        setSlidesPerView(3);
       } else {
         setSlidesPerView(3);
       }
@@ -65,70 +61,61 @@ const PartnersSlider = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { duration: 0.8, staggerChildren: 0.2 },
+      transition: { duration: 0.6, staggerChildren: 0.15 },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, x: -50 },
+    hidden: { opacity: 0, x: -30 },
     visible: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
+      transition: { duration: 0.5, ease: "easeOut" },
     },
   };
 
   const logoVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
+    hidden: { opacity: 0, scale: 0.95 },
     visible: {
       opacity: 1,
       scale: 1,
-      transition: { duration: 0.5, ease: "easeOut" },
+      transition: { duration: 0.4, ease: "easeOut" },
     },
     hover: {
-      scale: 1.05,
-      y: -5,
-      transition: { duration: 0.3, ease: "easeInOut" },
+      scale: 1.02,
+      y: -3,
+      transition: { duration: 0.2, ease: "easeInOut" },
     },
   };
 
   return (
-    <section className="bg-slate-800 py-16 sm:py-20 lg:py-24 overflow-hidden relative">
-      <div className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="bg-slate-800 py-16 overflow-hidden relative border-t border-slate-700">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="flex flex-col lg:flex-row items-start lg:items-center gap-12 lg:gap-16"
+          className="flex flex-col lg:flex-row items-start lg:items-center gap-10 lg:gap-14"
           variants={containerVariants}
           initial="hidden"
-          animate="visible"
-          viewport={{ once: true }}
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
         >
           {/* Left Content */}
-          <motion.div className="flex-shrink-0 lg:w-1/2" variants={itemVariants}>
+          <motion.div className="flex-shrink-0 lg:w-1/2 text-center lg:text-left" variants={itemVariants}>
             <motion.h2
-              className="text-white text-3xl sm:text-4xl lg:text-5xl font-bold mb-6"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-white text-2xl sm:text-3xl lg:text-4xl font-bold mb-4"
             >
-              Partners in <span className="text-Maincolor"> Success</span>
+              Partners in <span className="text-Maincolor">Success</span>
             </motion.h2>
             <motion.p
-              className="text-blue-100 text-lg sm:text-xl leading-relaxed mb-8"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-blue-100 text-sm sm:text-base leading-relaxed mb-6 max-w-md mx-auto lg:mx-0"
             >
               Our valuable customers are the heart of our business, inspiring us
               to deliver exceptional quality and unmatched service every day.
             </motion.p>
             <Link to="/contact">
               <motion.button
-                className="bg-white/20 backdrop-blur-lg text-white px-8 py-3 rounded-full font-semibold hover:bg-white/30  border border-white/30 cursor-pointer"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
+                className="bg-white/20 backdrop-blur-lg text-white px-5 py-2.5 rounded-full font-semibold text-xs border border-white/30 cursor-pointer"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
               >
                 Join them today!
               </motion.button>
@@ -136,28 +123,26 @@ const PartnersSlider = () => {
           </motion.div>
 
           {/* Right Slider */}
-          <motion.div className="flex-1 w-full sm:max-w-xl  mx-auto" variants={itemVariants}>
+          <motion.div className="flex-1 w-full sm:max-w-md mx-auto" variants={itemVariants}>
             <Swiper
-              modules={[Autoplay, Navigation]}
+              modules={[Autoplay]}
               slidesPerView={slidesPerView}
               spaceBetween={12}
               loop={true}
-              autoplay={{ delay: 3000, disableOnInteraction: true }}
-              className="rounded-2xl mx-10"
+              autoplay={{ delay: 3000, disableOnInteraction: false }}
+              className="rounded-xl mx-auto"
             >
               {partners.map((partner) => (
                 <SwiperSlide key={partner.id}>
                   <motion.div
-                    className="bg-white rounded-xl p-1 h-32 sm:h-40 flex items-center justify-center shadow-xl hover:shadow-2xl "
+                    className="bg-white rounded-lg p-2 h-24 sm:h-28 flex items-center justify-center shadow-md hover:shadow-lg transition-shadow duration-300"
                     variants={logoVariants}
-                    initial="hidden"
-                    animate="visible"
-             
+                    whileHover="hover"
                   >
                     <img
                       src={partner.logo}
                       alt={partner.name}
-                      className="h-40 w-40 object-contain filter group-hover:brightness-110"
+                      className="h-full w-full object-contain filter hover:brightness-105"
                     />
                   </motion.div>
                 </SwiperSlide>
@@ -165,31 +150,6 @@ const PartnersSlider = () => {
             </Swiper>
           </motion.div>
         </motion.div>
-      </div>
-
-      {/* Background Animation Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(8)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-white/10 rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, -30, 0],
-              opacity: [0.1, 0.5, 0.1],
-              scale: [0.5, 1, 0.5],
-            }}
-            transition={{
-              duration: 4 + Math.random() * 2,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-              ease: "easeInOut",
-            }}
-          />
-        ))}
       </div>
     </section>
   );

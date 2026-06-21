@@ -8,26 +8,26 @@ const About = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.15,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 15 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' },
+      transition: { duration: 0.5, ease: 'easeOut' },
     },
   };
 
   const scaleVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
+    hidden: { opacity: 0, scale: 0.95 },
     visible: {
       opacity: 1,
       scale: 1,
-      transition: { duration: 0.5, ease: 'easeOut' },
+      transition: { duration: 0.4, ease: 'easeOut' },
     },
   };
 
@@ -52,7 +52,6 @@ const About = () => {
     { logo: "/AboutImages/17.png" },
   ];
 
-  // Helper function to check if the logo is a valid image URL
   const isImageUrl = (logo) => {
     return (
       typeof logo === "string" &&
@@ -61,41 +60,43 @@ const About = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-800">
+    <div className="min-h-screen bg-slate-800 pb-16">
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600/20 to-purple-600/20">
+      <section className="relative overflow-hidden py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600/10 to-purple-600/10">
         <div className="relative max-w-7xl mx-auto text-center">
           <motion.div
             id="hero"
-            data-animate
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-white">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-2">
               About Us
             </h1>
+            <p className="text-gray-300 text-xs sm:text-sm max-w-lg mx-auto">
+              Get to know the team and vision behind Softivra.
+            </p>
           </motion.div>
         </div>
       </section>
 
       {/* Main Content */}
       <motion.section
-        className="py-12 sm:py-16"
+        className="py-12"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.2 }}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            className="max-w-4xl mx-auto text-center"
+            className="max-w-3xl mx-auto text-center"
             variants={itemVariants}
           >
-            <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-200">
+            <p className="text-sm sm:text-base leading-relaxed text-gray-200">
               At{' '}
               <span className="text-Maincolor font-semibold">
-                NextDigit Software
+                Softivra
               </span>
               , we are passionate about empowering businesses through
               cutting-edge technology and innovative design. Our team of
@@ -111,26 +112,26 @@ const About = () => {
 
       {/* Who We Are Section */}
       <motion.section
-        className="py-12 sm:py-16 bg-slate-800"
+        className="py-12"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.2 }}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-8 sm:gap-12 max-w-6xl mx-auto">
-            <motion.div variants={containerVariants}>
+          <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto items-center">
+            <motion.div variants={containerVariants} className="space-y-4">
               <motion.h2
-                className="text-3xl sm:text-4xl font-bold text-Maincolor mb-6"
+                className="text-2xl sm:text-3xl font-bold text-Maincolor"
                 variants={itemVariants}
               >
                 Who we are
               </motion.h2>
-              <motion.div className="space-y-4 text-white leading-relaxed" variants={containerVariants}>
+              <div className="space-y-3 text-gray-300 text-sm leading-relaxed">
                 <motion.p variants={itemVariants}>
                   At{' '}
                   <span className="font-semibold text-Maincolor">
-                    NextDigit Software
+                    Softivra
                   </span>
                   , we believe that technology should empower, not overwhelm.
                   Our team of expert developers, designers, and strategists work
@@ -145,24 +146,19 @@ const About = () => {
                   </span>{' '}
                   with ease.
                 </motion.p>
-              </motion.div>
+              </div>
             </motion.div>
 
             <motion.div
               variants={scaleVariants}
               className="flex justify-center"
             >
-              <div className="relative w-full max-w-md">
-                <motion.div
-                  className="w-full h-48 sm:h-64 md:h-72 bg-gradient-to-br from-blue-100 to-purple-100 rounded-lg shadow-lg flex items-center justify-center"
-                  variants={scaleVariants}
-                >
-                  <img
-                    src="https://images.unsplash.com/photo-1551836022-4c4c79ecde51?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="image"
-                    className="h-full w-full rounded-lg object-cover"
-                  />
-                </motion.div>
+              <div className="w-full max-w-sm rounded-lg overflow-hidden shadow-lg border border-slate-700/50">
+                <img
+                  src="https://images.unsplash.com/photo-1551836022-4c4c79ecde51?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"
+                  alt="Team collaborating at Softivra"
+                  className="w-full h-48 sm:h-56 object-cover"
+                />
               </div>
             </motion.div>
           </div>
@@ -171,30 +167,30 @@ const About = () => {
 
       {/* Mission & Vision Section */}
       <motion.section
-        className="py-12 sm:py-16 bg-slate-800"
+        className="py-12"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.2 }}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-8 sm:gap-12 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto items-center">
             <motion.div variants={itemVariants}>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 capitalize text-white">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white capitalize leading-tight">
                 Our Guiding <br />{' '}
                 <span className="text-Maincolor">Principles</span>
               </h2>
             </motion.div>
 
-            <motion.div className="space-y-6 sm:space-y-8" variants={containerVariants}>
+            <motion.div className="space-y-4" variants={containerVariants}>
               <motion.div
                 variants={itemVariants}
-                className="bg-white/20 backdrop-blur-lg text-white px-6 sm:px-8 py-6 rounded-lg shadow-lg text-center border border-white/30"
+                className="bg-slate-900/40 border border-slate-700/50 text-white p-5 rounded-xl shadow-md text-center"
               >
-                <h3 className="text-xl sm:text-2xl font-bold text-Maincolor mb-4">
+                <h3 className="text-base sm:text-lg font-bold text-Maincolor mb-2">
                   Mission
                 </h3>
-                <p className="leading-relaxed text-sm sm:text-base">
+                <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
                   To empower businesses with innovative technology solutions
                   that drive growth, efficiency, and success. We are committed
                   to delivering tailored IT services that meet the unique needs
@@ -205,12 +201,12 @@ const About = () => {
 
               <motion.div
                 variants={itemVariants}
-                className="bg-white/20 backdrop-blur-lg text-white px-6 sm:px-8 py-6 rounded-lg shadow-lg text-center border border-white/30"
+                className="bg-slate-900/40 border border-slate-700/50 text-white p-5 rounded-xl shadow-md text-center"
               >
-                <h3 className="text-xl sm:text-2xl font-bold text-Maincolor mb-4">
+                <h3 className="text-base sm:text-lg font-bold text-Maincolor mb-2">
                   Vision
                 </h3>
-                <p className="leading-relaxed text-sm sm:text-base">
+                <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
                   To be the leading provider of cutting-edge technology
                   solutions that transform businesses and set new standards of
                   excellence, enabling our clients to thrive in an ever-evolving
@@ -224,52 +220,50 @@ const About = () => {
 
       {/* Partners Section */}
       <motion.section
-        className="py-12 sm:py-16 bg-slate-800"
+        className="py-12"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.2 }}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div className="text-center mb-8 sm:mb-12" variants={containerVariants}>
+          <motion.div className="text-center mb-8" variants={containerVariants}>
             <motion.h2
-              className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4"
+              className="text-2xl sm:text-3xl font-bold text-white mb-2"
               variants={itemVariants}
             >
               Partners in <span className="text-Maincolor">Growth</span>
             </motion.h2>
             <motion.p
-              className="text-white text-sm sm:text-base max-w-2xl mx-auto"
+              className="text-gray-400 text-xs sm:text-sm max-w-md mx-auto"
               variants={itemVariants}
             >
               We're proud to work with amazing partners who share our vision of
-              digital excellence
+              digital excellence.
             </motion.p>
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6 mx-auto max-w-7xl"
+            className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-3 mx-auto max-w-5xl"
             variants={containerVariants}
           >
             {partners.map((partner, index) => (
               <motion.div
                 key={index}
-                className="rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden border hover:border-blue-200 group"
+                className="rounded-lg overflow-hidden border border-slate-700 bg-white/5 hover:border-blue-400/40 transition-colors duration-300"
                 variants={scaleVariants}
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
+                whileHover={{ scale: 1.03 }}
               >
-                <div className="aspect-square sm:aspect-video overflow-hidden flex items-center justify-center bg-white">
+                <div className="aspect-square flex items-center justify-center bg-white p-2">
                   {isImageUrl(partner.logo) ? (
-                    <motion.img
+                    <img
                       src={partner.logo}
-                      alt="logo"
-                      className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
-                      variants={scaleVariants}
+                      alt="partner logo"
+                      className="w-full h-full object-contain"
                     />
                   ) : (
-                    <div className="w-full h-full flex items-center justify-center bg-gray-200">
-                      <span className="text-gray-500 text-xs sm:text-sm">Invalid Image</span>
+                    <div className="w-full h-full flex items-center justify-center bg-slate-800">
+                      <span className="text-gray-500 text-[10px]">Invalid Image</span>
                     </div>
                   )}
                 </div>
@@ -281,31 +275,31 @@ const About = () => {
 
       {/* CTA Section */}
       <motion.section
-        className="py-12 sm:py-16 bg-gradient-to-b from-slate-800 via-slate-600/90 to-slate-800 text-white"
+        className="py-12 bg-slate-900 border-t border-slate-700 text-white"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.2 }}
       >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <motion.h2
-            className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6"
+            className="text-xl sm:text-2xl font-bold"
             variants={itemVariants}
           >
             Ready to Transform Your Business?
           </motion.h2>
           <motion.p
-            className="text-base sm:text-lg md:text-xl mb-8 max-w-2xl mx-auto"
+            className="text-xs sm:text-sm text-gray-300 max-w-xl mx-auto leading-relaxed"
             variants={itemVariants}
           >
             Let's work together to bring your digital vision to life with
             cutting-edge technology solutions.
           </motion.p>
           <motion.button
-            className="bg-white text-Maincolor font-bold py-2 sm:py-3 px-6 sm:px-8 rounded-full hover:bg-gray-100 transition-colors duration-300 shadow-lg cursor-pointer"
+            className="bg-white hover:bg-slate-100 text-Maincolor font-bold py-2 px-5 rounded-full text-xs shadow-md transition-colors cursor-pointer"
             variants={scaleVariants}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.98 }}
           >
             Get Started Today
           </motion.button>

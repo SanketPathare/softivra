@@ -30,37 +30,35 @@ const JobApplicationForm = ({ jobTitle, onClose }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
     console.log('Form submitted:', formData);
     alert('Application submitted successfully!');
     onClose();
   };
 
   return (
-    <div className="fixed inset-0 bg-black/50 bg-opacity-50 flex items-center justify-center p-4 z-50">
-      <div className="bg-white rounded-2xl shadow-2xl max-w-5xl w-full max-h-[90vh]">
+    <div className="fixed inset-0 bg-black/60 flex items-center justify-center p-4 z-50">
+      <div className="bg-white rounded-xl shadow-2xl max-w-lg w-full max-h-[90vh] flex flex-col overflow-hidden">
         {/* Header */}
-        <div className="bg-gradient-to-r from-Maincolor to-Secondcolor text-white p-6 rounded-t-2xl">
+        <div className="bg-gradient-to-r from-Maincolor to-Secondcolor text-white p-5">
           <div className="flex justify-between items-center">
-            <h2 className="text-2xl font-bold">Apply for {jobTitle}</h2>
+            <h2 className="text-base sm:text-lg font-bold">Apply for {jobTitle}</h2>
             <button
               onClick={onClose}
-              className="text-white hover:text-gray-200 text-2xl cursor-pointer"
+              className="text-white hover:text-gray-200 text-xl cursor-pointer"
             >
-         <IoCloseSharp />
-
+              <IoCloseSharp />
             </button>
           </div>
-          <p className="text-blue-100 mt-2">
-            Fill out the form below to submit your application
+          <p className="text-blue-100 text-[11px] mt-1">
+            Fill out the form below to submit your application.
           </p>
         </div>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="p-6 space-y-6 max-h-[calc(85vh-136px)] overflow-y-auto">
+        <form onSubmit={handleSubmit} className="p-5 space-y-4 overflow-y-auto">
           {/* Name */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+          <div className="space-y-1">
+            <label className="block text-xs font-semibold text-gray-700">
               Name *
             </label>
             <input
@@ -69,30 +67,30 @@ const JobApplicationForm = ({ jobTitle, onClose }) => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-xs focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors text-slate-800"
               placeholder="Enter your full name"
             />
           </div>
 
           {/* Contact Number */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+          <div className="space-y-1">
+            <label className="block text-xs font-semibold text-gray-700">
               Contact No. *
             </label>
             <input
-              type="tel"
+              type="text"
               name="contactNo"
               value={formData.contactNo}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-xs focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors text-slate-800"
               placeholder="Enter your contact number"
             />
           </div>
 
           {/* Email */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+          <div className="space-y-1">
+            <label className="block text-xs font-semibold text-gray-700">
               Email *
             </label>
             <input
@@ -101,16 +99,16 @@ const JobApplicationForm = ({ jobTitle, onClose }) => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-xs focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors text-slate-800"
               placeholder="Enter your email address"
             />
           </div>
 
           {/* Experience Fields */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Total Experience (in Yrs) *
+          <div className="grid grid-cols-2 gap-3">
+            <div className="space-y-1">
+              <label className="block text-xs font-semibold text-gray-700">
+                Total Exp. (Yrs) *
               </label>
               <input
                 type="text"
@@ -118,13 +116,13 @@ const JobApplicationForm = ({ jobTitle, onClose }) => {
                 value={formData.totalExperience}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
-                placeholder="e.g., 3 years"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md text-xs focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors text-slate-800"
+                placeholder="e.g., 3 Yrs"
               />
             </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Relevant Experience (in Yrs) *
+            <div className="space-y-1">
+              <label className="block text-xs font-semibold text-gray-700">
+                Relevant Exp. (Yrs) *
               </label>
               <input
                 type="text"
@@ -132,18 +130,18 @@ const JobApplicationForm = ({ jobTitle, onClose }) => {
                 value={formData.relevantExperience}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
-                placeholder="e.g., 2 years"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md text-xs focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors text-slate-800"
+                placeholder="e.g., 2 Yrs"
               />
             </div>
           </div>
 
           {/* File Upload */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+          <div className="space-y-1">
+            <label className="block text-xs font-semibold text-gray-700">
               Upload Resume
             </label>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3">
               <label className="flex-1 cursor-pointer">
                 <input
                   type="file"
@@ -152,46 +150,46 @@ const JobApplicationForm = ({ jobTitle, onClose }) => {
                   accept=".pdf,.doc,.docx"
                   className="hidden"
                 />
-                <div className="w-full px-4 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors text-gray-600">
+                <div className="w-full px-3 py-2 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors text-gray-600 text-xs font-medium">
                   {formData.resume ? formData.resume.name : 'Choose File'}
                 </div>
               </label>
-              <span className="text-sm text-gray-500">
+              <span className="text-[10px] text-gray-400">
                 {formData.resume ? 'File chosen' : 'No file chosen'}
               </span>
             </div>
           </div>
 
           {/* Cover Letter */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Cover Letter / Key Skills / Portfolio / GitHub Link *
+          <div className="space-y-1">
+            <label className="block text-xs font-semibold text-gray-700">
+              Cover Letter / Key Skills / Portfolio *
             </label>
             <textarea
               name="coverLetter"
               value={formData.coverLetter}
               onChange={handleChange}
               required
-              rows={4}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
-              placeholder="Enter your cover letter, key skills, portfolio link, or GitHub profile..."
+              rows={3}
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-xs focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-colors text-slate-800"
+              placeholder="Key skills, portfolio link, etc..."
             />
           </div>
 
           {/* Submit Button */}
-          <div className="flex  gap-4">
+          <div className="flex gap-3 pt-2">
             <button
               type="button"
               onClick={onClose}
-              className="flex-1 px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors font-medium cursor-pointer"
+              className="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50 transition-colors text-xs font-semibold cursor-pointer"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="flex-1 px-6 py-2 bg-Maincolor cursor-pointer rounded-lg text-white font-medium shadow-lg"
+              className="flex-1 px-4 py-2 bg-Maincolor hover:bg-blue-600 text-white rounded-md text-xs font-semibold shadow-md transition-colors cursor-pointer"
             >
-              Send 
+              Send Application
             </button>
           </div>
         </form>

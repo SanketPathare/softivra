@@ -12,16 +12,13 @@ import "swiper/css/autoplay";
 import { Link } from "react-router-dom";
 
 const ResponsiveSlider = () => {
-  const [currentTime, setCurrentTime] = useState("");
-
   const slidesData = [
     {
       title: "Digital Growth Starts Here",
-      subtitle: "Marketing, Design & Development",
-      details:
-        "Boost your online presence with our expert services and cutting-edge solutions.",
+      subtitle: "Marketing, Design & Development by Softivra",
+      details: "Boost your online presence with Softivra's expert services.",
       image: "/slider_1.webp",
-      icon: <Rocket className="w-16 h-16 text-blue-400" />,
+      icon: <Rocket className="w-12 h-12 text-blue-400" />,
       features: [
         "SEO Optimization",
         "Social Media Marketing",
@@ -29,21 +26,19 @@ const ResponsiveSlider = () => {
       ],
     },
     {
-      title: "Your Business, Transformed Digitally",
+      title: "Your Business, Transformed",
       subtitle: "Complete Tech Solutions for Growth",
-      details:
-        "Transform your business with innovative technology and data-driven strategies.",
+      details: "Scale your business with innovative technology and custom strategies.",
       image: "/slider_2.webp",
-      icon: <Zap className="w-16 h-16 text-emerald-400" />,
-      features: ["AI Integration", "Cloud Solutions", "Digital Transformation"],
+      icon: <Zap className="w-12 h-12 text-emerald-400" />,
+      features: ["Cloud Solutions", "Process Automation", "Digital Transformation"],
     },
     {
       title: "Empowering Your Digital Vision",
       subtitle: "Custom Websites, Software & Apps",
-      details:
-        "Create meaningful connections with compelling content and strategic engagement.",
+      details: "Create meaningful connections with compelling content and custom engineering.",
       image: "/slider_3.webp",
-      icon: <Users className="w-16 h-16 text-orange-400" />,
+      icon: <Users className="w-12 h-12 text-orange-400" />,
       features: [
         "Content Creation",
         "Community Building",
@@ -51,26 +46,6 @@ const ResponsiveSlider = () => {
       ],
     },
   ];
-
-  useEffect(() => {
-    const updateTime = () => {
-      const now = new Date();
-      setCurrentTime(
-        now.toLocaleString("en-IN", {
-          timeZone: "Asia/Kolkata",
-          hour12: true,
-          hour: "2-digit",
-          minute: "2-digit",
-          second: "2-digit",
-        })
-      );
-    };
-
-    updateTime();
-    const timeInterval = setInterval(updateTime, 1000);
-
-    return () => clearInterval(timeInterval);
-  }, []);
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
@@ -85,15 +60,11 @@ const ResponsiveSlider = () => {
           delay: 5000,
           disableOnInteraction: false,
         }}
-        navigation={{
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        }}
         pagination={{
           el: ".swiper-pagination",
           clickable: true,
           renderBullet: (index, className) => {
-            return `<span class="${className} w-3 h-3 rounded-full transition-all duration-300 bg-white/40 hover:bg-white/70"></span>`;
+            return `<span class="${className} w-2.5 h-2.5 rounded-full transition-all duration-300 bg-white/40 hover:bg-white/70"></span>`;
           },
         }}
         loop={true}
@@ -110,51 +81,32 @@ const ResponsiveSlider = () => {
               }}
             >
               {/* Dark Overlay for Better Text Readability */}
-              <div className="absolute inset-0 bg-gradient-to-b to-Maincolor/50 via-black/90 from-Maincolor/50"></div>
+              <div className="absolute inset-0 bg-gradient-to-b to-Maincolor/30 via-black/85 from-Maincolor/30"></div>
 
               {/* Animated Background Elements */}
               <div className="absolute inset-0 overflow-hidden">
                 <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/5 rounded-full animate-bounce"></div>
                 <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-white/5 rounded-full animate-pulse"></div>
-                <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-white/3 rounded-full animate-ping"></div>
               </div>
 
               {/* Content */}
-              <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-                <h1 className="text-5xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in-up">
+              <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold mb-4 animate-fade-in-up">
                   <span className="bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent">
                     {slide.title}
                   </span>
                 </h1>
 
-                <p className="text-lg sm:text-xl md:text-2xl mb-8 text-blue-200 animate-fade-in-up delay-200">
+                <p className="text-sm sm:text-base md:text-lg mb-8 text-blue-200 animate-fade-in-up delay-200 tracking-wide">
                   {slide.subtitle}
                 </p>
 
-                {/* <p className="text-base sm:text-lg md:text-xl mb-8 max-w-3xl mx-auto text-gray-300 animate-fade-in-up delay-300">
-                  {slide.details}
-                </p> */}
-
-                {/* Features */}
-                {/* <div className="flex flex-wrap justify-center gap-4 mb-8 animate-fade-in-up delay-500">
-                  {slide.features.map((feature, idx) => (
-                    <span
-                      key={idx}
-                      className="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm border border-white/20 hover:bg-white/20 transition-colors"
-                    >
-                      {feature}
-                    </span>
-                  ))}
-                </div> */}
-
                 {/* Action Buttons */}
-                <div className="flex flex-row sm:flex-row gap-4 justify-center animate-fade-in-up delay-600">
-                  <Link  to="/services" className="group px-8 py-4 bg-Maincolor cursor-pointer text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl">
-                    <span className="flex items-center justify-center">
-                      Our Services
-                    </span>
+                <div className="flex flex-row gap-4 justify-center animate-fade-in-up delay-300">
+                  <Link to="/services" className="group px-6 py-3 bg-Maincolor hover:bg-blue-600 cursor-pointer text-white rounded-lg text-sm font-semibold transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+                    Our Services
                   </Link>
-                  <Link to="/contact" className="px-8 py-4 border-2 border-white/30 text-white rounded-lg font-semibold hover:bg-white/10 backdrop-blur-sm transition-all duration-300 hover:border-white/50 transform hover:scale-105 cursor-pointer">
+                  <Link to="/contact" className="px-6 py-3 border border-white/40 text-white rounded-lg text-sm font-semibold hover:bg-white/10 backdrop-blur-sm transition-all duration-300 hover:border-white/60 transform hover:scale-105 cursor-pointer">
                     Contact Us
                   </Link>
                 </div>
@@ -163,21 +115,12 @@ const ResponsiveSlider = () => {
           </SwiperSlide>
         ))}
 
-        {/* Custom Navigation Arrows */}
-        {/* <button className="swiper-button-prev absolute left-4 top-1/2 transform -translate-y-1/2 z-20 p-3 bg-white/10 backdrop-blur-sm rounded-full text-white hover:bg-white/20 transition-all duration-300 group">
-          <ChevronLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform" />
-        </button> */}
-
-        {/* <button className="swiper-button-next absolute right-4 top-1/2 transform -translate-y-1/2 z-20 p-3 bg-white/10 backdrop-blur-sm rounded-full text-white hover:bg-white/20 transition-all duration-300 group">
-          <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-        </button> */}
-
         {/* Custom Pagination */}
-        <div className="swiper-pagination absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-3"></div>
+        <div className="swiper-pagination absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2"></div>
       </Swiper>
 
       {/* Progress Bar - Custom implementation for Swiper */}
-      <div className="absolute bottom-0 left-0 w-full h-1 bg-white/20 z-20">
+      <div className="absolute bottom-0 left-0 w-full h-1 bg-white/10 z-20">
         <div className="h-full bg-Maincolor swiper-progress-bar"></div>
       </div>
     </div>

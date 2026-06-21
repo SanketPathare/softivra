@@ -14,13 +14,13 @@ const JobOpeningDetail = () => {
   // If job not found, show error
   if (!jobData) {
     return (
-      <div className="min-h-screen bg-slate-800 flex items-center justify-center px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-100 mb-4">Job Not Found</h1>
-          <p className="text-base sm:text-lg text-gray-300 mb-6 sm:mb-8">The job you're looking for doesn't exist.</p>
+      <div className="min-h-screen bg-slate-800 flex items-center justify-center px-4">
+        <div className="text-center space-y-4">
+          <h1 className="text-xl sm:text-2xl font-bold text-gray-100">Job Not Found</h1>
+          <p className="text-xs sm:text-sm text-gray-300">The job you're looking for doesn't exist.</p>
           <Link
             to="/job-openings"
-            className="bg-Maincolor text-white px-4 py-2 sm:px-6 sm:py-3 rounded-lg text-sm sm:text-base hover:bg-blue-700 transition-colors"
+            className="inline-block bg-Maincolor text-white px-4 py-2 rounded-lg text-xs font-semibold hover:bg-blue-600 transition-colors"
           >
             Back to Job Openings
           </Link>
@@ -31,63 +31,61 @@ const JobOpeningDetail = () => {
 
   return (
     <>
-      <div className="min-h-screen bg-slate-800">
+      <div className="min-h-screen bg-slate-800 pb-16">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 text-white py-10 sm:py-12 md:py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">Current Opening</h1>
-              <p className="text-base sm:text-lg md:text-xl text-blue-100 max-w-3xl mx-auto">
-                Join our team and be part of an innovative environment where your skills make a real impact
-              </p>
-            </div>
+        <section className="bg-gradient-to-r from-blue-600/10 to-purple-600/10 text-white py-16 px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2">Current Opening</h1>
+            <p className="text-xs sm:text-sm text-blue-100/80 max-w-lg mx-auto leading-relaxed">
+              Join our team and be part of an innovative environment where your skills make a real impact.
+            </p>
           </div>
         </section>
 
         {/* Main Content */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12">
-          <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+        <div className="max-w-4xl mx-auto px-4 mt-8">
+          <div className="bg-slate-900 rounded-xl shadow-lg overflow-hidden border border-slate-800">
             {/* Job Header */}
-            <div className="bg-gradient-to-r from-Maincolor to-Secondcolor text-white p-4 sm:p-6 md:p-8">
-              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 sm:gap-6">
+            <div className="bg-gradient-to-r from-Maincolor/30 to-Secondcolor/30 text-white p-6 border-b border-slate-700">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <div>
-                  <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2">{jobData.title}</h1>
-                  <p className="text-base sm:text-lg md:text-xl text-blue-100 mb-3 sm:mb-4">{jobData.position}</p>
-                  <div className="flex flex-wrap gap-2 sm:gap-3">
-                    <span className="inline-flex items-center px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium bg-blue-500/30 text-white backdrop-blur-sm">
+                  <h1 className="text-lg sm:text-xl font-bold mb-1">{jobData.title}</h1>
+                  <p className="text-xs sm:text-sm text-blue-200 mb-3">{jobData.position}</p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-slate-800 text-gray-300 border border-slate-700">
                       {jobData.department}
                     </span>
-                    <span className="inline-flex items-center px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium bg-blue-500/30 text-white backdrop-blur-sm">
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-slate-800 text-gray-300 border border-slate-700">
                       {jobData.experience}
                     </span>
-                    <span className="inline-flex items-center px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium bg-blue-500/30 text-white backdrop-blur-sm">
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-slate-800 text-gray-300 border border-slate-700">
                       {jobData.location}
                     </span>
                   </div>
                 </div>
-                <div className="mt-4 sm:mt-6 lg:mt-0 lg:text-right">
+                <div className="sm:text-right flex flex-col gap-2">
                   <button 
                     onClick={() => setShowApplicationForm(true)}
-                    className="bg-white text-Maincolor px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-lg font-semibold text-sm sm:text-base hover:bg-blue-50 transition-colors duration-300 shadow-lg cursor-pointer"
+                    className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold text-xs transition-colors duration-300 shadow-md cursor-pointer w-fit sm:ml-auto"
                   >
                     Apply Now
                   </button>
-                  <p className="text-blue-100 mt-2 text-xs sm:text-sm">Joining: {jobData.joining}</p>
+                  <p className="text-gray-400 text-[10px]">Joining: {jobData.joining}</p>
                 </div>
               </div>
             </div>
 
             {/* Tab Navigation */}
-            <div className="border-b border-gray-200">
-              <div className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8">
-                <nav className="flex flex-wrap gap-4 sm:gap-8">
+            <div className="border-b border-slate-800 bg-slate-900/60">
+              <div className="px-6">
+                <nav className="flex gap-6">
                   {['details', 'process', 'requirements'].map((tab) => (
                     <button
                       key={tab}
-                      className={`py-3 sm:py-4 px-1 border-b-2 font-medium text-xs sm:text-sm capitalize ${
+                      className={`py-3.5 px-1 border-b-2 font-semibold text-xs capitalize cursor-pointer ${
                         activeTab === tab
                           ? 'border-Maincolor text-Maincolor'
-                          : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                          : 'border-transparent text-gray-400 hover:text-gray-200'
                       }`}
                       onClick={() => setActiveTab(tab)}
                     >
@@ -99,22 +97,22 @@ const JobOpeningDetail = () => {
             </div>
 
             {/* Tab Content */}
-            <div className="max-w-4xl mx-auto p-4 sm:p-6 md:p-8">
+            <div className="p-6">
               {activeTab === 'details' && (
-                <div className="space-y-6 sm:space-y-8">
-                  <section>
-                    <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">Job Summary</h2>
-                    <div className="bg-gray-50 rounded-lg p-4 sm:p-6">
-                      <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
+                <div className="space-y-6">
+                  <section className="space-y-3">
+                    <h2 className="text-sm font-bold text-white uppercase tracking-wider">Job Summary</h2>
+                    <div className="bg-slate-950/40 border border-slate-800/80 rounded-lg p-4">
+                      <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
                         {jobData.description}
                       </p>
                     </div>
                   </section>
                   
-                  <section>
-                    <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">Key Responsibilities</h2>
-                    <div className="bg-gray-50 rounded-lg p-4 sm:p-6">
-                      <ul className="space-y-2 sm:space-y-3 text-gray-700 text-sm sm:text-base">
+                  <section className="space-y-3">
+                    <h2 className="text-sm font-bold text-white uppercase tracking-wider">Key Responsibilities</h2>
+                    <div className="bg-slate-950/40 border border-slate-800/80 rounded-lg p-4">
+                      <ul className="space-y-2 text-gray-300 text-xs sm:text-sm">
                         {jobData.responsibilities.map((responsibility, index) => (
                           <li key={index} className="flex items-start">
                             <span className="text-Maincolor mr-2">•</span>
@@ -128,25 +126,25 @@ const JobOpeningDetail = () => {
               )}
 
               {activeTab === 'process' && (
-                <div className="space-y-6 sm:space-y-8">
-                  <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6">Hiring Process</h2>
-                  <div className="space-y-4 sm:space-y-6">
+                <div className="space-y-6">
+                  <h2 className="text-sm font-bold text-white uppercase tracking-wider mb-2">Hiring Process</h2>
+                  <div className="space-y-4">
                     {hiringProcess.map((step) => (
-                      <div key={step.step} className="flex items-start space-x-3 sm:space-x-4">
+                      <div key={step.step} className="flex items-start space-x-3">
                         <div className="flex-shrink-0">
-                          <div className="w-8 sm:w-10 h-8 sm:h-10 bg-Maincolor rounded-full flex items-center justify-center text-white font-bold text-sm sm:text-base">
+                          <div className="w-7 h-7 bg-Maincolor/25 text-Maincolor rounded-full flex items-center justify-center font-bold text-xs">
                             {step.step}
                           </div>
                         </div>
-                        <div className="flex-1">
-                          <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-1 sm:mb-2">{step.title}</h3>
-                          <p className="text-gray-600 text-sm sm:text-base">{step.description}</p>
+                        <div className="flex-1 space-y-1">
+                          <h3 className="text-xs sm:text-sm font-bold text-white">{step.title}</h3>
+                          <p className="text-gray-400 text-xs leading-relaxed">{step.description}</p>
                         </div>
                       </div>
                     ))}
                   </div>
-                  <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mt-4 sm:mt-6">
-                    <p className="text-yellow-800 font-medium text-sm sm:text-base">
+                  <div className="bg-blue-950/20 border border-blue-900/30 rounded-lg p-4">
+                    <p className="text-blue-300 text-xs font-semibold">
                       Note: Joining Required: {jobData.joining.toLowerCase()}
                     </p>
                   </div>
@@ -154,11 +152,11 @@ const JobOpeningDetail = () => {
               )}
 
               {activeTab === 'requirements' && (
-                <div className="space-y-6 sm:space-y-8">
-                  <section>
-                    <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">Required Skills</h2>
-                    <div className="bg-gray-50 rounded-lg p-4 sm:p-6">
-                      <ul className="space-y-2 sm:space-y-3 text-gray-700 text-sm sm:text-base">
+                <div className="space-y-6">
+                  <section className="space-y-3">
+                    <h2 className="text-sm font-bold text-white uppercase tracking-wider">Required Skills</h2>
+                    <div className="bg-slate-950/40 border border-slate-800/80 rounded-lg p-4">
+                      <ul className="space-y-2 text-gray-300 text-xs sm:text-sm">
                         {jobData.requiredSkills.map((skill, index) => (
                           <li key={index} className="flex items-start">
                             <span className="text-Maincolor mr-2">•</span>
@@ -169,13 +167,13 @@ const JobOpeningDetail = () => {
                     </div>
                   </section>
                   
-                  <section>
-                    <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">Nice to Have</h2>
-                    <div className="bg-gray-50 rounded-lg p-4 sm:p-6">
-                      <ul className="space-y-2 sm:space-y-3 text-gray-700 text-sm sm:text-base">
+                  <section className="space-y-3">
+                    <h2 className="text-sm font-bold text-white uppercase tracking-wider">Nice to Have</h2>
+                    <div className="bg-slate-950/40 border border-slate-800/80 rounded-lg p-4">
+                      <ul className="space-y-2 text-gray-300 text-xs sm:text-sm">
                         {jobData.niceToHave.map((skill, index) => (
                           <li key={index} className="flex items-start">
-                            <span className="text-green-500 mr-2">•</span>
+                            <span className="text-green-400 mr-2">•</span>
                             {skill}
                           </li>
                         ))}
@@ -187,20 +185,17 @@ const JobOpeningDetail = () => {
             </div>
 
             {/* Apply Now Section */}
-            <div className="bg-gray-50 border-t border-gray-200 p-4 sm:p-6 md:p-8">
-              <div className="max-w-4xl mx-auto text-center">
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">Ready to Join Our Team?</h3>
-                <p className="text-gray-600 text-sm sm:text-base mb-4 sm:mb-6 max-w-2xl mx-auto">
-                  Take the next step in your career journey. Apply now and become part of our innovative team where your skills will be valued and your growth supported.
-                </p>
-                <button 
-                  onClick={() => setShowApplicationForm(true)}
-                  className="bg-Maincolor text-white px-6 sm:px-8 md:px-10 py-2 sm:py-3 md:py-4 rounded-lg font-semibold text-sm sm:text-base md:text-lg hover:bg-blue-700 transition-colors duration-300 shadow-lg cursor-pointer"
-                >
-                  Apply Now
-                </button>
-                <p className="text-gray-500 text-xs sm:text-sm mt-3 sm:mt-4">We're excited to potentially welcome you to our team!</p>
-              </div>
+            <div className="bg-slate-950/40 border-t border-slate-800 p-6 text-center space-y-3">
+              <h3 className="text-base font-bold text-white">Ready to Join Our Team?</h3>
+              <p className="text-gray-400 text-xs leading-relaxed max-w-md mx-auto">
+                Take the next step in your career journey. Apply now and become part of our innovative team where your skills will be valued and your growth supported.
+              </p>
+              <button 
+                onClick={() => setShowApplicationForm(true)}
+                className="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2.5 rounded-lg font-semibold text-xs cursor-pointer shadow-md transition-colors"
+              >
+                Apply Now
+              </button>
             </div>
           </div>
         </div>

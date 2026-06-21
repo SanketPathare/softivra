@@ -6,38 +6,38 @@ const ServicesShowcase = () => {
     {
       title: "Web Design",
       description:
-        "Your website is often the first impression customers have of your business. We specialize in creating visually stunning, user-friendly websites that not only look great but also deliver a seamless user experience and engaging your audience effectively.",
-      color: "from-blue-400 to-blue-600",
+        "Your website is the digital storefront of your business. We craft custom visual identities and user interfaces that resonate with your target audience, establishing immediate trust and credibility.",
+      color: "from-blue-500 to-indigo-600",
     },
     {
       title: "Web Development",
       description:
-        "Our web development services turn your ideas into reality. We build robust, scalable, and secure websites and web applications that meet the unique needs of your business, ensuring optimal performance and a strong online presence.",
-         color: "from-blue-400 to-blue-600",
+        "We build robust, scalable, and responsive web applications using modern stacks. Our development workflow ensures optimized performance, cross-device consistency, and clean code architectures.",
+      color: "from-blue-500 to-indigo-600",
     },
     {
       title: "Custom Software",
       description:
-        "When off-the-shelf solutions don't cut it, we step in with custom software development. We design and develop software tailored to your specific business processes and requirements, ensuring efficiency and effectiveness.",
-         color: "from-blue-400 to-blue-600",
+        "Tailor-made software built to optimize your unique business operations. From standalone applications to complex enterprise integrations, we create tools that enhance automation and productivity.",
+      color: "from-blue-500 to-indigo-600",
     },
     {
       title: "Logo & Branding",
       description:
-        "Your brand's identity begins with a strong logo. We create memorable logos that capture the essence of your business and resonate with your target audience, helping you stand out in a crowded market.",
-      color: "from-blue-400 to-blue-600",
+        "Create a memorable presence with unified brand identity design. We deliver pixel-perfect logos, brand assets, and styling guidelines that set you apart in highly competitive markets.",
+      color: "from-blue-500 to-indigo-600",
     },
     {
       title: "Graphic Design",
       description:
-        "Visual communication is key to effective marketing. We ensure that your brand stands out in a crowded marketplace with eye-catching graphics for marketing materials, print, and social media, like facebook, instagram, whatsapp, youtube etc.",
-        color: "from-blue-400 to-blue-600",
+        "Meticulously designed marketing collateral, social media assets, and print media. We translate complex brand ideas into clear, striking visual statements that drive engagement.",
+      color: "from-blue-500 to-indigo-600",
     },
     {
       title: "Digital Marketing",
       description:
-        "Boost your online presence with tailored strategies, including SEO, PPC, social media, and content marketing. We drive targeted traffic, enhance brand visibility, and increase conversions, helping your business achieve measurable growth and long-term success.",
-         color: "from-blue-400 to-blue-600",
+        "Grow your business through search engine optimization, content strategy, and target outreach campaigns. We analyze user demographics and behaviors to maximize your marketing returns.",
+      color: "from-blue-500 to-indigo-600",
     },
   ];
 
@@ -46,25 +46,25 @@ const ServicesShowcase = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.15,
       },
     },
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 30, scale: 0.95 },
+    hidden: { opacity: 0, y: 20, scale: 0.98 },
     visible: {
       opacity: 1,
       y: 0,
       scale: 1,
       transition: {
-        duration: 0.5,
+        duration: 0.4,
         ease: "easeOut",
       },
     },
     hover: {
-      scale: 1.03,
-      y: -5,
+      scale: 1.02,
+      y: -4,
       transition: {
         duration: 0.2,
         ease: "easeInOut",
@@ -74,47 +74,42 @@ const ServicesShowcase = () => {
 
   const buttonVariants = {
     hover: {
-      scale: 1.05,
+      scale: 1.03,
       transition: {
         duration: 0.2,
       },
     },
     tap: {
-      scale: 0.95,
+      scale: 0.97,
     },
   };
 
   return (
-    <div className="bg-slate-800 py-8 sm:py-12 px-4 sm:px-6 lg:px-8 min-h-screen relative">
+    <div className="bg-slate-800 py-16 px-4 sm:px-6 lg:px-8 relative border-t border-slate-700">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <motion.div
-          className="text-center mb-8 sm:mb-12 lg:mb-16"
-          initial={{ opacity: 0, y: -20 }}
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: -15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
         >
-          <motion.p
-            className="text-Maincolor text-sm sm:text-lg md:text-xl mb-3 sm:mb-4 font-light"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+          <span className="text-Maincolor text-xs font-semibold uppercase tracking-wider block mb-2">
+            What We Do
+          </span>
+          <motion.h2
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white"
+            initial={{ opacity: 0, scale: 0.98 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
           >
-            We Can Help You
-          </motion.p>
-          <motion.h1
-            className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-          >
-            What Are You Looking For?
-          </motion.h1>
+            Services Designed for Growth
+          </motion.h2>
         </motion.div>
 
         {/* Services Grid */}
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -128,44 +123,46 @@ const ServicesShowcase = () => {
             >
               {/* Gradient Border Wrapper */}
               <div
-                className={`relative rounded-tl-[40px] sm:rounded-tl-[50px] rounded-br-[20px] sm:rounded-br-[30px] p-[2px] bg-gradient-to-br ${service.color} shadow-lg transition-all duration-300`}
+                className={`relative rounded-tl-[30px] rounded-br-[15px] p-[2px] bg-gradient-to-br ${service.color} shadow-md transition-all duration-300`}
               >
                 {/* Inner Card */}
-                <div className="bg-slate-900 rounded-tl-[38px] sm:rounded-tl-[48px] rounded-br-[18px] sm:rounded-br-[28px] p-4 sm:p-6 lg:p-8 sm:min-h-[300px] flex flex-col justify-between">
+                <div className="bg-slate-900 rounded-tl-[28px] rounded-br-[13px] p-6 lg:p-7 min-h-[260px] flex flex-col justify-between">
                   {/* Hover Gradient Overlay */}
                   <div
-                    className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-tl-[38px] sm:rounded-tl-[48px] rounded-br-[18px] sm:rounded-br-[28px]`}
+                    className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-tl-[28px] rounded-br-[13px]`}
                   ></div>
 
                   {/* Card Content */}
-                  <div className="relative z-10 flex flex-col h-full">
+                  <div className="relative z-10 flex flex-col h-full space-y-4">
                     <motion.h3
-                      className="text-white text-xl sm:text-2xl font-bold mb-4 sm:mb-6"
+                      className="text-white text-lg sm:text-xl font-bold"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
-                      transition={{ delay: index * 0.1 + 0.6 }}
+                      transition={{ delay: index * 0.05 + 0.3 }}
                     >
                       {service.title}
                     </motion.h3>
 
                     <motion.p
-                      className="text-gray-300 text-sm sm:text-base leading-relaxed mb-4 sm:mb-6 line-clamp-5 sm:line-clamp-5"
+                      className="text-gray-400 text-xs sm:text-sm leading-relaxed line-clamp-4"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
-                      transition={{ delay: index * 0.1 + 0.8 }}
+                      transition={{ delay: index * 0.05 + 0.4 }}
                     >
                       {service.description}
                     </motion.p>
 
-                    <div className="mt-auto">
-                      <motion.button
-                        variants={buttonVariants}
-                        whileHover="hover"
-                        whileTap="tap"
-                        className="text-Maincolor cursor-pointer font-semibold text-sm sm:text-base hover:underline transition-all duration-300"
-                      >
-                        Know more ...
-                      </motion.button>
+                    <div className="mt-auto pt-2">
+                      <Link to="/services">
+                        <motion.button
+                          variants={buttonVariants}
+                          whileHover="hover"
+                          whileTap="tap"
+                          className="text-Maincolor cursor-pointer font-semibold text-xs hover:underline transition-all duration-300 flex items-center gap-1"
+                        >
+                          Find out more &rarr;
+                        </motion.button>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -176,45 +173,22 @@ const ServicesShowcase = () => {
 
         {/* Bottom CTA Button */}
         <motion.div
-          className="text-center mt-8 sm:mt-10 "
-          initial={{ opacity: 0, y: 20 }}
+          className="text-center mt-10"
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.2, duration: 0.6 }}
+          transition={{ delay: 0.8, duration: 0.5 }}
         >
           <Link to="/services">
             <motion.button
               variants={buttonVariants}
               whileHover="hover"
               whileTap="tap"
-              className="bg-white/10 backdrop-blur-lg text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-sm sm:text-lg border border-white/30 hover:bg-white/30 transition-all duration-300 shadow-lg cursor-pointer"
+              className="bg-white/10 backdrop-blur-lg text-white px-5 py-2.5 rounded-full font-semibold text-xs border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-md cursor-pointer"
             >
-              Find out more ...
+              View Detailed Services
             </motion.button>
           </Link>
         </motion.div>
-      </div>
-
-      {/* Floating Particles */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        {[...Array(4)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1.5 h-1.5 sm:w-2 sm:h-2 bg-white/20 rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, -20, 0],
-              opacity: [0.2, 0.6, 0.2],
-            }}
-            transition={{
-              duration: 2.5 + Math.random() * 1.5,
-              repeat: Infinity,
-              delay: Math.random() * 1.5,
-            }}
-          />
-        ))}
       </div>
     </div>
   );

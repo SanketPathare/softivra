@@ -206,37 +206,39 @@ const Services = () => {
 
   // Animation variants for Framer Motion
   const serviceVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
   };
 
   return (
-    <div className="min-h-screen bg-slate-800">
+    <div className="min-h-screen bg-slate-800 pb-16">
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-12 md:py-20 px-4 sm:px-6 lg:px-8 inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20">
+      <section className="relative overflow-hidden py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600/10 to-purple-600/10">
         <div className="relative max-w-7xl mx-auto text-center">
           <motion.div
             id="hero"
-            data-animate
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-4 text-white">
-              Services
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-2">
+              Our Services
             </h1>
+            <p className="text-gray-300 text-xs sm:text-sm max-w-lg mx-auto">
+              Explore how Softivra helps you build, scale, and thrive online.
+            </p>
           </motion.div>
         </div>
       </section>
 
       {/* Services Designed for You Header */}
-      <section className="py-8 md:py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
+      <section className="py-8 text-center">
+        <div className="max-w-7xl mx-auto">
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 px-4"
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="text-xl sm:text-2xl lg:text-3xl font-bold text-white px-4"
           >
             Services Designed for You
           </motion.h2>
@@ -244,82 +246,54 @@ const Services = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="pb-12 md:pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto space-y-16 md:space-y-24 lg:space-y-30">
+      <section className="px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto space-y-12">
           {services.map((service, index) => (
             <motion.div
               key={service.id}
               id={`service-${index}`}
-              data-animate
               variants={serviceVariants}
               initial="hidden"
-              animate={isVisible[`service-${index}`] ? "visible" : "hidden"}
-              className="bg-slate-700/30 rounded-2xl p-6 md:p-8 lg:p-10 backdrop-blur-sm border border-slate-600/50"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.15 }}
+              className="bg-slate-700/20 rounded-xl p-5 sm:p-6 md:p-8 backdrop-blur-sm border border-slate-600/40"
             >
-              {/* Service Image and Content */}
-              <div className="flex flex-col lg:flex-row justify-between items-center gap-8 md:gap-10">
-                {/* Image Section - Order changes on mobile */}
-                <div className={`w-full lg:w-1/2 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                  <div className="relative">
-                    <motion.img
-                      src={service.image}
-                      alt={`${service.title} illustration`}
-                      className="w-full h-64 sm:h-64 md:h-80 lg:h-96 object-contain rounded-lg"
-                      initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-                    />
-                  </div>
+              {/* Service Content */}
+              <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
+                {/* Image Section */}
+                <div className={`w-full lg:w-1/2 flex justify-center ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+                  <img
+                    src={service.image}
+                    alt={`${service.title} illustration`}
+                    className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-[360px] h-auto object-contain rounded-lg filter drop-shadow-lg"
+                  />
                 </div>
 
-                {/* Service Content */}
-                <div className={`w-full lg:w-1/2 ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                  <motion.h3
-                    className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 md:mb-6 text-center lg:text-left"
-                    initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
-                  >
+                {/* Content Section */}
+                <div className={`w-full lg:w-1/2 space-y-3.5 text-center lg:text-left ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+                  <h3 className="text-xl sm:text-2xl font-bold text-white">
                     {service.title}
-                  </motion.h3>
-                  <motion.p
-                    className="text-base sm:text-lg text-blue-100 mb-4 md:mb-6 leading-relaxed text-center lg:text-left"
-                    initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
-                  >
+                  </h3>
+                  <p className="text-xs sm:text-sm text-blue-100 leading-relaxed">
                     {service.description}
-                  </motion.p>
-                  <motion.p
-                    className="text-sm sm:text-base text-blue-200 mb-6 md:mb-8 leading-relaxed text-center lg:text-left"
-                    initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
-                  >
+                  </p>
+                  <p className="text-xs text-blue-200/80 leading-relaxed font-light">
                     {service.detailText}
-                  </motion.p>
+                  </p>
                 </div>
               </div>
 
               {/* Service Features */}
-              <div className="flex flex-col items-center justify-center mt-8 md:mt-10">
-                <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 max-w-6xl">
+              <div className="mt-8 border-t border-slate-600/40 pt-6">
+                <div className="flex flex-wrap justify-center gap-2 max-w-4xl mx-auto">
                   {service.features.map((feature, featureIndex) => (
                     <motion.div
                       key={featureIndex}
-                      className="flex items-center bg-gradient-to-br from-gray-800 to-gray-900 text-white rounded-full px-3 py-2 sm:px-4 sm:py-2 border border-gray-700 hover:bg-gray-700 transition-all duration-300"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ 
-                        duration: 0.3, 
-                        ease: "easeOut", 
-                        delay: 0.7 + featureIndex * 0.05 
-                      }}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
+                      className="flex items-center bg-slate-900/60 text-white rounded-full px-3 py-1.5 border border-slate-700 transition-colors"
+                      whileHover={{ scale: 1.02 }}
                     >
                       <svg
-                        className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400 mr-2 flex-shrink-0"
+                        className="w-3.5 h-3.5 text-blue-400 mr-1.5 flex-shrink-0"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -328,11 +302,11 @@ const Services = () => {
                         <path
                           strokeLinecap="round"
                           strokeLinejoin="round"
-                          strokeWidth="2"
+                          strokeWidth="2.5"
                           d="M5 13l4 4L19 7"
                         />
                       </svg>
-                      <span className="text-xs sm:text-sm font-medium text-white whitespace-nowrap">
+                      <span className="text-[10px] sm:text-xs font-medium text-gray-200">
                         {feature}
                       </span>
                     </motion.div>
@@ -345,7 +319,9 @@ const Services = () => {
       </section>
 
       {/* CTA Section */}
-      <CTASection />
+      <div className="mt-16">
+        <CTASection />
+      </div>
     </div>
   );
 };
