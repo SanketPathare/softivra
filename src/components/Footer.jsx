@@ -11,14 +11,11 @@ import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import SoftivraLogo from "./SoftivraLogo";
 
 const Footer = () => {
-  // Animation variants for staggered children
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
+      transition: { staggerChildren: 0.08 },
     },
   };
 
@@ -27,63 +24,62 @@ const Footer = () => {
     visible: {
       y: 0,
       opacity: 1,
-      transition: {
-        duration: 0.5,
-      },
+      transition: { duration: 0.5, ease: "easeOut" },
     },
   };
 
   return (
-    <footer
-      className="relative bg-slate-800 text-white bg-opacity-90 border-t border-slate-700"
-      style={{
-        backgroundImage: 'url("https://nextdigit.in/img/city-bg.png")',
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundBlendMode: "overlay",
-      }}
-    >
-      {/* Top section with company info */}
-      <div className="flex flex-col md:flex-row justify-around items-center bg-slate-900 border-b border-slate-800 text-white py-4 px-4 shadow-sm">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="py-2 text-center md:text-left"
-        >
-          <h2 className="text-sm sm:text-base font-semibold mb-1 text-gray-200">
-            Trust our professionals for reliable, comprehensive evaluations.
-          </h2>
-          <p className="text-base sm:text-lg mb-2 md:mb-0 text-Maincolor font-semibold">
-            Contact us today!
-          </p>
-        </motion.div>
-        <div>
-          <Link to="/contact">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-Maincolor hover:bg-blue-600 text-white px-5 py-2.5 rounded-lg font-semibold text-sm shadow-md cursor-pointer transition-colors"
-              aria-label="Get Started"
-            >
-              Get Started
-            </motion.button>
-          </Link>
+    <footer className="relative bg-slate-950 border-t border-slate-800/50">
+      {/* Top CTA */}
+      <div className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-Maincolor/10 to-transparent" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-sm sm:text-base font-semibold text-gray-200 text-center sm:text-left">
+              Trust our professionals for reliable, comprehensive evaluations.
+            </h3>
+            <p className="text-Maincolor font-semibold text-sm text-center sm:text-left">
+              Contact us today!
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <Link to="/contact">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-Maincolor hover:bg-blue-600 text-white px-6 py-2.5 rounded-lg font-semibold text-sm shadow-lg shadow-Maincolor/20 transition-all cursor-pointer"
+                aria-label="Get Started"
+              >
+                Get Started
+              </motion.button>
+            </Link>
+          </motion.div>
         </div>
       </div>
 
       {/* Main footer content */}
-      <div className="container mx-auto px-4 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8"
+          viewport={{ once: true, margin: "-50px" }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-8 lg:gap-12"
         >
           {/* Company description */}
-          <motion.div variants={itemVariants} className="lg:col-span-2 space-y-4">
+          <motion.div variants={itemVariants} className="sm:col-span-2 xl:col-span-2 space-y-4">
             <SoftivraLogo className="h-9" textColor="text-white" lightMode={true} />
-            <p className="text-gray-300 text-sm leading-relaxed max-w-sm">
+            <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
               We specialize in innovative IT, custom software solutions, and creative
               design services, delivering excellence and driving digital
               transformation for businesses worldwide.
@@ -92,10 +88,10 @@ const Footer = () => {
 
           {/* Services */}
           <motion.div variants={itemVariants}>
-            <h4 className="text-xs font-bold tracking-wider mb-4 border-b border-slate-700 pb-2 text-blue-400">
+            <h4 className="text-[11px] font-bold tracking-widest mb-4 text-blue-400 uppercase">
               SERVICES
             </h4>
-            <ul className="space-y-2 text-sm text-gray-300">
+            <ul className="space-y-2.5">
               {[
                 { to: "/services", label: "Website Design" },
                 { to: "/services", label: "Website Development" },
@@ -103,12 +99,12 @@ const Footer = () => {
                 { to: "/services", label: "Payment Gateway" },
                 { to: "/services", label: "Bulk SMS" },
               ].map((item) => (
-                <li key={item.to}>
+                <li key={item.label}>
                   <Link
                     to={item.to}
-                    className="flex items-center gap-1.5 hover:text-blue-400 transition-colors"
+                    className="flex items-center gap-1.5 text-sm text-gray-400 hover:text-blue-400 transition-colors group"
                   >
-                    <MdOutlineKeyboardArrowRight className="w-3.5 h-3.5 flex-shrink-0" />
+                    <MdOutlineKeyboardArrowRight className="w-3.5 h-3.5 flex-shrink-0 text-gray-600 group-hover:text-blue-400 transition-colors" />
                     {item.label}
                   </Link>
                 </li>
@@ -118,10 +114,10 @@ const Footer = () => {
 
           {/* Other Services */}
           <motion.div variants={itemVariants}>
-            <h4 className="text-xs font-bold tracking-wider mb-4 border-b border-slate-700 pb-2 text-blue-400">
+            <h4 className="text-[11px] font-bold tracking-widest mb-4 text-blue-400 uppercase">
               OTHER SERVICES
             </h4>
-            <ul className="space-y-2 text-sm text-gray-300">
+            <ul className="space-y-2.5">
               {[
                 { to: "/services", label: "Logo & Branding" },
                 { to: "/services", label: "Graphic Design" },
@@ -130,12 +126,12 @@ const Footer = () => {
                 { to: "/services", label: "Packaging Design" },
                 { to: "/services", label: "Social Media Graphics" },
               ].map((item) => (
-                <li key={item.to}>
+                <li key={item.label}>
                   <Link
                     to={item.to}
-                    className="flex items-center gap-1.5 hover:text-blue-400 transition-colors"
+                    className="flex items-center gap-1.5 text-sm text-gray-400 hover:text-blue-400 transition-colors group"
                   >
-                    <MdOutlineKeyboardArrowRight className="w-3.5 h-3.5 flex-shrink-0" />
+                    <MdOutlineKeyboardArrowRight className="w-3.5 h-3.5 flex-shrink-0 text-gray-600 group-hover:text-blue-400 transition-colors" />
                     {item.label}
                   </Link>
                 </li>
@@ -145,22 +141,22 @@ const Footer = () => {
 
           {/* Company Links */}
           <motion.div variants={itemVariants}>
-            <h4 className="text-xs font-bold tracking-wider mb-4 border-b border-slate-700 pb-2 text-blue-400">
+            <h4 className="text-[11px] font-bold tracking-widest mb-4 text-blue-400 uppercase">
               COMPANY
             </h4>
-            <ul className="space-y-2 text-sm text-gray-300">
+            <ul className="space-y-2.5">
               {[
                 { to: "/about-us", label: "Who We Are" },
                 { to: "/services", label: "Services" },
                 { to: "/careers", label: "Career" },
                 { to: "/contact", label: "Contact Us" },
               ].map((item) => (
-                <li key={item.to}>
+                <li key={item.label}>
                   <Link
                     to={item.to}
-                    className="flex items-center gap-1.5 hover:text-blue-400 transition-colors"
+                    className="flex items-center gap-1.5 text-sm text-gray-400 hover:text-blue-400 transition-colors group"
                   >
-                    <MdOutlineKeyboardArrowRight className="w-3.5 h-3.5 flex-shrink-0" />
+                    <MdOutlineKeyboardArrowRight className="w-3.5 h-3.5 flex-shrink-0 text-gray-600 group-hover:text-blue-400 transition-colors" />
                     {item.label}
                   </Link>
                 </li>
@@ -169,85 +165,60 @@ const Footer = () => {
           </motion.div>
 
           {/* Contact */}
-          <motion.div
-            variants={itemVariants}
-            className="md:col-span-2 lg:col-span-1"
-          >
-            <h4 className="text-xs font-bold tracking-wider mb-4 border-b border-slate-700 pb-2 text-blue-400">
+          <motion.div variants={itemVariants} className="sm:col-span-2 xl:col-span-1">
+            <h4 className="text-[11px] font-bold tracking-widest mb-4 text-blue-400 uppercase">
               CONTACT
             </h4>
-            <ul className="space-y-3 text-sm text-gray-300">
-              <li className="flex items-start">
-                <span className="font-semibold mr-1.5 text-blue-400 flex-shrink-0">Phone:</span>
-                <Link
-                  to="tel:+917620663151"
-                  className="hover:text-blue-400 transition-colors"
+            <ul className="space-y-3">
+              <li>
+                <span className="text-xs font-semibold text-blue-400 block mb-1">Phone</span>
+                <a
+                  href="tel:+917620663151"
+                  className="text-sm text-gray-400 hover:text-blue-400 transition-colors"
                 >
                   +91 76206 xxx
-                </Link>
+                </a>
               </li>
-              <li className="flex items-start">
-                <span className="font-semibold mr-1.5 text-blue-400 flex-shrink-0">Email:</span>
-                <Link
-                  to="mailto:contact@softivra.com"
-                  className="hover:text-blue-400 transition-colors break-all"
+              <li>
+                <span className="text-xs font-semibold text-blue-400 block mb-1">Email</span>
+                <a
+                  href="mailto:contact@softivra.com"
+                  className="text-sm text-gray-400 hover:text-blue-400 transition-colors break-all"
                 >
                   contact@softivra.com
-                </Link>
+                </a>
               </li>
               <li>
                 <Link
                   to="/contact"
-                  className="font-semibold text-blue-400 hover:underline transition-colors"
+                  className="inline-flex items-center gap-1 text-sm font-medium text-blue-400 hover:text-Maincolor transition-colors group"
                 >
-                  Leave a message here
+                  Leave a message
+                  <MdOutlineKeyboardArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                 </Link>
               </li>
-              <li className="mt-4">
-                <span className="font-semibold block mb-2 text-xs tracking-wider">
-                  FOLLOW US
+              <li className="pt-4">
+                <span className="text-[11px] font-bold tracking-widest text-blue-400 block mb-3 uppercase">
+                  Follow Us
                 </span>
-                <div className="flex space-x-3">
+                <div className="flex gap-2.5">
                   {[
-                    {
-                      to: "https://www.facebook.com/softivra",
-                      icon: FaFacebook,
-                      color: "bg-slate-700 hover:bg-slate-600",
-                      label: "Facebook",
-                    },
-                    {
-                      to: "https://twitter.com/softivra",
-                      icon: FaTwitter,
-                      color: "bg-slate-700 hover:bg-slate-600",
-                      label: "Twitter",
-                    },
-                    {
-                      to: "https://www.instagram.com/softivra",
-                      icon: FaInstagram,
-                      color: "bg-slate-700 hover:bg-slate-600",
-                      label: "Instagram",
-                    },
-                    {
-                      to: "https://www.linkedin.com/company/softivra",
-                      icon: FaLinkedin,
-                      color: "bg-slate-700 hover:bg-slate-600",
-                      label: "LinkedIn",
-                    },
+                    { to: "https://www.facebook.com/softivra", icon: FaFacebook, label: "Facebook" },
+                    { to: "https://twitter.com/softivra", icon: FaTwitter, label: "Twitter" },
+                    { to: "https://www.instagram.com/softivra", icon: FaInstagram, label: "Instagram" },
+                    { to: "https://www.linkedin.com/company/softivra", icon: FaLinkedin, label: "LinkedIn" },
                   ].map((social) => (
-                    <motion.div
-                      key={social.to}
-                      whileHover={{ scale: 1.15 }}
-                      className={`${social.color} p-2 rounded-full cursor-pointer transition-colors`}
+                    <motion.a
+                      key={social.label}
+                      href={social.to}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={social.label}
+                      whileHover={{ scale: 1.1, y: -2 }}
+                      className="p-2.5 bg-slate-900/80 backdrop-blur-sm border border-slate-800/50 text-gray-400 hover:text-Maincolor hover:border-Maincolor/30 rounded-xl transition-all duration-200"
                     >
-                      <Link
-                        to={social.to}
-                        aria-label={social.label}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <social.icon className="w-4 h-4 text-white" />
-                      </Link>
-                    </motion.div>
+                      <social.icon className="w-4 h-4" />
+                    </motion.a>
                   ))}
                 </div>
               </li>
@@ -256,14 +227,17 @@ const Footer = () => {
         </motion.div>
       </div>
 
-      {/* Copyright section */}
+      {/* Copyright */}
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        className="border-t border-slate-700 py-6 text-center text-xs text-gray-400"
+        transition={{ duration: 0.5, delay: 0.3 }}
+        viewport={{ once: true }}
+        className="border-t border-slate-800/50"
       >
-        <p>© 2026 Softivra. All Rights Reserved.</p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 text-center text-xs text-gray-500">
+          <p>© 2026 Softivra. All Rights Reserved.</p>
+        </div>
       </motion.div>
     </footer>
   );

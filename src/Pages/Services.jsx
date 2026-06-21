@@ -204,7 +204,6 @@ const Services = () => {
     },
   ];
 
-  // Animation variants for Framer Motion
   const serviceVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
@@ -213,7 +212,7 @@ const Services = () => {
   return (
     <div className="min-h-screen bg-slate-800 pb-16">
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600/10 to-purple-600/10">
+      <section className="relative overflow-hidden py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-Maincolor/10 via-transparent to-Secondcolor/5">
         <div className="relative max-w-7xl mx-auto text-center">
           <motion.div
             id="hero"
@@ -224,30 +223,16 @@ const Services = () => {
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-2">
               Our Services
             </h1>
-            <p className="text-gray-300 text-xs sm:text-sm max-w-lg mx-auto">
+            <p className="text-transparent bg-clip-text bg-gradient-to-r from-Maincolor to-Secondcolor font-semibold text-sm sm:text-base max-w-lg mx-auto">
               Explore how Softivra helps you build, scale, and thrive online.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Services Designed for You Header */}
-      <section className="py-8 text-center">
-        <div className="max-w-7xl mx-auto">
-          <motion.h2
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            className="text-xl sm:text-2xl lg:text-3xl font-bold text-white px-4"
-          >
-            Services Designed for You
-          </motion.h2>
-        </div>
-      </section>
-
-      {/* Services Grid */}
-      <section className="px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto space-y-12">
+      {/* Service Cards */}
+      <section className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="max-w-6xl mx-auto space-y-10">
           {services.map((service, index) => (
             <motion.div
               key={service.id}
@@ -256,44 +241,44 @@ const Services = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.15 }}
-              className="bg-slate-700/20 rounded-xl p-5 sm:p-6 md:p-8 backdrop-blur-sm border border-slate-600/40"
+              className="bg-slate-900/60 backdrop-blur-sm border border-slate-700/50 rounded-xl p-6 sm:p-8 hover:border-Maincolor/30 transition-all duration-500"
             >
-              {/* Service Content */}
+              {/* Service Row */}
               <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
-                {/* Image Section */}
+                {/* Image Section - always on top on mobile */}
                 <div className={`w-full lg:w-1/2 flex justify-center ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
                   <img
                     src={service.image}
                     alt={`${service.title} illustration`}
-                    className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-[360px] h-auto object-contain rounded-lg filter drop-shadow-lg"
+                    className="w-full max-w-[260px] sm:max-w-[300px] md:max-w-[340px] h-auto object-contain drop-shadow-lg"
                   />
                 </div>
 
                 {/* Content Section */}
-                <div className={`w-full lg:w-1/2 space-y-3.5 text-center lg:text-left ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+                <div className={`w-full lg:w-1/2 space-y-4 text-center lg:text-left ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
                   <h3 className="text-xl sm:text-2xl font-bold text-white">
                     {service.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-blue-100 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-gray-200 leading-relaxed">
                     {service.description}
                   </p>
-                  <p className="text-xs text-blue-200/80 leading-relaxed font-light">
+                  <p className="text-xs text-gray-400 leading-relaxed font-light">
                     {service.detailText}
                   </p>
                 </div>
               </div>
 
-              {/* Service Features */}
-              <div className="mt-8 border-t border-slate-600/40 pt-6">
-                <div className="flex flex-wrap justify-center gap-2 max-w-4xl mx-auto">
+              {/* Feature Tags */}
+              <div className="mt-8 border-t border-slate-700/40 pt-6">
+                <div className="flex flex-wrap justify-center lg:justify-start gap-2 max-w-4xl">
                   {service.features.map((feature, featureIndex) => (
                     <motion.div
                       key={featureIndex}
-                      className="flex items-center bg-slate-900/60 text-white rounded-full px-3 py-1.5 border border-slate-700 transition-colors"
-                      whileHover={{ scale: 1.02 }}
+                      className="flex items-center bg-slate-950/50 text-white rounded-full px-3 py-1.5 border border-slate-700/50 hover:border-Maincolor/40 transition-all duration-300"
+                      whileHover={{ scale: 1.04 }}
                     >
                       <svg
-                        className="w-3.5 h-3.5 text-blue-400 mr-1.5 flex-shrink-0"
+                        className="w-3.5 h-3.5 text-Maincolor mr-1.5 flex-shrink-0"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -319,7 +304,7 @@ const Services = () => {
       </section>
 
       {/* CTA Section */}
-      <div className="mt-16">
+      <div className="mt-8">
         <CTASection />
       </div>
     </div>

@@ -8,7 +8,6 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
-  // Navigation items with routes
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about-us' },
@@ -27,78 +26,95 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      setIsScrolled(scrollPosition > 50);
+      setIsScrolled(window.scrollY > 50);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [isOpen]);
+
   return (
     <div className="w-full relative z-50">
-      {/* Top Contact Bar (Desktop Only) - Thin, clean, no logo */}
-      <div className="bg-slate-950/80 text-gray-400 px-4 py-2 hidden md:block border-b border-slate-900">
-        <div className="max-w-7xl mx-auto flex justify-between items-center text-xs">
-          <div className="flex items-center space-x-6">
-            <div className="flex items-center space-x-1.5">
-              <Phone className="w-3.5 h-3.5 text-Maincolor" />
-              <Link to="tel:+917620663151" className="hover:text-white transition-colors">
-                +91 76206 xxx
-              </Link>
-            </div>
-            <div className="flex items-center space-x-1.5">
-              <Mail className="w-3.5 h-3.5 text-Maincolor" />
-              <Link to="mailto:contact@softivra.com" className="hover:text-white transition-colors">
-                contact@softivra.com
-              </Link>
-            </div>
-          </div>
-          <div className="flex items-center space-x-3">
-            <span className="text-[10px] uppercase font-bold tracking-wider text-gray-500 mr-1">Follow Us:</span>
-            {socialIcons.map(({ Icon, href, label }) => (
-              <Link
-                key={label}
-                to={href}
-                target="_blank"
-                aria-label={label}
-                className="hover:text-white transition-colors text-gray-400"
+      {/* Top Contact Bar (Desktop Only) - Glass effect */}
+      <div className="hidden md:block bg-slate-950/60 backdrop-blur-sm border-b border-slate-800/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-9">
+            <div className="flex items-center gap-5">
+              <a
+                href="tel:+917620663151"
+                className="flex items-center gap-1.5 text-gray-400 hover:text-white transition-colors text-[11px]"
               >
-                <Icon className="w-3.5 h-3.5" />
-              </Link>
-            ))}
+                <Phone className="w-3 h-3 text-Maincolor" />
+                +91 76206 xxx
+              </a>
+              <a
+                href="mailto:contact@softivra.com"
+                className="flex items-center gap-1.5 text-gray-400 hover:text-white transition-colors text-[11px]"
+              >
+                <Mail className="w-3 h-3 text-Maincolor" />
+                contact@softivra.com
+              </a>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-[9px] uppercase font-semibold tracking-widest text-gray-500">
+                Follow:
+              </span>
+              {socialIcons.map(({ Icon, href, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={label}
+                  className="text-gray-500 hover:text-Maincolor transition-colors p-1"
+                >
+                  <Icon className="w-3 h-3" />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Main Navbar */}
-      <nav className={`transition-all duration-300 w-full ${isScrolled ? 'bg-slate-900/95 backdrop-blur-md border-b border-slate-800 md:fixed md:top-0 md:left-0 md:right-0 shadow-md py-3' : 'bg-slate-900/90 backdrop-blur-md border-b border-slate-800 py-4'}`}>
+      {/* Main Navbar - Glass morphism */}
+      <nav
+        className={`transition-all duration-300 ${
+          isScrolled
+            ? 'bg-slate-900/85 backdrop-blur-xl shadow-lg shadow-black/10 border-b border-slate-800/50'
+            : 'bg-slate-900/30 backdrop-blur-md border-b border-transparent'
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-12">
-            {/* Brand Logo - Rendered once */}
-            <div className="flex items-center">
-              <Link to="/">
-                <SoftivraLogo className="h-9" textColor="text-white" lightMode={true} />
-              </Link>
-            </div>
+          <div className="flex justify-between items-center h-14 lg:h-16">
+            <Link to="/" className="flex-shrink-0">
+              <SoftivraLogo className="h-8 lg:h-9" textColor="text-white" lightMode={true} />
+            </Link>
 
-            {/* Desktop Navigation Links - Borderless and clean */}
-            <div className="hidden md:flex items-center space-x-1">
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center gap-0.5">
               {navItems.map((item) => {
                 const isActive = location.pathname === item.path;
                 return (
                   <Link
                     key={item.name}
                     to={item.path}
-                    className={`relative px-4 py-2 text-xs font-semibold tracking-wider uppercase transition-colors duration-200 rounded-md ${
-                      isActive 
-                        ? 'text-Maincolor' 
-                        : 'text-gray-300 hover:text-white hover:bg-slate-800/40'
+                    className={`relative px-3 lg:px-4 py-2 text-[11px] lg:text-xs font-semibold tracking-wider uppercase rounded-lg transition-all duration-200 ${
+                      isActive
+                        ? 'text-Maincolor bg-Maincolor/10'
+                        : 'text-gray-300 hover:text-white hover:bg-white/5'
                     }`}
                   >
-                    <span>{item.name}</span>
+                    {item.name}
                     {isActive && (
-                      <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-Maincolor rounded-full" />
+                      <span className="absolute -bottom-px left-3 lg:left-4 right-3 lg:right-4 h-[2px] bg-Maincolor rounded-full" />
                     )}
                   </Link>
                 );
@@ -106,36 +122,59 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Menu Button */}
-            <div className="md:hidden flex items-center">
-              <button
-                onClick={() => setIsOpen(!isOpen)}
-                className="p-1.5 text-gray-300 hover:text-white hover:bg-slate-800/60 rounded-lg cursor-pointer transition-colors"
-                aria-label={isOpen ? 'Close menu' : 'Open menu'}
-                aria-expanded={isOpen}
-              >
-                {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-              </button>
-            </div>
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="md:hidden relative p-2 text-gray-300 hover:text-white rounded-lg transition-colors cursor-pointer z-50"
+              aria-label={isOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={isOpen}
+            >
+              <div className="relative w-5 h-5">
+                <span
+                  className={`absolute inset-0 transition-all duration-300 ${
+                    isOpen ? 'opacity-0 rotate-90 scale-75' : 'opacity-100 rotate-0 scale-100'
+                  }`}
+                >
+                  <Menu className="w-5 h-5" />
+                </span>
+                <span
+                  className={`absolute inset-0 transition-all duration-300 ${
+                    isOpen ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-75'
+                  }`}
+                >
+                  <X className="w-5 h-5" />
+                </span>
+              </div>
+            </button>
           </div>
         </div>
+      </nav>
 
-        {/* Mobile Dropdown Menu */}
-        <div
-          className={`md:hidden transition-all duration-300 ease-in-out ${
-            isOpen ? 'max-h-[350px] opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
-          }`}
-        >
-          <div className="px-4 py-3 space-y-1 bg-slate-950 border-t border-slate-900 shadow-inner">
+      {/* Mobile Overlay */}
+      <div
+        className={`fixed inset-0 bg-black/50 backdrop-blur-sm transition-all duration-300 md:hidden ${
+          isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
+        onClick={() => setIsOpen(false)}
+      />
+
+      {/* Mobile Slide-in Panel */}
+      <div
+        className={`fixed top-0 right-0 h-full w-full max-w-sm bg-slate-900/95 backdrop-blur-xl border-l border-slate-800/50 shadow-2xl transition-all duration-300 ease-in-out md:hidden z-40 ${
+          isOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        <div className="flex flex-col h-full pt-20 px-6">
+          <div className="space-y-1">
             {navItems.map((item) => {
               const isActive = location.pathname === item.path;
               return (
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`block px-4 py-2 text-xs uppercase tracking-wider font-semibold rounded-lg transition-colors ${
+                  className={`block px-4 py-3 text-sm font-semibold tracking-wider uppercase rounded-xl transition-all duration-200 ${
                     isActive
-                      ? 'bg-Maincolor text-white'
-                      : 'text-gray-300 hover:bg-slate-900 hover:text-white'
+                      ? 'bg-Maincolor/10 text-Maincolor border-l-2 border-Maincolor'
+                      : 'text-gray-300 hover:text-white hover:bg-white/5 border-l-2 border-transparent'
                   }`}
                   onClick={() => setIsOpen(false)}
                 >
@@ -143,26 +182,49 @@ const Navbar = () => {
                 </Link>
               );
             })}
-            
-            {/* Mobile Contact & Social Details */}
-            <div className="pt-4 mt-2 border-t border-slate-900 space-y-2 text-center text-xs text-gray-400">
-              <div className="flex justify-center space-x-4">
-                {socialIcons.map(({ Icon, href, label }) => (
-                  <a
-                    key={label}
-                    href={href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="p-2 bg-slate-900 text-gray-400 hover:text-white rounded-full hover:scale-110 transition-all"
-                  >
-                    <Icon className="w-4 h-4" />
-                  </a>
-                ))}
+          </div>
+
+          <div className="mt-auto pb-10">
+            <div className="border-t border-slate-800/50 pt-6 space-y-4">
+              <a
+                href="tel:+917620663151"
+                className="flex items-center gap-3 text-sm text-gray-400 hover:text-white transition-colors group"
+              >
+                <span className="p-2 bg-Maincolor/10 rounded-lg group-hover:bg-Maincolor/20 transition-colors">
+                  <Phone className="w-4 h-4 text-Maincolor" />
+                </span>
+                +91 76206 xxx
+              </a>
+              <a
+                href="mailto:contact@softivra.com"
+                className="flex items-center gap-3 text-sm text-gray-400 hover:text-white transition-colors group"
+              >
+                <span className="p-2 bg-Maincolor/10 rounded-lg group-hover:bg-Maincolor/20 transition-colors">
+                  <Mail className="w-4 h-4 text-Maincolor" />
+                </span>
+                contact@softivra.com
+              </a>
+              <div className="flex items-center gap-3 pt-2">
+                <span className="text-[10px] uppercase tracking-widest text-gray-500">Follow:</span>
+                <div className="flex gap-2">
+                  {socialIcons.map(({ Icon, href, label }) => (
+                    <a
+                      key={label}
+                      href={href}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={label}
+                      className="p-2 bg-slate-800/50 text-gray-400 hover:text-Maincolor hover:bg-Maincolor/10 rounded-lg transition-all duration-200"
+                    >
+                      <Icon className="w-4 h-4" />
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </nav>
+      </div>
     </div>
   );
 };
