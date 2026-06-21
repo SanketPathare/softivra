@@ -138,7 +138,7 @@ const Navbar = () => {
               </a>
               <a
                 href="mailto:contact@softivra.com"
-                className="flex items-center gap-3 text-xs font-black uppercase text-black hover:text-Maincolor transition-colors group"
+                className="flex items-center gap-3 text-xs font-black text-black hover:text-Maincolor transition-colors group"
               >
                 <span className="p-1.5 bg-white border-2 border-black rounded-none shadow-[2px_2px_0px_0px_#000]">
                   <Mail className="w-3.5 h-3.5 text-black" />

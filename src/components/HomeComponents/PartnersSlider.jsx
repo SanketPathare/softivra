@@ -119,7 +119,9 @@ const PartnersSlider = () => {
 
   useEffect(() => {
     const updateSlidesPerView = () => {
-      if (window.innerWidth < 640) {
+      if (window.innerWidth < 480) {
+        setSlidesPerView(1);
+      } else if (window.innerWidth < 768) {
         setSlidesPerView(2);
       } else {
         setSlidesPerView(3);

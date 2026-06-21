@@ -1,46 +1,52 @@
 import React from "react";
 
-export const SoftivraLogo = ({ className = "h-10", textColor = "text-slate-900", lightMode = false }) => {
+export const SoftivraLogo = ({ className = "h-10", textColor = "text-black", lightMode = false }) => {
   return (
     <div className={`flex items-center gap-3 select-none ${className}`}>
-      {/* Sleek SVG Icon */}
+      {/* Neo-Brutalist SVG Icon */}
       <svg
-        viewBox="0 0 100 100"
-        className="h-full w-auto filter drop-shadow-md"
+        viewBox="0 0 110 110"
+        className="h-full w-auto"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <defs>
-          <linearGradient id="softivraGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#2563eb" /> {/* Royal Blue */}
-            <stop offset="50%" stopColor="#4f46e5" />  {/* Indigo */}
-            <stop offset="100%" stopColor="#06b6d4" /> {/* Cyan */}
-          </linearGradient>
-        </defs>
-        
-        {/* Hexagonal Background Frame */}
+        {/* Flat SVG Shadow Hexagon */}
         <path
-          d="M50 5 L88 27 L88 73 L50 95 L12 73 L12 27 Z"
-          fill="url(#softivraGrad)"
-          stroke={lightMode ? "#ffffff" : "#1e293b"}
-          strokeWidth="3"
+          d="M55 12 L93 34 L93 80 L55 102 L17 80 L17 34 Z"
+          fill="#000000"
         />
 
-        {/* Abstract Stylized S-curve representing Softivra */}
+        {/* Foreground Hexagon with solid border */}
         <path
-          d="M68 35 C68 25, 58 22, 50 22 C40 22, 32 25, 32 35 C32 48, 68 45, 68 58 C68 68, 58 72, 50 72 C38 72, 32 68, 32 58"
-          stroke="#ffffff"
+          d="M50 7 L88 29 L88 75 L50 97 L12 75 L12 29 Z"
+          fill="#ffd13b"
+          stroke="#000000"
+          strokeWidth="6"
+          strokeLinejoin="miter"
+        />
+
+        {/* Heavy Black S-curve representing Softivra */}
+        <path
+          d="M66 37 C66 27, 58 24, 50 24 C40 24, 34 27, 34 37 C34 50, 66 48, 66 61 C66 71, 58 74, 50 74 C40 74, 34 71, 34 61"
+          stroke="#000000"
           strokeWidth="10"
-          strokeLinecap="round"
-          strokeLinejoin="round"
+          strokeLinecap="square"
+          strokeLinejoin="miter"
         />
 
-        {/* Core Glowing Dot */}
-        <circle cx="50" cy="47" r="4.5" fill="#22c55e" />
+        {/* Saturated Core Pink Dot with outline */}
+        <circle 
+          cx="50" 
+          cy="49" 
+          r="5" 
+          fill="#ff4a77" 
+          stroke="#000000" 
+          strokeWidth="2.5" 
+        />
       </svg>
       
       {/* Brand Text */}
-      <span className={`text-xl sm:text-2xl font-bold tracking-tight font-sans ${textColor}`}>
+      <span className={`text-base sm:text-lg font-black tracking-widest uppercase ${textColor}`}>
         Softivra
       </span>
     </div>

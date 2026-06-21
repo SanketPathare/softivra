@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
 import { Zap, Users, Rocket } from "lucide-react";
@@ -38,24 +38,9 @@ const ResponsiveSlider = () => {
     },
   ];
 
-  const [heightClass, setHeightClass] = useState("h-[65vh] md:h-[75vh] lg:h-[80vh]");
-
-  useEffect(() => {
-    const updateHeight = () => {
-      if (window.innerWidth < 640) {
-        setHeightClass("h-[65vh] md:h-[75vh] lg:h-[80vh]");
-      } else {
-        setHeightClass("h-[65vh] md:h-[75vh] lg:h-[80vh]");
-      }
-    };
-    updateHeight();
-    window.addEventListener("resize", updateHeight);
-    return () => window.removeEventListener("resize", updateHeight);
-  }, []);
-
   return (
     <div className="relative w-full max-w-7xl mx-auto px-4 py-6 sm:py-10">
-      <div className={`relative w-full ${heightClass} rounded-2xl border-4 border-black overflow-hidden bg-white shadow-[8px_8px_0px_0px_#000]`}>
+      <div className="relative w-full h-[450px] sm:h-[550px] md:h-[600px] lg:h-[650px] rounded-2xl border-4 border-black overflow-hidden bg-white shadow-[8px_8px_0px_0px_#000]">
         <Swiper
           modules={[Navigation, Pagination, Autoplay, EffectFade]}
           spaceBetween={0}

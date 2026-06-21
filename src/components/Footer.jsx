@@ -181,7 +181,7 @@ const Footer = () => {
                 <span className="text-[10px] font-black text-black block mb-1 uppercase tracking-wider">Email</span>
                 <a
                   href="mailto:contact@softivra.com"
-                  className="text-xs text-gray-500 hover:text-Secondcolor transition-colors break-all font-black uppercase tracking-wider"
+                  className="text-xs text-gray-500 hover:text-Secondcolor transition-colors whitespace-nowrap font-black tracking-wider"
                 >
                   contact@softivra.com
                 </a>

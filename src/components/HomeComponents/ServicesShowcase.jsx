@@ -65,7 +65,7 @@ const ServicesShowcase = () => {
   };
 
   return (
-    <div className="bg-slate-950 py-16 px-4 sm:px-6 lg:px-8 relative border-b-4 border-black">
+    <div className="bg-[#faf6ee] py-16 px-4 sm:px-6 lg:px-8 relative border-b-4 border-black">
       {/* Background grids */}
       <div className="absolute inset-0 bg-[linear-gradient(45deg,#000_1px,transparent_1px)] bg-[size:40px_40px] opacity-[0.03] pointer-events-none"></div>
 
