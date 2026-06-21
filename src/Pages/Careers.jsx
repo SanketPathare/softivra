@@ -111,7 +111,7 @@ const CareersPage = () => {
 
       {/* Career Impact Section */}
       <motion.section
-        className="py-12 px-4 sm:px-6 lg:px-8 bg-white"
+        className="py-12 px-4 sm:px-6 lg:px-8 bg-slate-900 border-t border-b border-slate-800"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -119,13 +119,13 @@ const CareersPage = () => {
       >
         <div className="max-w-4xl mx-auto text-center space-y-3">
           <motion.h2
-            className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900"
+            className="text-lg sm:text-xl lg:text-2xl font-bold text-white"
             variants={itemVariants}
           >
             Be Part of Our Impactful Journey!
           </motion.h2>
           <motion.p
-            className="text-xs sm:text-sm text-gray-600 leading-relaxed"
+            className="text-xs sm:text-sm text-gray-300 leading-relaxed"
             variants={itemVariants}
           >
             At Softivra, we value creativity, collaboration, and a passion for excellence. We foster growth, learning, and mutual respect, empowering every team member to achieve their professional best.

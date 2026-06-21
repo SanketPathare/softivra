@@ -45,17 +45,17 @@ const Footer = () => {
       }}
     >
       {/* Top section with company info */}
-      <div className="flex flex-col md:flex-row justify-around items-center bg-white text-black py-4 px-4 shadow-md">
+      <div className="flex flex-col md:flex-row justify-around items-center bg-slate-900 border-b border-slate-800 text-white py-4 px-4 shadow-sm">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="py-2 text-center md:text-left"
         >
-          <h2 className="text-sm sm:text-base font-semibold mb-1">
+          <h2 className="text-sm sm:text-base font-semibold mb-1 text-gray-200">
             Trust our professionals for reliable, comprehensive evaluations.
           </h2>
-          <p className="text-base sm:text-lg mb-2 md:mb-0 text-Maincolor font-medium">
+          <p className="text-base sm:text-lg mb-2 md:mb-0 text-Maincolor font-semibold">
             Contact us today!
           </p>
         </motion.div>

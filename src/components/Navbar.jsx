@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Mail, Twitter, Facebook, Instagram, Linkedin, Menu, X } from 'lucide-react';
-import { Icon } from '@iconify-icon/react';
-import { Link } from 'react-router-dom';
+import { Mail, Phone, Twitter, Facebook, Instagram, Linkedin, Menu, X } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 import SoftivraLogo from './SoftivraLogo';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   // Navigation items with routes
   const navItems = [
@@ -19,10 +19,10 @@ const Navbar = () => {
   ];
 
   const socialIcons = [
-    { Icon: Twitter, href: 'https://twitter.com/softivra', color: 'bg-Maincolor text-white p-3 rounded-full' },
-    { Icon: Facebook, href: 'https://www.facebook.com/softivra', color: 'bg-Maincolor text-white p-3 rounded-full' },
-    { Icon: Instagram, href: 'https://www.instagram.com/softivra', color: 'bg-Maincolor text-white p-3 rounded-full' },
-    { Icon: Linkedin, href: 'https://www.linkedin.com/company/softivra', color: 'bg-Maincolor text-white p-3 rounded-full' }
+    { Icon: Twitter, href: 'https://twitter.com/softivra', label: 'Twitter' },
+    { Icon: Facebook, href: 'https://www.facebook.com/softivra', label: 'Facebook' },
+    { Icon: Instagram, href: 'https://www.instagram.com/softivra', label: 'Instagram' },
+    { Icon: Linkedin, href: 'https://www.linkedin.com/company/softivra', label: 'LinkedIn' }
   ];
 
   useEffect(() => {
@@ -36,79 +36,80 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="w-full shadow-lg">
-      {/* Top Contact Bar */}
-      <div className="bg-blue-100 px-4 py-3 hidden md:block border-b border-blue-200">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center space-x-3 text-gray-700">
-            {/* Logo */}
-            <div className="flex items-center">
-              <Link to="/">
-                <SoftivraLogo className="h-10" textColor="text-slate-800" />
+    <div className="w-full relative z-50">
+      {/* Top Contact Bar (Desktop Only) - Thin, clean, no logo */}
+      <div className="bg-slate-950/80 text-gray-400 px-4 py-2 hidden md:block border-b border-slate-900">
+        <div className="max-w-7xl mx-auto flex justify-between items-center text-xs">
+          <div className="flex items-center space-x-6">
+            <div className="flex items-center space-x-1.5">
+              <Phone className="w-3.5 h-3.5 text-Maincolor" />
+              <Link to="tel:+917620663151" className="hover:text-white transition-colors">
+                +91 76206 63151
+              </Link>
+            </div>
+            <div className="flex items-center space-x-1.5">
+              <Mail className="w-3.5 h-3.5 text-Maincolor" />
+              <Link to="mailto:contact@softivra.com" className="hover:text-white transition-colors">
+                contact@softivra.com
               </Link>
             </div>
           </div>
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-2">
-              <Mail className="w-4 h-4 text-Maincolor" />
-              <Link target='_blank' to="mailto:contact@softivra.com">
-                <span className="text-xs font-semibold text-gray-700 hover:text-Maincolor transition-colors">contact@softivra.com</span>
+          <div className="flex items-center space-x-3">
+            <span className="text-[10px] uppercase font-bold tracking-wider text-gray-500 mr-1">Follow Us:</span>
+            {socialIcons.map(({ Icon, href, label }) => (
+              <Link
+                key={label}
+                to={href}
+                target="_blank"
+                aria-label={label}
+                className="hover:text-white transition-colors text-gray-400"
+              >
+                <Icon className="w-3.5 h-3.5" />
               </Link>
-            </div>
-            <div className='flex items-center'>
-              <Icon icon="ci:line-l" width="20" height="20" className='text-Maincolor' />
-            </div>
-            <div className='flex gap-2'>
-              {socialIcons.map(({ Icon, href, color }, index) => (
-                <Link
-                  key={index}
-                  to={href}
-                  target="_blank"
-                  className={`bg-Maincolor transition-all duration-300 hover:scale-110 text-white p-2 rounded-full`}
-                >
-                  <Icon className="w-3.5 h-3.5" />
-                </Link>
-              ))}
-            </div>
+            ))}
           </div>
         </div>
       </div>
 
       {/* Main Navbar */}
-      <nav className={`relative transition-all duration-300 w-full ${isScrolled ? 'bg-slate-900/95 backdrop-blur-md border-b border-slate-700 md:fixed md:top-0 md:left-0 md:right-0 md:z-50 shadow-md py-2' : 'bg-blue-100 py-3'}`}>
+      <nav className={`transition-all duration-300 w-full ${isScrolled ? 'bg-slate-900/95 backdrop-blur-md border-b border-slate-800 md:fixed md:top-0 md:left-0 md:right-0 shadow-md py-3' : 'bg-slate-900/90 backdrop-blur-md border-b border-slate-800 py-4'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-14 md:h-16">
-            {/* Logo for Mobile / Scrolled View */}
+          <div className="flex justify-between items-center h-12">
+            {/* Brand Logo - Rendered once */}
             <div className="flex items-center">
               <Link to="/">
-                <SoftivraLogo className="h-9" textColor={isScrolled ? "text-white" : "text-slate-800"} lightMode={isScrolled} />
+                <SoftivraLogo className="h-9" textColor="text-white" lightMode={true} />
               </Link>
             </div>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center z-10">
-              <div className="flex items-center bg-Maincolor rounded-md px-2 py-1 shadow-md">
-                {navItems.map((item, index) => (
-                  <div key={index} className="flex items-center">
-                    <Link
-                      to={item.path}
-                      className="relative px-5 py-2 text-white font-semibold text-xs tracking-wide transition-all duration-300 hover:text-blue-200 group"
-                    >
-                      <span className="relative">{item.name}</span>
-                    </Link>
-                    {index < navItems.length - 1 && (
-                      <span className="h-4 w-[1px] bg-white/30 mx-1"></span>
+            {/* Desktop Navigation Links - Borderless and clean */}
+            <div className="hidden md:flex items-center space-x-1">
+              {navItems.map((item) => {
+                const isActive = location.pathname === item.path;
+                return (
+                  <Link
+                    key={item.name}
+                    to={item.path}
+                    className={`relative px-4 py-2 text-xs font-semibold tracking-wider uppercase transition-colors duration-200 rounded-md ${
+                      isActive 
+                        ? 'text-Maincolor' 
+                        : 'text-gray-300 hover:text-white hover:bg-slate-800/40'
+                    }`}
+                  >
+                    <span>{item.name}</span>
+                    {isActive && (
+                      <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-Maincolor rounded-full" />
                     )}
-                  </div>
-                ))}
-              </div>
+                  </Link>
+                );
+              })}
             </div>
 
             {/* Mobile Menu Button */}
             <div className="md:hidden flex items-center">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className={`p-2 transition-colors duration-200 rounded-lg cursor-pointer ${isScrolled ? 'text-white hover:text-blue-400' : 'text-gray-700 hover:text-blue-600'}`}
+                className="p-1.5 text-gray-300 hover:text-white hover:bg-slate-800/60 rounded-lg cursor-pointer transition-colors"
                 aria-label={isOpen ? 'Close menu' : 'Open menu'}
                 aria-expanded={isOpen}
               >
@@ -118,36 +119,46 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Dropdown Menu */}
         <div
           className={`md:hidden transition-all duration-300 ease-in-out ${
             isOpen ? 'max-h-[350px] opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
           }`}
         >
-          <div className="px-4 py-3 space-y-1 bg-slate-900 border-t border-slate-800 shadow-inner">
-            {navItems.map((item, index) => (
-              <div key={index}>
+          <div className="px-4 py-3 space-y-1 bg-slate-950 border-t border-slate-900 shadow-inner">
+            {navItems.map((item) => {
+              const isActive = location.pathname === item.path;
+              return (
                 <Link
+                  key={item.name}
                   to={item.path}
-                  className="block px-4 py-2 text-white/90 hover:text-white hover:bg-slate-800 transition-all duration-300 text-sm font-semibold rounded-lg"
+                  className={`block px-4 py-2 text-xs uppercase tracking-wider font-semibold rounded-lg transition-colors ${
+                    isActive
+                      ? 'bg-Maincolor text-white'
+                      : 'text-gray-300 hover:bg-slate-900 hover:text-white'
+                  }`}
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
                 </Link>
+              );
+            })}
+            
+            {/* Mobile Contact & Social Details */}
+            <div className="pt-4 mt-2 border-t border-slate-900 space-y-2 text-center text-xs text-gray-400">
+              <div className="flex justify-center space-x-4">
+                {socialIcons.map(({ Icon, href, label }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="p-2 bg-slate-900 text-gray-400 hover:text-white rounded-full hover:scale-110 transition-all"
+                  >
+                    <Icon className="w-4 h-4" />
+                  </a>
+                ))}
               </div>
-            ))}
-            {/* Mobile Social Icons */}
-            <div className="flex justify-center space-x-4 pt-3 border-t border-slate-800 mt-2">
-              {socialIcons.map(({ Icon, href }, index) => (
-                <a
-                  key={index}
-                  href={href}
-                  className="bg-slate-800 text-white/80 p-2 rounded-full transition-all duration-300 hover:scale-110 hover:text-white"
-                  aria-label={`Visit social page`}
-                >
-                  <Icon className="w-4 h-4" />
-                </a>
-              ))}
             </div>
           </div>
         </div>
