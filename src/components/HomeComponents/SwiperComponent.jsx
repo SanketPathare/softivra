@@ -48,80 +48,82 @@ const ResponsiveSlider = () => {
   ];
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
-      <Swiper
-        modules={[Navigation, Pagination, Autoplay, EffectFade]}
-        spaceBetween={0}
-        slidesPerView={1}
-        effect="fade"
-        fadeEffect={{ crossFade: true }}
-        speed={700}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-        }}
-        pagination={{
-          el: ".swiper-pagination",
-          clickable: true,
-          renderBullet: (index, className) => {
-            return `<span class="${className} w-2.5 h-2.5 rounded-full transition-all duration-300 bg-white/40 hover:bg-white/70"></span>`;
-          },
-        }}
-        loop={true}
-        className="h-full"
-      >
-        {slidesData.map((slide, index) => (
-          <SwiperSlide key={index}>
-            <div
-              className="min-w-full h-full flex items-center justify-center relative"
-              style={{
-                backgroundImage: `url(${slide.image})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
-              {/* Dark Overlay for Better Text Readability */}
-              <div className="absolute inset-0 bg-gradient-to-b to-blue-950/70 via-black/90 from-blue-950/50"></div>
+    <div className="relative w-full max-w-7xl mx-auto px-4 py-6">
+      <div className="relative w-full h-[70vh] md:h-[80vh] lg:h-screen rounded-7xl border border-slate-700/60 overflow-hidden shadow-2xl shadow-blue-500/5">
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay, EffectFade]}
+          spaceBetween={0}
+          slidesPerView={1}
+          effect="fade"
+          fadeEffect={{ crossFade: true }}
+          speed={700}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
+          pagination={{
+            el: ".swiper-pagination",
+            clickable: true,
+            renderBullet: (index, className) => {
+              return `<span class="${className} w-2.5 h-2.5 rounded-full transition-all duration-300 bg-white/40 hover:bg-white/70"></span>`;
+            },
+          }}
+          loop={true}
+          className="h-full rounded-7xl"
+        >
+          {slidesData.map((slide, index) => (
+            <SwiperSlide key={index}>
+              <div
+                className="min-w-full h-full flex items-center justify-center relative"
+                style={{
+                  backgroundImage: `url(${slide.image})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              >
+                {/* Dark Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-b to-blue-950/70 via-black/90 from-blue-950/50"></div>
 
-              {/* Animated Background Elements */}
-              <div className="absolute inset-0 overflow-hidden">
-                <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/5 rounded-full animate-bounce"></div>
-                <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-white/5 rounded-full animate-pulse"></div>
-              </div>
+                {/* Animated Background Elements */}
+                <div className="absolute inset-0 overflow-hidden">
+                  <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/5 rounded-full animate-bounce"></div>
+                  <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-white/5 rounded-full animate-pulse"></div>
+                </div>
 
-              {/* Content */}
-              <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold mb-4 animate-fade-in-up">
-                  <span className="bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent">
-                    {slide.title}
-                  </span>
-                </h1>
+                {/* Content */}
+                <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold mb-4 animate-fade-in-up">
+                    <span className="bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent">
+                      {slide.title}
+                    </span>
+                  </h1>
 
-                <p className="text-sm sm:text-base md:text-lg mb-8 text-blue-200 animate-fade-in-up delay-200 tracking-wide">
-                  {slide.subtitle}
-                </p>
+                  <p className="text-sm sm:text-base md:text-lg mb-8 text-blue-200 animate-fade-in-up delay-200 tracking-wide">
+                    {slide.subtitle}
+                  </p>
 
-                {/* Action Buttons */}
-                <div className="flex flex-row gap-4 justify-center animate-fade-in-up delay-300">
-                  <Link to="/services" className="group px-6 py-3 bg-Maincolor hover:bg-blue-600 cursor-pointer text-white rounded-lg text-sm font-semibold transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
-                    Our Services
-                  </Link>
-                  <Link to="/contact" className="px-6 py-3 border border-white/40 text-white rounded-lg text-sm font-semibold hover:bg-white/10 backdrop-blur-sm transition-all duration-300 hover:border-white/60 transform hover:scale-105 cursor-pointer">
-                    Contact Us
-                  </Link>
+                  {/* Action Buttons */}
+                  <div className="flex flex-row gap-4 justify-center animate-fade-in-up delay-300">
+                    <Link to="/services" className="group px-6 py-3 bg-Maincolor hover:bg-blue-600 cursor-pointer text-white rounded-lg text-sm font-semibold transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+                      Our Services
+                    </Link>
+                    <Link to="/contact" className="px-6 py-3 border border-white/40 text-white rounded-lg text-sm font-semibold hover:bg-white/10 backdrop-blur-sm transition-all duration-300 hover:border-white/60 transform hover:scale-105 cursor-pointer">
+                      Contact Us
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
-          </SwiperSlide>
-        ))}
+            </SwiperSlide>
+          ))}
 
-        {/* Custom Pagination */}
-        <div className="swiper-pagination absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2"></div>
-      </Swiper>
+          {/* Custom Pagination */}
+          <div className="swiper-pagination absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2"></div>
+        </Swiper>
 
-      {/* Progress Bar - Custom implementation for Swiper */}
-      <div className="absolute bottom-0 left-0 w-full h-1 bg-white/10 z-20">
-        <div className="h-full bg-Maincolor swiper-progress-bar"></div>
+        {/* Progress Bar */}
+        <div className="absolute bottom-0 left-0 w-full h-1 bg-white/10 z-20 rounded-b-7xl">
+          <div className="h-full bg-Maincolor rounded-b-7xl swiper-progress-bar"></div>
+        </div>
       </div>
     </div>
   );
