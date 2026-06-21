@@ -218,7 +218,7 @@ const Contact = () => {
                       Phone Number
                     </h3>
                     <p className="text-gray-300 text-xs">
-                      +91 76206 63151
+                      +91 76206 xxx
                     </p>
                   </div>
                 </motion.div>

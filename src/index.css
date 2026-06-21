@@ -29,6 +29,15 @@
   --color-blue-400: #60a5fa;
   --color-blue-200: #bfdbfe;
   --color-blue-100: #dbeafe;
+  --font-size-xs: 0.625rem;
+  --font-size-sm: 0.75rem;
+  --font-size-base: 0.8125rem;
+  --font-size-lg: 0.875rem;
+  --font-size-xl: 0.9375rem;
+  --font-size-2xl: 1.0625rem;
+  --font-size-3xl: 1.25rem;
+  --font-size-4xl: 1.5rem;
+  --font-size-5xl: 2rem;
 }
 
 body {

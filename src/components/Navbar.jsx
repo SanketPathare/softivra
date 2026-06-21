@@ -44,7 +44,7 @@ const Navbar = () => {
             <div className="flex items-center space-x-1.5">
               <Phone className="w-3.5 h-3.5 text-Maincolor" />
               <Link to="tel:+917620663151" className="hover:text-white transition-colors">
-                +91 76206 63151
+                +91 76206 xxx
               </Link>
             </div>
             <div className="flex items-center space-x-1.5">

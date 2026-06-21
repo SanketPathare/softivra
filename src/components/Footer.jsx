@@ -5,7 +5,6 @@ import {
   FaTwitter,
   FaInstagram,
   FaLinkedin,
-  FaWhatsapp,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
@@ -184,7 +183,7 @@ const Footer = () => {
                   to="tel:+917620663151"
                   className="hover:text-blue-400 transition-colors"
                 >
-                  +91 76206 63151
+                  +91 76206 xxx
                 </Link>
               </li>
               <li className="flex items-start">
@@ -256,18 +255,6 @@ const Footer = () => {
           </motion.div>
         </motion.div>
       </div>
-
-      {/* Floating WhatsApp Icon */}
-      <motion.a
-        href="https://wa.me/917620663151"
-        target="_blank"
-        rel="noopener noreferrer"
-        whileHover={{ scale: 1.1 }}
-        className="fixed bottom-5 left-5 z-50 bg-Maincolor text-white p-3 rounded-full shadow-lg hover:bg-Secondcolor transition-all cursor-pointer"
-        aria-label="Chat on WhatsApp"
-      >
-        <FaWhatsapp size={24} />
-      </motion.a>
 
       {/* Copyright section */}
       <motion.div
