@@ -11,7 +11,6 @@ import TestimonialSlider from '../components/HomeComponents/TestimonialSlider'
 import Navbar from '../components/Navbar'
 import { StatCard } from '../components/ui/AnimatedCounter'
 import ProcessFlow from '../components/ui/ProcessFlow'
-import FloatingBadges from '../components/ui/FloatingBadges'
 import AnimatedDivider from '../components/ui/AnimatedDivider'
 import SplitTextReveal from '../components/ui/SplitTextReveal'
 import AnimatedGridBackground from '../components/ui/AnimatedGridBackground'
@@ -23,7 +22,6 @@ const Home = () => {
     <>
       <div className="relative">
         <SwiperComponent/>
-        <FloatingBadges />
       </div>
       <div className='mx-auto'>
         <AboutComponent/>

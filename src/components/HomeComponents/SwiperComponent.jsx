@@ -9,6 +9,7 @@ import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import "swiper/css/autoplay";
 import { Link } from "react-router-dom";
+import FloatingBadges from "../ui/FloatingBadges";
 
 const ResponsiveSlider = () => {
   const slidesData = [
@@ -139,6 +140,9 @@ const ResponsiveSlider = () => {
 
       {/* Pagination rendered BELOW the slider */}
       <div className="swiper-pagination flex justify-center items-center gap-3 mt-5"></div>
+      
+      {/* Floating Badges */}
+      <FloatingBadges />
     </div>
     </>
   );
