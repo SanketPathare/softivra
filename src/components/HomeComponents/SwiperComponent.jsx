@@ -39,8 +39,41 @@ const ResponsiveSlider = () => {
   ];
 
   return (
-    <div className="relative w-full max-w-7xl mx-auto px-4 py-6 sm:py-10">
-      <div className="relative w-full h-[450px] sm:h-[550px] md:h-[550px] lg:h-[550px] rounded-2xl border-4 border-black overflow-hidden bg-white shadow-[8px_8px_0px_0px_#000]">
+    <>
+    <style>{`
+      .swiper-pagination {
+        position: relative !important;
+        bottom: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 12px !important;
+        margin-top: 20px !important;
+      }
+      .swiper-pagination-bullet {
+        width: 14px !important;
+        height: 14px !important;
+        background-color: #ffffff !important;
+        border: 2px solid #000000 !important;
+        border-radius: 0px !important;
+        opacity: 1 !important;
+        transition: all 0.3s ease-in-out !important;
+        margin: 0 !important;
+        cursor: pointer;
+      }
+      .swiper-pagination-bullet-active {
+        width: 42px !important;
+        background-color: #ffd13b !important;
+        box-shadow: 2px 2px 0px 0px #000000 !important;
+      }
+      .swiper-pagination-bullet:hover:not(.swiper-pagination-bullet-active) {
+        background-color: #000000 !important;
+      }
+    `}</style>
+    <div className="relative w-full max-w-7xl mx-auto px-4 py-4 sm:py-10">
+      <div className="relative w-full h-[480px] sm:h-[550px] md:h-[550px] lg:h-[550px] rounded-2xl border-4 border-black overflow-hidden bg-white shadow-[8px_8px_0px_0px_#000]">
         <Swiper
           modules={[Navigation, Pagination, Autoplay, EffectFade]}
           spaceBetween={0}
@@ -56,7 +89,7 @@ const ResponsiveSlider = () => {
             el: ".swiper-pagination",
             clickable: true,
             renderBullet: (index, className) => {
-              return `<span class="${className} w-3 h-3 rounded-none border-2 border-black transition-all duration-500 bg-white hover:bg-black"></span>`;
+              return `<span class="${className}"></span>`;
             },
           }}
           loop={true}
@@ -79,21 +112,21 @@ const ResponsiveSlider = () => {
                 {/* Visual Brutalist Pattern (Diagonal lines or grids overlay) */}
                 <div className="absolute inset-0 bg-[linear-gradient(45deg,#000_1px,transparent_1px)] bg-[size:30px_30px] opacity-[0.07]"></div>
 
-                <div className="relative z-10 text-center text-black px-6 sm:px-8 lg:px-12 max-w-4xl mx-auto">
+                <div className="relative z-10 text-center text-black px-4 sm:px-8 lg:px-12 max-w-4xl mx-auto">
                   {/* Floating category sticker */}
-                  <div className="inline-block px-4 py-1.5 border-2 border-black bg-white font-black text-[10px] tracking-widest uppercase mb-6 shadow-[2px_2px_0px_0px_#000]">
+                  <div className="inline-block px-4 py-1.5 border-2 border-black bg-white font-black text-[10px] tracking-widest uppercase mb-4 sm:mb-6 shadow-[2px_2px_0px_0px_#000]">
                     {slide.subtitle}
                   </div>
 
-                  <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black mb-6 tracking-tighter leading-none text-black">
+                  <h1 className="text-2xl sm:text-5xl lg:text-6xl font-black mb-4 sm:mb-6 tracking-tighter leading-none text-black">
                     {slide.title}
                   </h1>
 
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <Link to="/services" className="w-full sm:w-auto px-8 py-3.5 border-3 border-black bg-black text-white font-black text-xs uppercase tracking-widest shadow-[4px_4px_0px_0px_#ffd13b] hover:bg-white hover:text-black transition-all active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0px_0px_#ffd13b]">
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4 sm:px-0">
+                    <Link to="/services" className="w-full sm:w-auto px-8 py-3 border-3 border-black bg-black text-white font-black text-xs uppercase tracking-widest shadow-[4px_4px_0px_0px_#ffd13b] hover:bg-white hover:text-black transition-all active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0px_0px_#ffd13b]">
                       Our Services
                     </Link>
-                    <Link to="/contact" className="w-full sm:w-auto px-8 py-3.5 border-3 border-black bg-white text-black font-black text-xs uppercase tracking-widest shadow-[4px_4px_0px_0px_#000] hover:bg-black hover:text-white transition-all active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0px_0px_#000]">
+                    <Link to="/contact" className="w-full sm:w-auto px-8 py-3 border-3 border-black bg-white text-black font-black text-xs uppercase tracking-widest shadow-[4px_4px_0px_0px_#000] hover:bg-black hover:text-white transition-all active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0px_0px_#000]">
                       Contact Us
                     </Link>
                   </div>
@@ -101,12 +134,13 @@ const ResponsiveSlider = () => {
               </div>
             </SwiperSlide>
           ))}
-
-          <div className="swiper-pagination absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-3"></div>
         </Swiper>
-
       </div>
+
+      {/* Pagination rendered BELOW the slider */}
+      <div className="swiper-pagination flex justify-center items-center gap-3 mt-5"></div>
     </div>
+    </>
   );
 };
 
