@@ -34,7 +34,7 @@ const BlogInsights = () => {
   };
 
   return (
-    <div className="bg-[#faf6ee] text-black border-b-4 border-black">
+    <div className="bg-[#faf6ee] text-black ">
       <div className="container mx-auto px-4 py-16">
         <motion.div
           variants={containerVariants}

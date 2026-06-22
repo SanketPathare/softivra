@@ -143,7 +143,7 @@ const PartnersSlider = () => {
   };
 
   return (
-    <section className="bg-white py-16 overflow-hidden relative border-t-4 border-b-4 border-black">
+    <section className="bg-white py-16 overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="flex flex-col lg:flex-row items-start lg:items-center gap-10 lg:gap-14"

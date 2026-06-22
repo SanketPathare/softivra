@@ -34,7 +34,7 @@ const CTASection = () => {
   };
 
   return (
-    <section className="relative overflow-hidden border-t-4 border-b-4 border-black bg-Secondcolor py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+    <section className="relative overflow-hidden  bg-Secondcolor py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
       {/* Floating Retro Grid Markers / Stickers */}
       <div className="absolute inset-0 opacity-20 pointer-events-none">
         {[...Array(8)].map((_, i) => (
