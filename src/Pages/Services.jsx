@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Code, Users, Target, Zap } from 'lucide-react';
 import CTASection from "../components/HomeComponents/CTASection";
+import CapabilityRadar from "../components/ui/CapabilityRadar";
+import ProcessFlow from "../components/ui/ProcessFlow";
+import { StatCard } from "../components/ui/AnimatedCounter";
+import ParticleBackground from "../components/ui/ParticleBackground";
 
 const Services = () => {
   const [isVisible, setIsVisible] = useState({});
@@ -295,6 +300,58 @@ const Services = () => {
               </div>
             </motion.div>
           ))}
+        </div>
+      </section>
+
+      {/* Process Section */}
+      <section className="relative py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white border-t-4 border-b-4 border-black overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(45deg,#000_1px,transparent_1px)] bg-[size:40px_40px] opacity-[0.03] pointer-events-none" />
+        <div className="max-w-7xl mx-auto relative z-10">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="inline-block px-4 py-1.5 border-2 border-black bg-Maincolor font-black text-[9px] uppercase tracking-widest mb-4 shadow-[2px_2px_0px_0px_#000]">
+              HOW IT WORKS
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-black text-black uppercase tracking-tighter leading-none">
+              Our <span className="inline-block px-3 py-1.5 bg-Secondcolor text-white border-3 border-black shadow-[4px_4px_0_0_#000] rotate-[-1deg]">Approach</span>
+            </h2>
+          </motion.div>
+          <ProcessFlow />
+        </div>
+      </section>
+
+      {/* Capabilities + Stats Grid */}
+      <section className="relative py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-[#faf6ee] border-t-4 border-b-4 border-black overflow-hidden">
+        <ParticleBackground count={8} opacity={0.04} />
+        <div className="max-w-6xl mx-auto relative z-10">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="inline-block px-4 py-1.5 border-2 border-black bg-teal-accent font-black text-[9px] uppercase tracking-widest mb-4 shadow-[2px_2px_0px_0px_#000]">
+              EXPERTISE
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-black text-black uppercase tracking-tighter leading-none">
+              Our <span className="inline-block px-3 py-1.5 bg-Maincolor border-3 border-black shadow-[4px_4px_0_0_#000] rotate-[1deg]">Edge</span>
+            </h2>
+          </motion.div>
+          <div className="grid lg:grid-cols-2 gap-8 items-start">
+            <CapabilityRadar />
+            <div className="grid grid-cols-2 gap-4">
+              <StatCard icon={<Code className="w-5 h-5 text-black" />} value={200} suffix="+" label="Projects Done" delay={0} />
+              <StatCard icon={<Users className="w-5 h-5 text-black" />} value={50} suffix="+" label="Experts" delay={0.1} />
+              <StatCard icon={<Target className="w-5 h-5 text-black" />} value={98} suffix="%" label="Satisfaction" delay={0.2} />
+              <StatCard icon={<Zap className="w-5 h-5 text-black" />} value={4} suffix="X" label="Faster Delivery" delay={0.3} />
+            </div>
+          </div>
         </div>
       </section>
 

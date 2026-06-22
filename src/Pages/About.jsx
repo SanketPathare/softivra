@@ -1,7 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Cpu, Terminal, Shield, Sparkles, Layout, Code, Award, Palette, LineChart } from 'lucide-react';
+import { Cpu, Terminal, Shield, Sparkles, Layout, Code, Award, Palette, LineChart, Rocket, Users, Target, Zap } from 'lucide-react';
+import { StatCard } from '../components/ui/AnimatedCounter';
+import ParticleBackground from '../components/ui/ParticleBackground';
 
 const PartnerLogo = ({ type }) => {
   switch (type) {
@@ -442,9 +444,80 @@ const About = () => {
         </div>
       </motion.section>
 
+      {/* Our Journey Timeline */}
+      <motion.section
+        className="py-16 sm:py-20 bg-white border-t-4 border-b-4 border-black relative overflow-hidden"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <ParticleBackground count={8} opacity={0.05} />
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div className="text-center mb-12" variants={itemVariants}>
+            <h2 className="text-2xl sm:text-3xl font-black text-black uppercase leading-tight">
+              Our <span className="inline-block px-3 py-1 bg-Secondcolor text-white border-3 border-black shadow-[4px_4px_0_0_#000] rotate-[1.5deg]">Journey</span>
+            </h2>
+            <p className="text-black text-xs sm:text-sm max-w-md mx-auto font-bold uppercase tracking-wide mt-4">
+              Milestones that shaped who we are today.
+            </p>
+          </motion.div>
+
+          <div className="relative max-w-3xl mx-auto">
+            <div className="absolute left-[23px] top-0 bottom-0 w-0.5 bg-black/20" />
+            {[
+              { year: '2019', title: 'The Beginning', desc: 'Softivra was founded with a vision to bridge the gap between technology and business innovation.' },
+              { year: '2020', title: 'First Major Client', desc: 'Secured our first enterprise client and delivered a comprehensive digital transformation project.' },
+              { year: '2021', title: 'Team Expansion', desc: 'Grew to a team of 25+ experts across design, development, and marketing disciplines.' },
+              { year: '2022', title: 'Industry Recognition', desc: 'Received multiple design and development awards for outstanding project delivery.' },
+              { year: '2023', title: 'Global Reach', desc: 'Expanded operations internationally, serving clients across 4 continents.' },
+              { year: '2024', title: 'Innovation Hub', desc: 'Launched our AI/ML division and innovation lab for next-gen solutions.' },
+            ].map((milestone, index) => (
+              <motion.div
+                key={index}
+                className="flex gap-6 mb-10 last:mb-0 relative"
+                variants={itemVariants}
+              >
+                <div className="relative z-10 flex-shrink-0 w-12 h-12 bg-Maincolor border-3 border-black flex items-center justify-center font-black text-xs shadow-[3px_3px_0px_0px_#000]">
+                  {milestone.year}
+                </div>
+                <div className="bg-white border-3 border-black p-5 flex-1 shadow-[3px_3px_0px_0px_#000] hover:shadow-[5px_5px_0px_0px_#000] hover:-translate-x-[1px] hover:-translate-y-[1px] transition-all duration-200">
+                  <h3 className="font-black text-sm uppercase tracking-wide mb-1">{milestone.title}</h3>
+                  <p className="text-[11px] font-semibold text-black/70 leading-relaxed">{milestone.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Stats Section */}
+      <motion.section
+        className="py-16 sm:py-20 bg-[#ff4a77] border-t-4 border-b-4 border-black relative overflow-hidden"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <ParticleBackground count={10} color="#ffffff" opacity={0.08} />
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div className="text-center mb-12" variants={itemVariants}>
+            <h2 className="text-2xl sm:text-4xl font-black text-white uppercase leading-tight tracking-tighter">
+              Impact <span className="inline-block px-3 py-1.5 bg-white text-black border-3 border-black shadow-[4px_4px_0_0_#000] rotate-[-1deg]">Metrics</span>
+            </h2>
+          </motion.div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-5xl mx-auto">
+            <StatCard icon={<Code className="w-5 h-5 text-black" />} value={150} suffix="+" label="Projects Delivered" delay={0} />
+            <StatCard icon={<Users className="w-5 h-5 text-black" />} value={50} suffix="+" label="Team Members" delay={0.1} />
+            <StatCard icon={<Target className="w-5 h-5 text-black" />} value={98} suffix="%" label="Client Satisfaction" delay={0.2} />
+            <StatCard icon={<Zap className="w-5 h-5 text-black" />} value={4} suffix="+" label="Global Offices" delay={0.3} />
+          </div>
+        </div>
+      </motion.section>
+
       {/* CTA Section */}
       <motion.section
-        className="py-16 sm:py-20 bg-[#ff4a77] border-t-4 border-b-4 border-black text-black"
+        className="py-16 sm:py-20 bg-black border-t-4 border-b-4 border-black text-white"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
