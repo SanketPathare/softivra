@@ -16,7 +16,7 @@ const ServicesShowcase = () => {
       description:
         "We build robust, scalable, and responsive web applications using modern stacks. Our development workflow ensures optimized performance, cross-device consistency, and clean code architectures.",
       hoverColor: "hover:bg-Secondcolor hover:text-white",
-      icon: <Code className="w-6 h-6 text-black stroke-[2.5px] group-hover:text-white transition-colors duration-150" />,
+      icon: <Code className="w-6 h-6 text-black stroke-[2.5px]" />,
     },
     {
       title: "Custom Software",
@@ -30,7 +30,7 @@ const ServicesShowcase = () => {
       description:
         "Create a memorable presence with unified brand identity design. We deliver pixel-perfect logos, brand assets, and styling guidelines that set you apart in highly competitive markets.",
       hoverColor: "hover:bg-blue-accent hover:text-white",
-      icon: <Award className="w-6 h-6 text-black stroke-[2.5px] group-hover:text-white transition-colors duration-150" />,
+      icon: <Award className="w-6 h-6 text-black stroke-[2.5px]" />,
     },
     {
       title: "Graphic Design",
@@ -65,7 +65,7 @@ const ServicesShowcase = () => {
   };
 
   return (
-    <div className="bg-[#faf6ee] py-16 px-4 sm:px-6 lg:px-8 relative border-b-4 border-black">
+    <div className="bg-[#faf6ee] py-16 px-4 sm:px-6 lg:px-8 relative ">
       {/* Background grids */}
       <div className="absolute inset-0 bg-[linear-gradient(45deg,#000_1px,transparent_1px)] bg-[size:40px_40px] opacity-[0.03] pointer-events-none"></div>
 
