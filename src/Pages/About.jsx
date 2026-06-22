@@ -4,6 +4,11 @@ import { Link } from 'react-router-dom';
 import { Cpu, Terminal, Shield, Sparkles, Layout, Code, Award, Palette, LineChart, Rocket, Users, Target, Zap } from 'lucide-react';
 import { StatCard } from '../components/ui/AnimatedCounter';
 import ParticleBackground from '../components/ui/ParticleBackground';
+import AnimatedDivider from '../components/ui/AnimatedDivider';
+import SplitTextReveal from '../components/ui/SplitTextReveal';
+import AnimatedGridBackground from '../components/ui/AnimatedGridBackground';
+import TiltCard from '../components/ui/TiltCard';
+import MorphingShape from '../components/ui/MorphingShape';
 
 const PartnerLogo = ({ type }) => {
   switch (type) {
@@ -242,7 +247,11 @@ const About = () => {
     <div className="min-h-screen bg-[#faf6ee] pb-16">
       {/* Hero Section */}
       <section className="relative overflow-hidden py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white border-b-4 border-black">
-        <div className="relative max-w-7xl mx-auto text-center">
+        <AnimatedGridBackground variant="dots" />
+        <div className="absolute top-6 right-10 opacity-15 hidden lg:block">
+          <MorphingShape color="#ffd13b" size={70} speed={4} />
+        </div>
+        <div className="relative max-w-7xl mx-auto text-center z-10">
           <motion.div
             id="hero"
             initial={{ opacity: 0, scale: 0.98 }}
@@ -250,7 +259,7 @@ const About = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <h1 className="text-3xl sm:text-5xl font-black text-black mb-3 uppercase tracking-tight">
-              About Us
+              <SplitTextReveal>About Us</SplitTextReveal>
             </h1>
             <p className="font-bold text-xs sm:text-sm max-w-lg mx-auto text-black border-2 border-black bg-[#ffd13b] px-4 py-2 inline-block shadow-[3px_3px_0px_0px_#000] tracking-widest uppercase">
               Get to know the team and vision behind Softivra.
@@ -363,39 +372,43 @@ const About = () => {
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* Mission Card */}
-            <motion.div
-              variants={itemVariants}
-              className="relative bg-white border-3 border-black rounded-none p-6 sm:p-8 overflow-hidden shadow-[4px_4px_0_0_#000] hover:shadow-[6px_6px_0_0_#000] hover:-translate-x-[2px] hover:-translate-y-[2px] transition-all duration-200"
-            >
-              <div className="absolute top-0 left-0 right-0 h-2 bg-Maincolor"></div>
-              <h3 className="text-base sm:text-lg font-black text-black mb-3 uppercase tracking-wide">
-                Mission
-              </h3>
-              <p className="text-black text-xs sm:text-sm leading-relaxed font-semibold">
-                To empower businesses with innovative technology solutions
-                that drive growth, efficiency, and success. We are committed
-                to delivering tailored IT services that meet the unique needs
-                of each client, ensuring they stay competitive in the digital
-                age.
-              </p>
-            </motion.div>
+            <TiltCard tiltDegree={5}>
+              <motion.div
+                variants={itemVariants}
+                className="relative bg-white border-3 border-black rounded-none p-6 sm:p-8 overflow-hidden shadow-[4px_4px_0_0_#000] hover:shadow-[6px_6px_0_0_#000] hover:-translate-x-[2px] hover:-translate-y-[2px] transition-all duration-200"
+              >
+                <div className="absolute top-0 left-0 right-0 h-2 bg-Maincolor"></div>
+                <h3 className="text-base sm:text-lg font-black text-black mb-3 uppercase tracking-wide">
+                  Mission
+                </h3>
+                <p className="text-black text-xs sm:text-sm leading-relaxed font-semibold">
+                  To empower businesses with innovative technology solutions
+                  that drive growth, efficiency, and success. We are committed
+                  to delivering tailored IT services that meet the unique needs
+                  of each client, ensuring they stay competitive in the digital
+                  age.
+                </p>
+              </motion.div>
+            </TiltCard>
 
             {/* Vision Card */}
-            <motion.div
-              variants={itemVariants}
-              className="relative bg-white border-3 border-black rounded-none p-6 sm:p-8 overflow-hidden shadow-[4px_4px_0_0_#000] hover:shadow-[6px_6px_0_0_#000] hover:-translate-x-[2px] hover:-translate-y-[2px] transition-all duration-200"
-            >
-              <div className="absolute top-0 left-0 right-0 h-2 bg-[#ff4a77]"></div>
-              <h3 className="text-base sm:text-lg font-black text-black mb-3 uppercase tracking-wide">
-                Vision
-              </h3>
-              <p className="text-black text-xs sm:text-sm leading-relaxed font-semibold">
-                To be the leading provider of cutting-edge technology
-                solutions that transform businesses and set new standards of
-                excellence, enabling our clients to thrive in an ever-evolving
-                digital landscape.
-              </p>
-            </motion.div>
+            <TiltCard tiltDegree={5}>
+              <motion.div
+                variants={itemVariants}
+                className="relative bg-white border-3 border-black rounded-none p-6 sm:p-8 overflow-hidden shadow-[4px_4px_0_0_#000] hover:shadow-[6px_6px_0_0_#000] hover:-translate-x-[2px] hover:-translate-y-[2px] transition-all duration-200"
+              >
+                <div className="absolute top-0 left-0 right-0 h-2 bg-[#ff4a77]"></div>
+                <h3 className="text-base sm:text-lg font-black text-black mb-3 uppercase tracking-wide">
+                  Vision
+                </h3>
+                <p className="text-black text-xs sm:text-sm leading-relaxed font-semibold">
+                  To be the leading provider of cutting-edge technology
+                  solutions that transform businesses and set new standards of
+                  excellence, enabling our clients to thrive in an ever-evolving
+                  digital landscape.
+                </p>
+              </motion.div>
+            </TiltCard>
           </div>
         </div>
       </motion.section>
@@ -444,6 +457,8 @@ const About = () => {
         </div>
       </motion.section>
 
+      <AnimatedDivider variant="minimal" />
+
       {/* Our Journey Timeline */}
       <motion.section
         className="py-16 sm:py-20 bg-white border-t-4 border-b-4 border-black relative overflow-hidden"
@@ -452,6 +467,7 @@ const About = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
       >
+        <AnimatedGridBackground variant="dots" />
         <ParticleBackground count={8} opacity={0.05} />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div className="text-center mb-12" variants={itemVariants}>
@@ -499,25 +515,29 @@ const About = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
       >
+        <AnimatedGridBackground variant="grid" />
         <ParticleBackground count={10} color="#ffffff" opacity={0.08} />
+        <div className="absolute bottom-6 right-8 opacity-[0.10] hidden lg:block">
+          <MorphingShape color="#ffffff" size={90} speed={5} />
+        </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div className="text-center mb-12" variants={itemVariants}>
             <h2 className="text-2xl sm:text-4xl font-black text-white uppercase leading-tight tracking-tighter">
-              Impact <span className="inline-block px-3 py-1.5 bg-white text-black border-3 border-black shadow-[4px_4px_0_0_#000] rotate-[-1deg]">Metrics</span>
+              <SplitTextReveal>Impact Metrics</SplitTextReveal>
             </h2>
           </motion.div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-5xl mx-auto">
-            <StatCard icon={<Code className="w-5 h-5 text-black" />} value={150} suffix="+" label="Projects Delivered" delay={0} />
-            <StatCard icon={<Users className="w-5 h-5 text-black" />} value={50} suffix="+" label="Team Members" delay={0.1} />
-            <StatCard icon={<Target className="w-5 h-5 text-black" />} value={98} suffix="%" label="Client Satisfaction" delay={0.2} />
-            <StatCard icon={<Zap className="w-5 h-5 text-black" />} value={4} suffix="+" label="Global Offices" delay={0.3} />
+            <TiltCard tiltDegree={4}><StatCard icon={<Code className="w-5 h-5 text-black" />} value={150} suffix="+" label="Projects Delivered" delay={0} /></TiltCard>
+            <TiltCard tiltDegree={4}><StatCard icon={<Users className="w-5 h-5 text-black" />} value={50} suffix="+" label="Team Members" delay={0.1} /></TiltCard>
+            <TiltCard tiltDegree={4}><StatCard icon={<Target className="w-5 h-5 text-black" />} value={98} suffix="%" label="Client Satisfaction" delay={0.2} /></TiltCard>
+            <TiltCard tiltDegree={4}><StatCard icon={<Zap className="w-5 h-5 text-black" />} value={4} suffix="+" label="Global Offices" delay={0.3} /></TiltCard>
           </div>
         </div>
       </motion.section>
 
       {/* CTA Section */}
       <motion.section
-        className="py-16 sm:py-20 bg-black border-t-4 border-b-4 border-black text-white"
+        className="py-16 sm:py-20 bg-[#ffd13b] border-t-4 border-b-4 border-black text-white"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"

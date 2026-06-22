@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Code, Users, Target, Zap } from 'lucide-react';
+import { Code, Users, Target, Zap, Sparkles } from 'lucide-react';
 import CTASection from "../components/HomeComponents/CTASection";
 import CapabilityRadar from "../components/ui/CapabilityRadar";
 import ProcessFlow from "../components/ui/ProcessFlow";
 import { StatCard } from "../components/ui/AnimatedCounter";
 import ParticleBackground from "../components/ui/ParticleBackground";
+import AnimatedDivider from "../components/ui/AnimatedDivider";
+import SplitTextReveal from "../components/ui/SplitTextReveal";
+import AnimatedGridBackground from "../components/ui/AnimatedGridBackground";
+import TiltCard from "../components/ui/TiltCard";
+import MorphingShape from "../components/ui/MorphingShape";
 
 const Services = () => {
   const [isVisible, setIsVisible] = useState({});
@@ -211,7 +216,11 @@ const Services = () => {
     <div className="min-h-screen bg-[#faf6ee] pb-16">
       {/* Hero Section */}
       <section className="relative overflow-hidden py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white border-b-4 border-black">
-        <div className="relative max-w-7xl mx-auto text-center">
+        <AnimatedGridBackground variant="dots" />
+        <div className="absolute top-6 right-10 opacity-15 hidden lg:block">
+          <MorphingShape color="#ff4a77" size={70} speed={4} />
+        </div>
+        <div className="relative max-w-7xl mx-auto text-center z-10">
           <motion.div
             id="hero"
             initial={{ opacity: 0, scale: 0.98 }}
@@ -219,7 +228,7 @@ const Services = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-black mb-4 uppercase tracking-tight">
-              Our Services
+              <SplitTextReveal>Our Services</SplitTextReveal>
             </h1>
             <p className="font-bold text-xs sm:text-sm max-w-lg mx-auto text-black border-2 border-black bg-[#ffd13b] px-4 py-2 inline-block shadow-[3px_3px_0px_0px_#000] tracking-wider uppercase">
               Explore how Softivra helps you build, scale, and thrive online.
@@ -239,7 +248,8 @@ const Services = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.15 }}
-              className="bg-white border-3 border-black p-6 sm:p-8 shadow-[4px_4px_0_0_#000] hover:shadow-[8px_8px_0_0_#000] hover:-translate-x-1 hover:-translate-y-1 transition-all duration-200"
+            >
+            <TiltCard tiltDegree={3} glare={false} className="bg-white border-3 border-black p-6 sm:p-8 shadow-[4px_4px_0_0_#000] hover:shadow-[8px_8px_0_0_#000] hover:-translate-x-1 hover:-translate-y-1 transition-all duration-200"
             >
               {/* Service Row */}
               <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
@@ -298,14 +308,20 @@ const Services = () => {
                   ))}
                 </div>
               </div>
+            </TiltCard>
             </motion.div>
           ))}
         </div>
       </section>
 
+      <AnimatedDivider variant="minimal" />
+
       {/* Process Section */}
       <section className="relative py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white border-t-4 border-b-4 border-black overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(45deg,#000_1px,transparent_1px)] bg-[size:40px_40px] opacity-[0.03] pointer-events-none" />
+        <AnimatedGridBackground variant="dots" />
+        <div className="absolute top-8 left-8 opacity-20 hidden lg:block">
+          <MorphingShape color="#00b8a9" size={75} speed={5} />
+        </div>
         <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
             className="text-center mb-12"
@@ -318,7 +334,7 @@ const Services = () => {
               HOW IT WORKS
             </div>
             <h2 className="text-3xl sm:text-5xl font-black text-black uppercase tracking-tighter leading-none">
-              Our <span className="inline-block px-3 py-1.5 bg-Secondcolor text-white border-3 border-black shadow-[4px_4px_0_0_#000] rotate-[-1deg]">Approach</span>
+              Our <span className="inline-block px-3 py-1.5 bg-Secondcolor text-white border-3 border-black shadow-[4px_4px_0_0_#000] rotate-[-1deg]"><SplitTextReveal>Approach</SplitTextReveal></span>
             </h2>
           </motion.div>
           <ProcessFlow />
@@ -327,7 +343,11 @@ const Services = () => {
 
       {/* Capabilities + Stats Grid */}
       <section className="relative py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-[#faf6ee] border-t-4 border-b-4 border-black overflow-hidden">
+        <AnimatedGridBackground variant="grid" />
         <ParticleBackground count={8} opacity={0.04} />
+        <div className="absolute bottom-6 right-8 opacity-[0.12] hidden lg:block">
+          <MorphingShape color="#ffd13b" size={85} speed={6} />
+        </div>
         <div className="max-w-6xl mx-auto relative z-10">
           <motion.div
             className="text-center mb-12"
@@ -340,16 +360,18 @@ const Services = () => {
               EXPERTISE
             </div>
             <h2 className="text-3xl sm:text-5xl font-black text-black uppercase tracking-tighter leading-none">
-              Our <span className="inline-block px-3 py-1.5 bg-Maincolor border-3 border-black shadow-[4px_4px_0_0_#000] rotate-[1deg]">Edge</span>
+              Our <span className="inline-block px-3 py-1.5 bg-Maincolor border-3 border-black shadow-[4px_4px_0_0_#000] rotate-[1deg]"><SplitTextReveal>Edge</SplitTextReveal></span>
             </h2>
           </motion.div>
           <div className="grid lg:grid-cols-2 gap-8 items-start">
-            <CapabilityRadar />
+            <TiltCard tiltDegree={3} glare={false}>
+              <CapabilityRadar />
+            </TiltCard>
             <div className="grid grid-cols-2 gap-4">
-              <StatCard icon={<Code className="w-5 h-5 text-black" />} value={200} suffix="+" label="Projects Done" delay={0} />
-              <StatCard icon={<Users className="w-5 h-5 text-black" />} value={50} suffix="+" label="Experts" delay={0.1} />
-              <StatCard icon={<Target className="w-5 h-5 text-black" />} value={98} suffix="%" label="Satisfaction" delay={0.2} />
-              <StatCard icon={<Zap className="w-5 h-5 text-black" />} value={4} suffix="X" label="Faster Delivery" delay={0.3} />
+              <TiltCard tiltDegree={4}><StatCard icon={<Code className="w-5 h-5 text-black" />} value={200} suffix="+" label="Projects Done" delay={0} /></TiltCard>
+              <TiltCard tiltDegree={4}><StatCard icon={<Users className="w-5 h-5 text-black" />} value={50} suffix="+" label="Experts" delay={0.1} /></TiltCard>
+              <TiltCard tiltDegree={4}><StatCard icon={<Target className="w-5 h-5 text-black" />} value={98} suffix="%" label="Satisfaction" delay={0.2} /></TiltCard>
+              <TiltCard tiltDegree={4}><StatCard icon={<Zap className="w-5 h-5 text-black" />} value={4} suffix="X" label="Faster Delivery" delay={0.3} /></TiltCard>
             </div>
           </div>
         </div>
